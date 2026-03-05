@@ -917,31 +917,158 @@ footer {
    Responsive Design
    ========================================================================== */
 @media (max-width: 768px) {
-    .split-layout {
-        flex-direction: column;
-        text-align: center;
+    /* 전역 컨테이너 조정 */
+    .container {
+        padding: 0 5%;
     }
 
-    .reverse .split-layout {
-        flex-direction: column;
+    .section {
+        padding: 6vh 0;
     }
 
-    .feature-text {
-        margin-bottom: 3rem;
-    }
-
-    .feature-list li {
-        text-align: left;
+    /* 히어로 섹션 최적화 */
+    .hero {
+        padding-top: 2vh;
+        padding-bottom: 5rem;
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        word-break: keep-all;
     }
 
-    .image-grid .offset-img {
-        position: relative;
-        right: 0;
+    .hero-desc {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
         width: 100%;
-        margin-top: -20%;
+        gap: 0.8rem;
+    }
+
+    .hero-actions .btn-primary,
+    .hero-actions .btn-secondary {
+        width: 100%;
+    }
+
+    .hero-image {
+        margin-top: 3rem;
+    }
+
+    .hero-image .image-wrapper {
+        transform: scale(1) !important; /* 모바일에서 과도한 확대 제거 */
+    }
+
+    .floating-card {
+        right: 0;
+        bottom: -10px;
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    /* 특징 섹션 공통 */
+    .split-layout {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .feature-text {
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .section-title.text-lg {
+        font-size: 1.8rem !important;
+    }
+
+    .section-desc.text-lg {
+        font-size: 1.1rem !important;
+    }
+
+    .feature-image {
+        width: 100%;
+    }
+
+    .feature-image .image-wrapper {
+        transform: scale(1) !important; /* 모바일에서 뚫고 나가는 현상 방지 */
+        margin: 0 auto !important;
+    }
+
+    /* 블랙리스트/화이트리스트 정보 박스 모바일 대응 */
+    .list-info-box {
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+        margin: 1.5rem auto 0 !important;
+        min-width: 0 !important;
+        width: 100%;
+        text-align: left;
+    }
+
+    /* 이미지 그리드 (17번/19번 병합 뷰) 최적화 */
+    .image-grid {
+        transform: scale(1) translateX(0) !important;
+        margin: 2rem 0 !important;
+        padding: 0 !important;
+    }
+
+    /* 특징 섹션 2-2번 이미지 오버랩 수정 */
+    .feature-text .image-wrapper {
+        width: 100% !important;
+        margin-top: 2rem !important;
+    }
+
+    /* 추가 기능 슬라이더 */
+    .slider-wrapper {
+        aspect-ratio: 4 / 3;
+    }
+
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    /* 시스템 사양 테이블 반응형 */
+    .system-req-wrapper {
+        padding: 1rem;
+        margin-top: 2rem;
+    }
+
+    .system-req-table th,
+    .system-req-table td {
+        padding: 0.8rem 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    /* CTA 섹션 */
+    .cta-title {
+        font-size: 1.8rem;
+    }
+
+    .btn-large {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    /* 네비게이션 상단 고정 대응 */
+    .intro-section {
+        padding-top: calc(var(--nav-height) + 4vh);
+    }
+    
+    .intro-title {
+        font-size: 2rem;
+    }
+    
+    .intro-logo-wrapper {
+        max-width: 280px;
+    }
+
+    .nav-links {
+        display: none; /* 모바일에서는 심플하게 링크 숨김 처리 (추후 햄버거 메뉴 필요시 추가) */
     }
 }

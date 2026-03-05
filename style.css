@@ -1,0 +1,947 @@
+@charset "utf-8";
+
+/* ==========================================================================
+   CSS Variables & Reset
+   ========================================================================== */
+:root {
+    --primary: #3DAEE9;
+    /* 스크린샷 이미지 우측 상단의 깔끔한 파스텔 블루 */
+    --primary-dark: #2980B9;
+    /* 텍스트/강조 딥 블루 */
+    --primary-light: #D6EAF8;
+    /* 배경/뱃지용 라이트 블루 */
+    --bg-main: #FFFFFF;
+    --bg-alt: #F8F9FA;
+    --text-dark: #1A1A1A;
+    --text-muted: #666666;
+    --border-color: #EAEAEA;
+    --font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --nav-height: 70px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-dark);
+    background-color: var(--bg-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Typography & Utils
+   ========================================================================== */
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.shadow-md {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-lg {
+    box-shadow: 0 20px 40px rgba(0, 200, 83, 0.15);
+}
+
+.container {
+    width: 100%;
+    max-width: 1560px;
+    margin: 0 auto;
+    padding: 0 3%;
+}
+
+/* 다음 섹션 살짝 보이기 기법 (여백을 줄이고 padding으로 콘텐츠 분리) */
+.section {
+    padding: 10vh 0;
+    position: relative;
+}
+
+.peek-next {
+    /* 100vh가 아닌 85~90vh를 차지하게 하여 다음 엘리먼트가 화면 하단에 걸치도록 함 */
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+}
+
+.alt-bg {
+    background-color: var(--bg-alt);
+}
+
+/* ==========================================================================
+   Navigation (Glassmorphism)
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1560px;
+    margin: 0 auto;
+    padding: 0 3%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.logo:hover {
+    transform: scale(1.02);
+}
+
+.logo-mark {
+    color: #E72027;
+    /* 이미지 속 MARK 빨간색 */
+}
+
+.logo-mon {
+    color: #0E99DC;
+    /* 이미지 속 MON 파란색 */
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.btn-primary-small,
+.btn-primary,
+.btn-secondary,
+.btn-large {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.btn-primary-small {
+    background-color: var(--primary);
+    color: #fff !important;
+    padding: 0.5rem 1.25rem;
+}
+
+.btn-primary-small:hover {
+    background-color: var(--primary-dark);
+    box-shadow: 0 4px 12px rgba(0, 200, 83, 0.3);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    font-size: 1.05rem;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 200, 83, 0.3);
+}
+
+.btn-secondary {
+    background-color: #fff;
+    color: var(--text-dark);
+    border: 1px solid var(--border-color);
+    padding: 0.8rem 2rem;
+    font-size: 1.05rem;
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-alt);
+    transform: translateY(-2px);
+}
+
+.btn-large {
+    background-color: var(--primary);
+    color: #fff;
+    padding: 1.2rem 3rem;
+    font-size: 1.2rem;
+    border-radius: 12px;
+}
+
+.btn-large:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 200, 83, 0.4);
+}
+
+/* ==========================================================================
+   Intro Section
+   ========================================================================== */
+.intro-section {
+    padding-top: calc(var(--nav-height) + 8vh);
+    padding-bottom: 5rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(180deg, var(--bg-main) 0%, var(--bg-alt) 100%);
+}
+
+.intro-logo-wrapper {
+    max-width: 450px;
+    width: 100%;
+    aspect-ratio: 1.1 / 1;
+    border-radius: 24px;
+    margin-bottom: 2.5rem;
+    background-color: #fbfbfa;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.intro-logo {
+    width: 135%;
+    height: auto;
+    mix-blend-mode: multiply;
+}
+
+.intro-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -1px;
+    margin-bottom: 1.2rem;
+}
+
+.intro-desc {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero {
+    padding-top: 5vh;
+    padding-bottom: 10rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.badge {
+    display: inline-block;
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+}
+
+.hero-desc {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.hero-image {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 10;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.floating-card {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    animation: floating 3s ease-in-out infinite;
+}
+
+/* 마우스 스크롤 인디케이터 */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.6;
+    animation: fadePulse 2s infinite;
+}
+
+.scroll-indicator span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.mouse {
+    width: 24px;
+    height: 36px;
+    border: 2px solid var(--text-dark);
+    border-radius: 15px;
+    position: relative;
+}
+
+.mouse::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 6px;
+    background: var(--text-dark);
+    border-radius: 2px;
+    animation: scrollWheel 1.5s infinite;
+}
+
+/* ==========================================================================
+   Features Section (Split Layout)
+   ========================================================================== */
+.split-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5%;
+}
+
+.reverse .split-layout {
+    flex-direction: row-reverse;
+}
+
+.feature-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+.section-desc {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+/* 폰트 확대 유틸리티 */
+h2.section-title.text-lg {
+    font-size: 2.8rem;
+    line-height: 1.35;
+}
+
+p.section-desc.text-lg {
+    font-size: 1.35rem;
+    line-height: 1.7;
+}
+
+.feature-list {
+    list-style: none;
+}
+
+.feature-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+.feature-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: 800;
+}
+
+.feature-image {
+    flex: 1.4;
+    position: relative;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.image-grid {
+    position: relative;
+    padding-bottom: 3rem;
+    padding-right: 3rem;
+    /* 오른쪽 여백 확보 (서브 이미지용) */
+}
+
+.image-grid .main-img-layer {
+    position: relative;
+    z-index: 1;
+    border-radius: 12px;
+}
+
+.image-grid .crossfade-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    border-radius: 12px;
+}
+
+.crossfade-animation {
+    animation: crossfadeToggle 4s infinite;
+    /* 2초 간격 교차 (총 4초) */
+}
+
+@keyframes crossfadeToggle {
+
+    0%,
+    45% {
+        opacity: 0;
+        /* 처음 2초간 19번 투명 -> 17번 보임 */
+    }
+
+    50%,
+    95% {
+        opacity: 1;
+        /* 다음 2초간 19번 보임 -> 17번 가려짐 */
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* ==========================================================================
+   Video Wrapper
+   ========================================================================== */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio for YouTube */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #000;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ==========================================================================
+   CTA Section
+   ========================================================================== */
+.cta {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    text-align: center;
+    padding: 12vh 0;
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.cta-desc {
+    font-size: 1.15rem;
+    opacity: 0.9;
+    margin-bottom: 3rem;
+}
+
+.cta-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cta-button-wrapper .btn-large {
+    background-color: #fff;
+    color: var(--primary-dark);
+}
+
+.cta-button-wrapper .btn-large:hover {
+    background-color: #f0f0f0;
+}
+
+.version-info {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ==========================================================================
+   System Requirements Table
+   ========================================================================== */
+.system-req-wrapper {
+    margin-top: 4rem;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+    /* 반응형 가로 스크롤 */
+}
+
+.system-req-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+.system-req-table th,
+.system-req-table td {
+    padding: 1.2rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.95rem;
+}
+
+.system-req-table th {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    font-weight: 700;
+    border-bottom: 2px solid var(--primary);
+    border-radius: 8px 8px 0 0;
+}
+
+.system-req-table th.recommended {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.system-req-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.system-req-table tbody td:first-child {
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.system-req-table .table-note {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+    background-color: #111;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.footer-logo:hover {
+    transform: scale(1.02);
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fadePulse {
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes scrollWheel {
+    0% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, 10px);
+        opacity: 0;
+    }
+}
+
+/* Scroll Reveal Classes (JS Triggered) */
+.fade-in-up,
+.reveal-left,
+.reveal-right,
+.reveal-up,
+.slide-up-delayed {
+    opacity: 0;
+}
+
+.fade-in-up {
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left {
+    transform: translateX(-40px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right {
+    transform: translateX(40px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-up {
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slide-up-delayed {
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+}
+
+.active.fade-in-up,
+.active.reveal-left,
+.active.reveal-right,
+.active.reveal-up,
+.active.slide-up-delayed {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* ==========================================================================
+   Image Slider
+   ========================================================================== */
+.slider-container {
+    padding-bottom: 2rem;
+}
+
+.slider-wrapper {
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1;
+}
+
+.slide-img.active-slide {
+    opacity: 1;
+    z-index: 2;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--primary-dark);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slider-btn:hover {
+    background: #fff;
+    color: var(--primary);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active-dot {
+    background-color: var(--primary);
+}
+
+/* ==========================================================================
+   List Info Box Overlay (Blacklist/Whitelist)
+   ========================================================================== */
+.list-image-container {
+    position: relative;
+}
+
+.list-info-box {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    z-index: 20;
+    min-width: 280px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.mt-2 {
+    margin-top: 1rem;
+}
+
+.dot-icon {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.dot-icon.black {
+    background-color: #333;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.dot-icon.white {
+    background-color: #fff;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.info-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-text strong {
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+.info-text span {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+@keyframes bounce-subtle {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.bounce-subtle {
+    animation: bounce-subtle 4s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+@media (max-width: 768px) {
+    .split-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .reverse .split-layout {
+        flex-direction: column;
+    }
+
+    .feature-text {
+        margin-bottom: 3rem;
+    }
+
+    .feature-list li {
+        text-align: left;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .image-grid .offset-img {
+        position: relative;
+        right: 0;
+        width: 100%;
+        margin-top: -20%;
+    }
+}

@@ -51,12 +51,56 @@
         <section id="warning-hook" class="section warning-section"
             style="padding-top: calc(var(--nav-height) + 8vh); padding-bottom: 4rem; background-color: #fff;">
             <style>
-                #warning-hook .feature-list li::before {
-                    content: '🚨';
-                    color: initial;
+                #warning-hook {
+                    background-color: #fcfdfe !important;
+                    /* 미세한 그레이시 블루 배경 */
                 }
 
-                /* 이미지 주변 상시 빛나는 연한 파스텔톤 광채 */
+                .risk-card {
+                    background: #fff;
+                    border: 1px solid #edf2f7;
+                    border-left: 4px solid #C62828;
+                    /* 전문적인 딥 레드 */
+                    padding: 1.5rem;
+                    border-radius: 12px;
+                    margin-bottom: 1.2rem;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 1.2rem;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+                    transition: transform 0.3s ease;
+                }
+
+                .risk-card:hover {
+                    transform: translateX(5px);
+                }
+
+                .risk-icon-box {
+                    background: rgba(198, 40, 40, 0.08);
+                    /* 딥 레드 블렌딩 */
+                    padding: 0.8rem;
+                    border-radius: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: 48px;
+                }
+
+                .risk-content h3 {
+                    font-size: 1.05rem;
+                    font-weight: 800;
+                    color: #C62828;
+                    margin-bottom: 0.4rem;
+                }
+
+                .risk-content p {
+                    font-size: 0.95rem;
+                    color: #555;
+                    line-height: 1.55;
+                    margin: 0;
+                }
+
+                /* 기존 애니메이션들... */
                 .inline-glow {
                     display: inline-block;
                     position: relative;
@@ -75,7 +119,6 @@
                     transform: translate(-50%, -50%);
                     border-radius: 10px;
                     background: rgba(255, 167, 38, 0.25);
-                    /* 연한 파스텔톤 오렌지 */
                     filter: blur(8px);
                     z-index: 1;
                     pointer-events: none;
@@ -87,61 +130,120 @@
                     height: 3.2rem;
                     border-radius: 6px;
                     border: 1.5px solid #ffccbc;
-                    /* 부드러운 파스텔톤 테두리 */
                     background: #fff;
                     box-shadow: 0 0 10px rgba(255, 138, 101, 0.2);
                 }
             </style>
             <div class="container split-layout">
-                <div class="feature-text fade-in-up" style="flex: 1.2;">
+                <div class="feature-text reveal-up" style="flex: 1.2;">
                     <div
-                        style="display:inline-block; background: rgba(220, 53, 69, 0.1); color: #dc3545; padding: 0.5rem 1.2rem; border-radius: 50px; font-weight: 800; margin-bottom: 1.5rem; border: 1px solid rgba(220, 53, 69, 0.2); font-size: 0.95rem;">
+                        style="display:inline-block; background: rgba(198, 40, 40, 0.08); color: #C62828; padding: 0.5rem 1.2rem; border-radius: 50px; font-weight: 800; margin-bottom: 1.5rem; border: 1px solid rgba(198, 40, 40, 0.2); font-size: 0.9rem; letter-spacing: -0.02em;">
                         🚨 스토어 생존을 위협하는 치명적 리스크
                     </div>
                     <h2 class="section-title text-lg"
-                        style="line-height: 1.4; margin-bottom: 1.5rem; word-break: keep-all;">
+                        style="line-height: 1.35; margin-bottom: 1.5rem; word-break: keep-all; font-weight: 800; letter-spacing: -0.03em;">
                         생각만 해도 두려운<br>
-                        <span style="color: #dc3545;">상표권 침해 경고 메일,</span><br>
+                        <span style="color: #C62828;">상표권 침해 경고 메일,</span><br>
                         어떻게 피할 수 있을까요?
                     </h2>
-                    <p class="section-desc text-lg" style="margin-bottom: 2rem; color: #444; word-break: keep-all;">
-                        수개월간 밤낮없이 피땀 흘려 키운 스토어가 <strong>단 한 번의 상표권 실수로 한순간에 무너집니다.</strong><br><br>
-                        수백만 원에 달하는 합의금 요구, 힘들게 쌓아온 리뷰와 매출의 증발, 그리고 판매자 계정 영구 정지까지. 더 이상 남의 일이 아닙니다. 지금 이 시간에도 누군가는 미처
-                        확인하지 못한 상표 하나 때문에 끔찍한 위기를 마주하고 있습니다.
+                    <p class="section-desc text-lg"
+                        style="margin-bottom: 2.5rem; color: #555; word-break: keep-all; line-height: 1.7;">
+                        수개월간 밤낮없이 피땀 흘려 키운 스토어가 <strong>단 한 번의 상표권 실수로 한순간에 무너집니다.</strong><br>
+                        더 이상 남의 일이 아닙니다. 지금 이 시간에도 누군가는 미처 확인하지 못한 상표 하나 때문에 끔찍한 위기를 마주하고 있습니다.
                     </p>
-                    <ul class="feature-list" style="margin-bottom: 2.5rem; color: #333;">
-                        <li style="margin-bottom: 1rem;"><strong style="color:#dc3545;">막대한 금전적 손실:</strong> 예기치 못한 수백만
-                            원 단위의 합의금 폭탄</li>
-                        <li style="margin-bottom: 1rem;"><strong style="color:#dc3545;">하루아침에 끊기는 매출:</strong> 판매 상품 강제
-                            삭제 및 스토어 이용 정지</li>
-                        <li style="margin-bottom: 1rem;"><strong style="color: var(--primary-dark);">가장 확실한 방어:</strong>
-                            사전에 철저하게 걸러내는 것만이 유일한 해결책입니다</li>
-                    </ul>
+
+                    <div class="risk-cards-wrapper">
+                        <!-- 카드 1 -->
+                        <div class="risk-card">
+                            <div class="risk-icon-box">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#C62828"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                </svg>
+                            </div>
+                            <div class="risk-content">
+                                <h3>막대한 금전적 손실</h3>
+                                <p>예기치 못한 수백만 원 단위의 합의금 폭탄</p>
+                            </div>
+                        </div>
+
+                        <!-- 카드 2 -->
+                        <div class="risk-card">
+                            <div class="risk-icon-box">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#C62828"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                                    </path>
+                                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                </svg>
+                            </div>
+                            <div class="risk-content">
+                                <h3>하루아침에 끊기는 매출</h3>
+                                <p>판매 상품 강제 삭제 및 스토어 이용 정지</p>
+                            </div>
+                        </div>
+
+                        <!-- 카드 3 -->
+                        <div class="risk-card" style="border-left-color: var(--primary);">
+                            <div class="risk-icon-box" style="background: rgba(255, 107, 0, 0.08);">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--primary)"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                            </div>
+                            <div class="risk-content">
+                                <h3 style="color: var(--primary);">가장 확실한 방어</h3>
+                                <p>사전에 철저하게 걸러내는 것만이 유일한 해결책입니다</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- 우측 이미지 영역 -->
-                <div class="feature-image fade-in-up" style="flex: 1; transition-delay: 0.2s;">
+                <div class="feature-image reveal-up" style="flex: 1; transition-delay: 0.2s;">
                     <div class="image-wrapper shadow-lg"
-                        style="position: relative; border-radius: 16px; overflow: hidden; border: 1px solid #ffeaea; box-shadow: 0 20px 40px rgba(220, 53, 69, 0.15);">
-                        <!-- 사용자가 나중에 변경할 이미지를 위한 플레이스홀더 -->
+                        style="position: relative; border-radius: 20px; overflow: hidden; border: 1px solid #edf2f7; background: #fff; padding: 1rem;">
+                        <!-- 세련된 이메일 알림 목업 -->
                         <div
-                            style="width: 100%; aspect-ratio: 4/5; background: linear-gradient(135deg, #2c3e50, #1a1a1a); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2.5rem; color: #fff;">
-                            <span
-                                style="font-size: 3.5rem; margin-bottom: 1.5rem; animation: floating 3s ease-in-out infinite;">✉️🚨</span>
-                            <h3
-                                style="font-size: 1.6rem; margin-bottom: 1rem; color: #ff6b6b; word-break: keep-all; line-height: 1.3;">
-                                대표님이 만드신<br>경고 메일 이미지를<br>여기에 넣어주세요</h3>
-                            <p style="font-size: 1.05rem; opacity: 0.8; word-break: keep-all; line-height: 1.5;">
-                                폴더에 <strong style="color:#fff;">warning_mail.jpg</strong> (또는 png) 파일을 추가하시면 이 화면 대신 실제
-                                이미지가 나타납니다.<br>
-                                <span
-                                    style="font-size: 0.85rem; color: #aaa; margin-top: 8px; display: inline-block;">(코드의
-                                    img src 경로를 설정하신 파일명에 맞게 변경해주세요)</span>
-                            </p>
+                            style="background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; overflow: hidden;">
+                            <div
+                                style="padding: 0.8rem 1.2rem; background: #fff; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between;">
+                                <div style="display: flex; gap: 6px;">
+                                    <span
+                                        style="width: 10px; height: 10px; background: #ff5f57; border-radius: 50%;"></span>
+                                    <span
+                                        style="width: 10px; height: 10px; background: #febc2e; border-radius: 50%;"></span>
+                                    <span
+                                        style="width: 10px; height: 10px; background: #28c840; border-radius: 50%;"></span>
+                                </div>
+                                <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">System
+                                    Notification</span>
+                            </div>
+                            <div style="padding: 2.5rem 1.5rem; text-align: center;">
+                                <div
+                                    style="width: 60px; height: 60px; background: rgba(198, 40, 40, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                                    <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#C62828"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                        </path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <h4 style="font-size: 1.2rem; color: #1e293b; margin-bottom: 0.8rem; font-weight: 800;">
+                                    [긴급] 상표권 침해 법적 통지</h4>
+                                <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 2rem; line-height: 1.6;">
+                                    마켓에 등록하신 상품 번호 [0135]가 <br>
+                                    제3자의 지식재산권을 침해한 것으로 확인되어...
+                                </p>
+                            </div>
                         </div>
-                        <!-- 실제 이미지가 로드되면 위의 플레이스홀더를 숨기고 이미지를 보여줌 -->
+                        <!-- 실제 이미지가 로드되면 위의 목업을 숨기고 이미지를 보여줌 -->
                         <img src="./warning_mail.png" alt="상표권 침해 경고 메일"
-                            style="display: none; width: 100%; height: auto;"
+                            style="display: none; width: 100%; height: auto; border-radius: 12px;"
                             onload="this.style.display='block'; this.previousElementSibling.style.display='none';">
                     </div>
                 </div>

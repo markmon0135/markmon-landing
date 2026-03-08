@@ -569,44 +569,7 @@ p.section-desc.text-lg {
     margin-bottom: 3rem;
 }
 
-.cta-button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.cta-button-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    width: 100%;
-}
-
-.cta-button-wrapper .btn-large {
-    background-color: #fff;
-    color: var(--primary-dark);
-    min-width: 280px;
-}
-
-@media (max-width: 768px) {
-    .cta-button-wrapper {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .cta-button-wrapper .btn-large {
-        width: 100%;
-        min-width: unset;
-        padding: 1rem 2rem;
-    }
-}
-
-.cta-button-wrapper .btn-large:hover {
-    background-color: #f0f0f0;
-}
+/* CTA 버튼 정렬 임시 제거 (아래 최하단에 통합 정의) */
 
 .version-info {
     font-size: 0.9rem;
@@ -954,6 +917,7 @@ footer {
    Responsive Design
    ========================================================================== */
 @media (max-width: 768px) {
+
     /* 전역 컨테이너 조정 */
     .container {
         padding: 0 5%;
@@ -995,7 +959,8 @@ footer {
     }
 
     .hero-image .image-wrapper {
-        transform: scale(1) !important; /* 모바일에서 과도한 확대 제거 */
+        transform: scale(1) !important;
+        /* 모바일에서 과도한 확대 제거 */
     }
 
     .floating-card {
@@ -1030,7 +995,8 @@ footer {
     }
 
     .feature-image .image-wrapper {
-        transform: scale(1) !important; /* 모바일에서 뚫고 나가는 현상 방지 */
+        transform: scale(1) !important;
+        /* 모바일에서 뚫고 나가는 현상 방지 */
         margin: 0 auto !important;
     }
 
@@ -1096,16 +1062,56 @@ footer {
     .intro-section {
         padding-top: calc(var(--nav-height) + 4vh);
     }
-    
+
     .intro-title {
         font-size: 2rem;
     }
-    
+
     .intro-logo-wrapper {
         max-width: 280px;
     }
 
     .nav-links {
-        display: none; /* 모바일에서는 심플하게 링크 숨김 처리 (추후 햄버거 메뉴 필요시 추가) */
+        display: none;
+        /* 모바일에서는 심플하게 링크 숨김 처리 (추후 햄버거 메뉴 필요시 추가) */
+    }
+}
+
+/* 최하단에 CTA 버튼 정렬 스타일 확정 정의 (우선순위 확보 및 캐시 방지) */
+.cta-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.cta-buttons-layout {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.cta-buttons-layout .btn-large {
+    background-color: #fff;
+    color: var(--primary-dark);
+    min-width: 280px;
+    width: auto !important;
+    /* PC에서 가로 전체를 차지하지 않도록 고정 */
+}
+
+@media (max-width: 768px) {
+    .cta-buttons-layout {
+        flex-direction: column !important;
+        gap: 1rem;
+    }
+
+    .cta-buttons-layout .btn-large {
+        width: 100% !important;
+        min-width: unset;
+        padding: 1rem 1.5rem;
     }
 }

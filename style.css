@@ -216,6 +216,20 @@ body {
     box-shadow: 0 10px 25px rgba(0, 200, 83, 0.4);
 }
 
+.btn-outline-white {
+    background-color: transparent !important;
+    color: #fff !important;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-white:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
 /* ==========================================================================
    Intro Section
    ========================================================================== */
@@ -555,16 +569,39 @@ p.section-desc.text-lg {
     margin-bottom: 3rem;
 }
 
-.cta-button-wrapper {
+.cta-button-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
+}
+
+.cta-button-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
 }
 
 .cta-button-wrapper .btn-large {
     background-color: #fff;
     color: var(--primary-dark);
+    min-width: 280px;
+}
+
+@media (max-width: 768px) {
+    .cta-button-wrapper {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .cta-button-wrapper .btn-large {
+        width: 100%;
+        min-width: unset;
+        padding: 1rem 2rem;
+    }
 }
 
 .cta-button-wrapper .btn-large:hover {

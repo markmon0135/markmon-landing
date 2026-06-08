@@ -200,14 +200,12 @@ function initHorizontalPager() {
         return rectWidth || window.innerWidth || document.documentElement.clientWidth || 0;
     }
 
-    function syncHash(index) {
-        const activePage = pages[index];
+    function syncCleanUrl() {
+        const cleanUrl = `${window.location.pathname}${window.location.search}`;
 
-        if (!activePage || !activePage.id) {
-            return;
+        if (window.location.hash) {
+            window.history.replaceState(null, "", cleanUrl);
         }
-
-        window.history.replaceState(null, "", `#${activePage.id}`);
     }
 
     function updateButtons() {
@@ -243,7 +241,7 @@ function initHorizontalPager() {
         }
 
         if (syncUrl) {
-            syncHash(index);
+            syncCleanUrl();
         }
 
         updateButtons();
@@ -357,16 +355,6 @@ function initHorizontalPager() {
         });
     });
 
-    window.addEventListener("hashchange", () => {
-        const targetId = window.location.hash.replace("#", "");
-
-        if (!pageIndexById.has(targetId)) {
-            return;
-        }
-
-        goToPage(pageIndexById.get(targetId));
-    });
-
     window.addEventListener("keydown", event => {
         if (event.key === "ArrowRight") {
             event.preventDefault();
@@ -437,7 +425,8 @@ function initHorizontalPager() {
     }
 
     applyViewportVariables();
-    setActivePage(currentPage);
+    setActivePage(currentPage, { syncUrl: false });
+    syncCleanUrl();
     scheduleLayoutRefresh({ resetScroll: true });
 
     window.addEventListener("load", () => {

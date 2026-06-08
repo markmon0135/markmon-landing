@@ -1584,6 +1584,33 @@ button {
     line-height: 1.6;
 }
 
+#pricing .pricing-free-banner {
+    width: min(100%, 760px);
+    padding: 0.9rem 1.2rem;
+    border-radius: 22px;
+    background: linear-gradient(135deg, rgba(255, 122, 24, 0.12), rgba(255, 184, 77, 0.22));
+    border: 1px solid rgba(255, 122, 24, 0.16);
+    box-shadow: 0 14px 26px rgba(255, 122, 24, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.18rem;
+    text-align: center;
+}
+
+#pricing .pricing-free-banner strong {
+    font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+    line-height: 1.18;
+    color: #c24f00;
+}
+
+#pricing .pricing-free-banner span {
+    font-size: 0.88rem;
+    color: #7a5a45;
+    line-height: 1.4;
+    word-break: keep-all;
+}
+
 #pricing .pricing-actions-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1804,6 +1831,12 @@ button {
 
     #pricing .pricing-copy {
         max-width: none;
+    }
+
+    #pricing .pricing-free-banner {
+        width: 100%;
+        padding: 0.9rem 1rem;
+        border-radius: 18px;
     }
 
     #pricing .pricing-actions-grid {

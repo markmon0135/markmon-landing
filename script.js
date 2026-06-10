@@ -1,6 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("horizontal-mode");
-    document.body.classList.add("layout-pending");
+    const isMobileLanding = document.body.classList.contains("mobile-landing");
+    const isDesktopLanding = !isMobileLanding;
+    const mobileBreakpoint = 860;
+    const currentPath = window.location.pathname || "";
+    const mobilePath = currentPath.replace(/[^/]*$/, "mobile.html");
+    const desktopPath = currentPath.replace(/[^/]*$/, "index.html");
+
+    if (isDesktopLanding && window.innerWidth <= mobileBreakpoint && !/mobile\.html$/i.test(currentPath)) {
+        const target = `${mobilePath}${window.location.search}${window.location.hash}`;
+        window.location.replace(target);
+        return;
+    }
+
+    if (isMobileLanding && window.innerWidth > mobileBreakpoint && !/index\.html$/i.test(currentPath)) {
+        const target = `${desktopPath}${window.location.search}${window.location.hash}`;
+        window.location.replace(target);
+        return;
+    }
 
     const main = document.querySelector("main");
     const header = document.querySelector(".navbar");
@@ -10,9 +26,21 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    if (isMobileLanding) {
+        document.body.classList.remove("horizontal-mode");
+        document.body.classList.remove("layout-pending");
+    } else {
+        document.body.classList.add("horizontal-mode");
+        document.body.classList.add("layout-pending");
+    }
+
     refreshIntroSection();
-    ensureHorizontalLayout(main, header, footer);
-    initHorizontalPager();
+
+    if (!isMobileLanding) {
+        ensureHorizontalLayout(main, header, footer);
+        initHorizontalPager();
+    }
+
     initFeatureSlider();
     initWarningRiskCards();
     initFooterInfoPanels();

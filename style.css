@@ -674,7 +674,12 @@ button {
 }
 
 #hero .hero-title {
-    font-size: clamp(2.2rem, 3.55vw, 3.9rem);
+    font-size: clamp(2.05rem, 3.35vw, 3.7rem);
+}
+
+#hero .hero-title-first-line {
+    display: inline-block;
+    font-size: 0.88em;
 }
 
 #hero .hero-desc {
@@ -2015,7 +2020,7 @@ button {
 }
 
 #warning-hook .risk-card {
-    padding: 0.92rem !important;
+    padding: 0.8rem !important;
     margin-bottom: 0.68rem !important;
     position: relative;
 }
@@ -2026,7 +2031,7 @@ button {
 }
 
 #warning-hook .risk-content h3 {
-    font-size: 1.98rem !important;
+    font-size: 1.82rem !important;
     margin-bottom: 0.25rem !important;
 }
 

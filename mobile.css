@@ -377,35 +377,26 @@ body.mobile-landing #download .page-frame--cta {
 }
 
 body.mobile-landing #download .cta-title {
-    color: var(--text-dark) !important;
+    color: #17212b !important;
     text-shadow: none !important;
 }
 
 body.mobile-landing #download .cta-desc,
 body.mobile-landing #download .version-info {
-    color: var(--text-muted) !important;
+    color: #5f6f7d !important;
 }
 
 body.mobile-landing #download .cta-desc strong {
-    color: var(--primary-dark) !important;
-}
-
-body.mobile-landing #download .cta-title,
-body.mobile-landing #download .cta-desc,
-body.mobile-landing #download .cta-desc *,
-body.mobile-landing #download .mobile-disabled-download,
-body.mobile-landing #download .mobile-disabled-download *,
-body.mobile-landing #download .version-info {
-    color: inherit !important;
+    color: #e25700 !important;
 }
 
 body.mobile-landing #download .cta-title {
-    color: var(--text-dark) !important;
+    color: #17212b !important;
 }
 
 body.mobile-landing #download .cta-desc,
 body.mobile-landing #download .version-info {
-    color: var(--text-muted) !important;
+    color: #5f6f7d !important;
 }
 
 body.mobile-landing #download .mobile-disabled-download {
@@ -414,6 +405,39 @@ body.mobile-landing #download .mobile-disabled-download {
 
 body.mobile-landing #download .mobile-disabled-download.btn-outline-white {
     color: #546575 !important;
+    background: #f8fbff !important;
+    border-color: rgba(23, 33, 43, 0.08) !important;
+    box-shadow: 0 12px 24px rgba(18, 38, 54, 0.08) !important;
+}
+
+body.mobile-landing #download .cta-title,
+body.mobile-landing #download .cta-title *,
+body.mobile-landing #download .cta-desc,
+body.mobile-landing #download .cta-desc *,
+body.mobile-landing #download .mobile-download-blocked,
+body.mobile-landing #download .mobile-download-blocked *,
+body.mobile-landing #download .mobile-disabled-download,
+body.mobile-landing #download .mobile-disabled-download *,
+body.mobile-landing #download .version-info {
+    -webkit-text-fill-color: currentColor !important;
+}
+
+body.mobile-landing #download .mobile-download-blocked .btn-large {
+    color: #405162 !important;
+}
+
+body.mobile-landing #download .mobile-download-blocked .btn-outline-white {
+    color: #546575 !important;
+}
+
+body.mobile-landing #download .mobile-download-blocked .btn-outline-white,
+body.mobile-landing #download .mobile-download-blocked .btn-outline-white * {
+    color: #546575 !important;
+}
+
+body.mobile-landing #download .mobile-download-blocked .btn-large,
+body.mobile-landing #download .mobile-download-blocked .btn-large * {
+    color: #405162 !important;
 }
 
 body.mobile-landing #download .download-corner-visual {

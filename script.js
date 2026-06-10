@@ -622,6 +622,7 @@ function initVideoModal() {
 function initFooterInfoPanels() {
     const display = document.getElementById("footer-panel-display");
     const buttons = Array.from(document.querySelectorAll("[data-footer-panel-target]"));
+    const isMobileLanding = document.body.classList.contains("mobile-landing");
 
     if (!display || !buttons.length) {
         return;
@@ -670,10 +671,12 @@ function initFooterInfoPanels() {
         });
     });
 
-    const defaultButton = buttons.find(button => button.dataset.footerPanelTarget === "terms") || buttons[0];
+    if (!isMobileLanding) {
+        const defaultButton = buttons.find(button => button.dataset.footerPanelTarget === "terms") || buttons[0];
 
-    if (defaultButton) {
-        openPanel(defaultButton);
+        if (defaultButton) {
+            openPanel(defaultButton);
+        }
     }
 }
 

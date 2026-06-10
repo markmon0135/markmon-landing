@@ -360,6 +360,27 @@ body.mobile-landing #pricing .pricing-action-card {
 
 body.mobile-landing #download .page-frame--cta {
     padding: 18px 16px !important;
+    overflow: visible !important;
+}
+
+body.mobile-landing #download,
+body.mobile-landing #download .cta,
+body.mobile-landing #download .cta-container,
+body.mobile-landing #download .page-frame--cta {
+    color: var(--text-dark) !important;
+}
+
+body.mobile-landing #download .cta-title {
+    color: var(--text-dark) !important;
+}
+
+body.mobile-landing #download .cta-desc,
+body.mobile-landing #download .version-info {
+    color: var(--text-muted) !important;
+}
+
+body.mobile-landing #download .cta-desc strong {
+    color: var(--primary-dark) !important;
 }
 
 body.mobile-landing #download .download-corner-visual {
@@ -368,17 +389,49 @@ body.mobile-landing #download .download-corner-visual {
     margin: 0 auto 14px !important;
 }
 
+body.mobile-landing #download .cta-button-container,
+body.mobile-landing #download .cta-container {
+    overflow: visible !important;
+}
+
+body.mobile-landing #download .mobile-download-blocked {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+body.mobile-landing #download .mobile-disabled-download {
+    cursor: default;
+    pointer-events: none;
+    background: linear-gradient(135deg, #dbe4ec 0%, #c9d5e0 100%) !important;
+    color: #405162 !important;
+    box-shadow: 0 12px 24px rgba(18, 38, 54, 0.1) !important;
+    border: 1px solid rgba(23, 33, 43, 0.08) !important;
+}
+
+body.mobile-landing #download .mobile-disabled-download.btn-outline-white {
+    background: #f8fbff !important;
+    color: #546575 !important;
+}
+
 body.mobile-landing .system-req-wrapper {
+    width: 100%;
     overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
 }
 
 body.mobile-landing .system-req-table {
-    min-width: 640px;
+    width: max-content;
+    min-width: 600px;
 }
 
 body.mobile-landing .system-req-table th,
 body.mobile-landing .system-req-table td {
-    font-size: 0.9rem !important;
+    font-size: 0.86rem !important;
+    white-space: nowrap;
 }
 
 body.mobile-landing .footer-quick-links {

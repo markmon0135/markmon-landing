@@ -56,41 +56,61 @@
                     /* 미세한 그레이시 블루 배경 */
                 }
 
+                .risk-card-group {
+                    margin-bottom: 1.2rem;
+                }
+
                 .risk-card {
                     background: #fff;
                     border: 1px solid #edf2f7;
                     border-left: 4px solid #C62828;
                     /* 전문적인 딥 레드 */
-                    padding: 1.5rem;
-                    border-radius: 12px;
-                    margin-bottom: 1.2rem;
+                    padding: 2rem 1.9rem;
+                    border-radius: 16px;
                     display: flex;
-                    align-items: flex-start;
-                    gap: 1.2rem;
+                    align-items: center;
+                    gap: 1.45rem;
                     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-                    transition: transform 0.3s ease;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    width: 100%;
+                    text-align: left;
+                    cursor: pointer;
+                    position: relative;
                 }
 
                 .risk-card:hover {
                     transform: translateX(5px);
+                    box-shadow: 0 12px 24px rgba(17, 26, 34, 0.08);
+                }
+
+                .risk-card:hover .risk-card-action-label {
+                    background: #fff7ed;
+                    border-color: #fed7aa;
+                    color: #c2410c;
+                }
+
+                .risk-card:focus-visible {
+                    outline: 2px solid rgba(198, 40, 40, 0.28);
+                    outline-offset: 2px;
                 }
 
                 .risk-icon-box {
                     background: rgba(198, 40, 40, 0.08);
                     /* 딥 레드 블렌딩 */
-                    padding: 0.8rem;
-                    border-radius: 10px;
+                    padding: 1.15rem;
+                    border-radius: 14px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    min-width: 48px;
+                    min-width: 74px;
+                    min-height: 74px;
                 }
 
                 .risk-content h3 {
-                    font-size: 1.05rem;
+                    font-size: 1.45rem;
                     font-weight: 800;
                     color: #C62828;
-                    margin-bottom: 0.4rem;
+                    margin: 0;
                 }
 
                 .risk-content p {
@@ -98,6 +118,92 @@
                     color: #555;
                     line-height: 1.55;
                     margin: 0;
+                }
+
+                .risk-highlight {
+                    font-weight: 800;
+                    color: #C62828;
+                }
+
+                .risk-highlight--accent {
+                    font-weight: 800;
+                    color: #ff6b00;
+                }
+
+                .risk-card-chevron {
+                    color: #c62828;
+                    transition: transform 0.24s ease;
+                    flex: 0 0 auto;
+                }
+
+                .risk-card-action {
+                    margin-left: auto;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    flex: 0 0 auto;
+                }
+
+                .risk-card-action-label {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 34px;
+                    padding: 0.4rem 0.78rem;
+                    border-radius: 999px;
+                    border: 1px solid #e2e8f0;
+                    background: #f8fafc;
+                    color: #475569;
+                    font-size: 0.88rem;
+                    font-weight: 800;
+                    line-height: 1;
+                    animation: riskActionPulse 2.8s ease-in-out infinite;
+                }
+
+                .risk-card[aria-expanded="true"] .risk-card-chevron {
+                    transform: rotate(180deg);
+                }
+
+                .risk-card[aria-expanded="true"] .risk-card-action-label {
+                    background: rgba(255, 107, 0, 0.12);
+                    border-color: rgba(255, 122, 24, 0.24);
+                    color: #c2410c;
+                    animation: none;
+                }
+
+                .risk-card-panel {
+                    margin-top: 0.45rem;
+                    padding: 1rem 1.1rem;
+                    border-radius: 12px;
+                    border: 1px dashed rgba(198, 40, 40, 0.18);
+                    background: rgba(255, 255, 255, 0.86);
+                }
+
+                .risk-card-panel[hidden] {
+                    display: none !important;
+                }
+
+                .risk-card-panel-body {
+                    min-height: 56px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #94a3b8;
+                    font-size: 0.9rem;
+                    font-weight: 700;
+                    letter-spacing: -0.02em;
+                }
+
+                @keyframes riskActionPulse {
+                    0%,
+                    100% {
+                        transform: translateY(0);
+                        box-shadow: 0 0 0 0 rgba(255, 122, 24, 0.0);
+                    }
+                    50% {
+                        transform: translateY(-1px);
+                        box-shadow: 0 6px 16px rgba(255, 122, 24, 0.16);
+                    }
                 }
 
                 /* 기존 애니메이션들... */
@@ -136,67 +242,103 @@
             </style>
             <div class="container split-layout">
                 <div class="feature-text reveal-up" style="flex: 1.2;">
-                    <div
-                        style="display:inline-block; background: rgba(198, 40, 40, 0.08); color: #C62828; padding: 0.5rem 1.2rem; border-radius: 50px; font-weight: 800; margin-bottom: 1.5rem; border: 1px solid rgba(198, 40, 40, 0.2); font-size: 0.9rem; letter-spacing: -0.02em;">
-                        🚨 스토어 생존을 위협하는 치명적 리스크
-                    </div>
                     <h2 class="section-title text-lg"
-                        style="line-height: 1.35; margin-bottom: 1.5rem; word-break: keep-all; font-weight: 800; letter-spacing: -0.03em;">
-                        누구에게나 찾아올 수 있는<br>
-                        <span style="color: #C62828;">상표권 침해 문제,</span><br>
-                        어떻게 대비하고 계신가요?
+                        style="display:flex; align-items:center; gap: 1rem; line-height: 1.35; margin-bottom: 1.5rem; word-break: keep-all; font-weight: 800; letter-spacing: -0.03em;">
+                        <span class="warning-hook-title-stack">
+                            <span class="warning-hook-title-line warning-hook-title-line--emphasis">지재권, 상표권</span>
+                            <span class="warning-hook-title-line warning-hook-title-line--emphasis">문제는</span>
+                            <span class="warning-hook-title-line warning-hook-title-line--main">터진 뒤엔 늦습니다</span>
+                        </span>
                     </h2>
-                    <p class="section-desc text-lg"
-                        style="margin-bottom: 2.5rem; color: #555; word-break: keep-all; line-height: 1.7;">
-                        열심히 키워온 스토어의 상품이 <strong>단 한 번의 상표권 실수로 노출이 제한되거나 삭제될 수 있습니다.</strong><br>
-                        문제 해결을 위해 쏟아야 하는 시간과 비용, 무엇보다 미처 예상치 못한 상황이 주는 정신적 소모는 셀러의 소중한 에너지를 빼앗아 갑니다.
-                    </p>
 
                     <div class="risk-cards-wrapper">
                         <!-- 카드 1 -->
-                        <div class="risk-card">
-                            <div class="risk-icon-box">
-                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#C62828"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="12" y1="1" x2="12" y2="23"></line>
-                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                                </svg>
-                            </div>
-                            <div class="risk-content">
-                                <h3>막대한 금전적 손실</h3>
-                                <p>예기치 못한 수백만 원 단위의 합의금 폭탄</p>
+                        <div class="risk-card-group">
+                            <button type="button" class="risk-card" data-risk-toggle="risk-panel-cost" data-risk-image="./cost-bomb.png" aria-expanded="false" aria-controls="risk-panel-cost" style="border-left-color: #111827;">
+                                <div class="risk-icon-box" style="background: rgba(15, 23, 42, 0.08);">
+                                    <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#111827"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                    </svg>
+                                </div>
+                                <div class="risk-content">
+                                    <h3 style="color: #111827;">합의금 폭탄</h3>
+                                </div>
+                                <span class="risk-card-action" aria-hidden="true">
+                                    <span class="risk-card-action-label">눌러서 보기</span>
+                                    <span class="risk-card-chevron" style="color: #111827;">
+                                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </span>
+                                </span>
+                            </button>
+                            <div id="risk-panel-cost" class="risk-card-panel" hidden>
+                                <div class="risk-card-panel-body" style="display:block; min-height:auto; text-align:left; color:#475569; font-size:1.08rem; font-weight:600; line-height:1.7;">
+                                    상표권 침해는 경고장으로 끝나지 않을 수 있습니다. 실제 분쟁은 <span class="risk-highlight">합의·조정과 손해배상</span>으로 이어질 수 있고, 고의 침해는 손해액의 <span class="risk-highlight">최대 3배</span>, 법정손해배상도 <span class="risk-highlight">최대 1억원(고의는 최대 3억원)</span>까지 청구될 수 있습니다. 일부는 상표를 선점한 뒤 <span class="risk-highlight--accent">합의금이나 사용료</span>를 요구하는 방식으로 압박하는 경우도 있어, 초기에 걸러내지 못하면 <span class="risk-highlight">비용 부담</span>이 더 커질 수 있습니다.
+                                </div>
                             </div>
                         </div>
 
                         <!-- 카드 2 -->
-                        <div class="risk-card">
-                            <div class="risk-icon-box">
-                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#C62828"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
-                                    </path>
-                                    <line x1="12" y1="9" x2="12" y2="13"></line>
-                                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                                </svg>
-                            </div>
-                            <div class="risk-content">
-                                <h3>하루아침에 끊기는 매출</h3>
-                                <p>판매 상품 강제 삭제 및 스토어 이용 정지</p>
+                        <div class="risk-card-group">
+                            <button type="button" class="risk-card" data-risk-toggle="risk-panel-stop" data-risk-image="./store-suspension.png" aria-expanded="false" aria-controls="risk-panel-stop">
+                                <div class="risk-icon-box">
+                                    <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#C62828"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                                        </path>
+                                        <line x1="12" y1="9" x2="12" y2="13"></line>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                    </svg>
+                                </div>
+                                <div class="risk-content">
+                                    <h3>스토어 정지</h3>
+                                </div>
+                                <span class="risk-card-action" aria-hidden="true">
+                                    <span class="risk-card-action-label">눌러서 보기</span>
+                                    <span class="risk-card-chevron">
+                                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </span>
+                                </span>
+                            </button>
+                            <div id="risk-panel-stop" class="risk-card-panel" hidden>
+                                <div class="risk-card-panel-body" style="display:block; min-height:auto; text-align:left; color:#475569; font-size:1.08rem; font-weight:600; line-height:1.7;">
+                                    상표권 분쟁은 <span class="risk-highlight">판매중지 요청이나 삭제 조치</span>로 바로 이어질 수 있습니다. 경고장 접수 후 <span class="risk-highlight">플랫폼 신고, 상품 비노출, 판매 제한</span>이 겹치면 스토어 운영이 한순간에 흔들릴 수 있고, 거래처나 외부 채널까지 문제가 번지면 <span class="risk-highlight--accent">매출 공백</span>이 더 길어질 수 있습니다.
+                                </div>
                             </div>
                         </div>
 
                         <!-- 카드 3 -->
-                        <div class="risk-card" style="border-left-color: var(--primary);">
-                            <div class="risk-icon-box" style="background: rgba(255, 107, 0, 0.08);">
-                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--primary)"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                                </svg>
-                            </div>
-                            <div class="risk-content">
-                                <h3 style="color: var(--primary);">가장 확실한 방어</h3>
-                                <p>사전에 철저하게 걸러내는 것만이 유일한 해결책입니다</p>
+                        <div class="risk-card-group">
+                            <button type="button" class="risk-card" data-risk-toggle="risk-panel-time" data-risk-image="./time-waste.png" aria-expanded="false" aria-controls="risk-panel-time" style="border-left-color: var(--primary);">
+                                <div class="risk-icon-box" style="background: rgba(255, 107, 0, 0.08);">
+                                    <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="var(--primary)"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="9"></circle>
+                                        <polyline points="12 7 12 12 15.5 14.5"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="risk-content">
+                                    <h3 style="color: var(--primary);">시간 낭비</h3>
+                                </div>
+                                <span class="risk-card-action" aria-hidden="true">
+                                    <span class="risk-card-action-label">눌러서 보기</span>
+                                    <span class="risk-card-chevron" style="color: var(--primary);">
+                                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </span>
+                                </span>
+                            </button>
+                            <div id="risk-panel-time" class="risk-card-panel" hidden>
+                                <div class="risk-card-panel-body" style="display:block; min-height:auto; text-align:left; color:#475569; font-size:1.08rem; font-weight:600; line-height:1.7;">
+                                    경고장을 받은 뒤에는 끝이 아니라 <span class="risk-highlight">대응이 시작됩니다</span>. <span class="risk-highlight--accent">합의 요구</span>에 답해야 하고, <span class="risk-highlight">판매 이력·거래 자료·소명 자료</span>를 다시 정리해야 하며, 고의 침해 주장으로 형사 고소까지 이어지면 <span class="risk-highlight">경찰·검찰 조사 출석</span>에 시간을 써야 할 수 있습니다. 한번 얽히면 <span class="risk-highlight--accent">판매보다 대응에 더 많은 시간</span>을 빼앗길 수 있습니다.
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -206,45 +348,48 @@
                 <div class="feature-image reveal-up" style="flex: 1; transition-delay: 0.2s;">
                     <div class="image-wrapper shadow-lg"
                         style="position: relative; border-radius: 20px; overflow: hidden; border: 1px solid #edf2f7; background: #fff; padding: 1rem;">
-                        <!-- 세련된 이메일 알림 목업 -->
-                        <div
-                            style="background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; overflow: hidden;">
-                            <div
-                                style="padding: 0.8rem 1.2rem; background: #fff; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between;">
-                                <div style="display: flex; gap: 6px;">
-                                    <span
-                                        style="width: 10px; height: 10px; background: #ff5f57; border-radius: 50%;"></span>
-                                    <span
-                                        style="width: 10px; height: 10px; background: #febc2e; border-radius: 50%;"></span>
-                                    <span
-                                        style="width: 10px; height: 10px; background: #28c840; border-radius: 50%;"></span>
-                                </div>
-                                <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">System
-                                    Notification</span>
-                            </div>
-                            <div style="padding: 2.5rem 1.5rem; text-align: center;">
+                        <div id="warning-hook-image-stage"
+                            style="aspect-ratio: 49 / 40; display: grid; place-items: center; background: #f8fafc; border-radius: 12px; overflow: hidden;">
+                            <!-- 세련된 이메일 알림 목업 -->
+                            <div id="warning-hook-image-fallback"
+                                style="width: 100%; height: 100%; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; overflow: hidden;">
                                 <div
-                                    style="width: 60px; height: 60px; background: rgba(198, 40, 40, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
-                                    <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#C62828"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path
-                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                        </path>
-                                        <polyline points="22,6 12,13 2,6"></polyline>
-                                    </svg>
+                                    style="padding: 0.8rem 1.2rem; background: #fff; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between;">
+                                    <div style="display: flex; gap: 6px;">
+                                        <span
+                                            style="width: 10px; height: 10px; background: #ff5f57; border-radius: 50%;"></span>
+                                        <span
+                                            style="width: 10px; height: 10px; background: #febc2e; border-radius: 50%;"></span>
+                                        <span
+                                            style="width: 10px; height: 10px; background: #28c840; border-radius: 50%;"></span>
+                                    </div>
+                                    <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">System
+                                        Notification</span>
                                 </div>
-                                <h4 style="font-size: 1.2rem; color: #1e293b; margin-bottom: 0.8rem; font-weight: 800;">
-                                    [긴급] 상표권 침해 법적 통지</h4>
-                                <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 2rem; line-height: 1.6;">
-                                    마켓에 등록하신 상품 번호 [0135]가 <br>
-                                    제3자의 지식재산권을 침해한 것으로 확인되어...
-                                </p>
+                                <div style="padding: 2.5rem 1.5rem; text-align: center;">
+                                    <div
+                                        style="width: 60px; height: 60px; background: rgba(198, 40, 40, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                                        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#C62828"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                            </path>
+                                            <polyline points="22,6 12,13 2,6"></polyline>
+                                        </svg>
+                                    </div>
+                                    <h4 style="font-size: 1.2rem; color: #1e293b; margin-bottom: 0.8rem; font-weight: 800;">
+                                        [긴급] 상표권 침해 법적 통지</h4>
+                                    <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 2rem; line-height: 1.6;">
+                                        마켓에 등록하신 상품 번호 [0135]가 <br>
+                                        제3자의 지식재산권을 침해한 것으로 확인되어...
+                                    </p>
+                                </div>
                             </div>
+                            <!-- 실제 이미지가 로드되면 위의 목업을 숨기고 이미지를 보여줌 -->
+                            <img id="warning-hook-main-image" class="is-default-risk-image" src="./email_final.png" alt="상표권 침해 경고 메일" data-default-src="./email_final.png"
+                                style="display: none; width: 100%; height: 100%; border-radius: 12px; object-fit: contain; object-position: center top;"
+                                onload="this.style.display='block'; this.previousElementSibling.style.display='none';">
                         </div>
-                        <!-- 실제 이미지가 로드되면 위의 목업을 숨기고 이미지를 보여줌 -->
-                        <img src="./email_final.png" alt="상표권 침해 경고 메일"
-                            style="display: none; width: 100%; height: auto; border-radius: 12px;"
-                            onload="this.style.display='block'; this.previousElementSibling.style.display='none';">
                     </div>
                 </div>
             </div>
@@ -271,6 +416,63 @@
         </section>
 
         <!-- Intro Section (보강됨: 키워드 집중 및 실시간 가공) -->
+        <section id="prevention-first" class="section feature alt-bg"
+            style="padding: 5.6vh 0 5vh; background: linear-gradient(180deg, #f9fbff 0%, #eef4fa 100%);">
+            <div class="container split-layout">
+                <div class="feature-text reveal-left">
+                    <div class="badge prevention-badge">문제가 생기기 전에 확인할 것</div>
+                    <h2 class="section-title prevention-title" style="word-break: keep-all;">
+                        <span class="text-gradient">예방이 제일 쉬운 방법입니다.</span><br>상표권, 검색해보셨나요?
+                    </h2>
+                    <p class="section-desc prevention-desc" style="word-break: keep-all;">
+                        기존엔 하나하나 찾으셨나요?<br>
+                        <strong>상표권 검색</strong>이라도 해보는 분들은 그나마 다행입니다. 실제로는 <strong>찾는 것조차 하지 않거나</strong>,<br>
+                        경험으로 쌓인 <strong>금지어 몇 개</strong>만 떠올리며 걸러내는 경우도 많습니다.<br>
+                        또 검색해도 <strong>어떤 걸 봐야 하지</strong>, <strong>어디까지 확인해야 하지</strong> 막막해지기 쉽습니다.
+                    </p>
+                    <p class="prevention-highlight">찾기 어렵고, 확인은 더 어렵습니다</p>
+                </div>
+
+                <div class="feature-image reveal-right">
+                    <div class="image-wrapper shadow-lg prevention-visual-card">
+                        <div class="prevention-visual-header">
+                            <span>기존엔 이렇게 확인하셨나요?</span>
+                            <strong>하나씩 찾다 보면 놓치기 쉽습니다</strong>
+                        </div>
+
+                        <div class="prevention-check-list">
+                            <div class="prevention-check-item">
+                                <span class="prevention-check-icon">1</span>
+                                <div>
+                                    <strong>키프리스 검색</strong>
+                                    <p>하나씩 찾다 보면 확인 흐름이 길어집니다</p>
+                                </div>
+                            </div>
+                            <div class="prevention-check-item prevention-check-item--focus">
+                                <span class="prevention-check-icon">2</span>
+                                <div>
+                                    <strong>판단 기준</strong>
+                                    <p>검색해도 무엇을 봐야 할지 막막할 수 있습니다</p>
+                                </div>
+                            </div>
+                            <div class="prevention-check-item">
+                                <span class="prevention-check-icon">3</span>
+                                <div>
+                                    <strong>등록 전 점검</strong>
+                                    <p>올리기 전에 한 번 더 확인하는 편이 가장 쉽습니다</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="prevention-focus-box">
+                            <span>실제 불편한 지점</span>
+                            <strong>하나씩 찾고 나서도 결과가 한눈에 들어오지 않아 확인 과정이 길어집니다</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="intro" class="section intro-section"
             style="padding-top: 4rem; min-height: auto; background: #fff;">
             <div class="container hero-container">
@@ -295,7 +497,7 @@
 
         <!-- Hero Section (보강됨: 대량 검사 및 무제한 강조) -->
         <section id="hero" class="section hero peek-next"
-            style="padding-bottom: 8rem; background-color: var(--bg-alt);">
+            style="padding-bottom: 5rem; background-color: var(--bg-alt);">
             <div class="container hero-container">
                 <div class="hero-content fade-in-up">
                     <div class="badge" style="background: #e1f5fe; color: #0288d1;">AI 제한 없음 · 대량 엑셀 업로드 최적화</div>
@@ -304,7 +506,7 @@
                     <p class="hero-desc" style="max-width: 750px; word-break: keep-all;">
                         AI 토큰 비용이나 검색 수 제한 때문에 망설이지 마세요. <br>
                         마크몬은 AI를 사용하지 않아 <strong>불필요한 토킹 비용이 일체 없으며, 사용 횟수 또한 무제한</strong>입니다. <br>
-                        엑셀 업로드 한 번으로 최대 3,000개의 키워드를 동시에 분석하고, 위험 발견 시 실시간으로 즉시 수정/삭제가 가능합니다.
+                        엑셀 업로드 한 번으로 최대 3,000행의 키워드를 동시에 분석하고, 위험 발견 시 실시간으로 즉시 수정/삭제가 가능합니다.
                     </p>
 
                     <div class="hero-actions">
@@ -315,7 +517,7 @@
                         이용을 위해 컴퓨터 사양(권장 사양 이상)이 뒷받침되어야 합니다.</p>
                 </div>
                 <!-- 22번 사진 메인 강조 -->
-                <div class="hero-image slide-up-delayed" style="margin-top: 4rem;">
+                <div class="hero-image slide-up-delayed" style="margin-top: 0;">
                     <div class="image-wrapper shadow-lg" style="transform: scale(1.1); transform-origin: top center;">
                         <img src="./47.jpg" alt="마크몬 메인 검색 인터페이스" loading="lazy">
                         <div class="floating-card bounce-subtle">
@@ -333,9 +535,9 @@
                 <div class="feature-text reveal-left">
                     <h2 class="section-title">불필요한 기능은 과감히 버리고,<br>한 화면에 모든 것을 담았습니다.</h2>
                     <p class="section-desc">
-                        지식재산처 DB 기반의 정확한 데이터를 제공하며, 거추장스러운 여백 없이 필요한 정보를 꽉 차게 배치했습니다. 여러 페이지를 오갈 필요 없이, 상표의 출원번호, 상품분류
+                        <strong>지식재산처 DB 기반</strong>의 정확한 데이터를 제공하며, 거추장스러운 여백 없이 필요한 정보를 꽉 차게 배치했습니다. 여러 페이지를 오갈 필요 없이, 상표의 출원번호, 상품분류
                         코드,
-                        지정상품정보 등 복잡한 내용을 하나의 직관적인 인터페이스에서 즉시 확인할 수 있습니다.
+                        지정상품정보 등 복잡한 내용을 <strong>하나의 직관적인 인터페이스</strong>에서 즉시 확인할 수 있습니다.
                     </p>
                     <ul class="feature-list">
                         <li><strong>100% DB 매칭:</strong> 허위 결과 노출 확률 0%</li>
@@ -363,10 +565,12 @@
         <section id="direct-search" class="section feature peek-next reverse">
             <div class="container split-layout">
                 <div class="feature-text reveal-right">
-                    <h2 class="section-title text-lg">원하는 위치에서<br>자유롭게 가공하세요.</h2>
+                    <h2 class="section-title text-lg">보고, 지우고, 고치고<br>바로 가공하세요.</h2>
                     <p class="section-desc text-lg">
-                        상세페이지를 실시간으로 확인할 수 있습니다. 팝업 형태 등의 뷰를 사용자가 원하는 위치에 띄워두고 핵심 정보와 실시간으로 비교하며, 필요한 내용은 새롭게 추가하고 불필요한
-                        부분은 바로 삭제하며 데이터를 목적에 맞게 자유롭게 가공할 수 있습니다.
+                        상세페이지를 <strong>작업 화면 옆에서 바로 확인</strong>하면서 가공할 수 있습니다.<br>
+                        어떤 문구가 들어가 있는지, 어떤 표현을 지워야 하는지 눈으로 보며 <strong>바로 수정</strong>할 수 있어 훨씬 편합니다.<br>
+                        필요한 내용은 <strong>추가</strong>하고, 불필요한 부분은 <strong>삭제</strong>하고, 어색한 표현은 바로 고치면서 작업 흐름을 끊지 않고 이어갈 수 있습니다.<br>
+                        <strong>듀얼모니터? 당연히 됩니다.</strong>
                     </p>
                 </div>
                 <div class="feature-image reveal-left">
@@ -378,19 +582,58 @@
             </div>
         </section>
 
+        <section id="keyword-wizard-showcase" class="section feature alt-bg peek-next">
+            <div class="container split-layout keyword-wizard-layout">
+                <div class="feature-text reveal-up keyword-wizard-copy">
+                    <h2 class="section-title text-lg">키워드 작업의 핵심,<br>올인원 가공도구 키워드 마법사</h2>
+                    <p class="section-desc text-lg keyword-wizard-subcopy">
+                        <strong>키워드 정리, 비교, 선별</strong>까지 <strong>한 번에</strong> 이어갈 수 있는 강력한 작업 도구입니다.
+                    </p>
+                    <ul class="feature-list keyword-wizard-feature-list">
+                        <li><strong>키워드 정리:</strong> 필요한 표현만 빠르게 선별</li>
+                        <li><strong>즉시 비교:</strong> 후보 키워드를 한눈에 비교</li>
+                        <li><strong>빠른 판단:</strong> 남길 표현과 제거할 표현을 바로 결정</li>
+                        <li><strong>강력한 작업성:</strong> 키워드 작업만으로도 높은 활용도를 제공</li>
+                    </ul>
+                    <div class="keyword-wizard-summary">
+                        키워드 마법사로,<br>
+                        <strong>정리부터 선별까지 한 번에 이어갈 수 있습니다.</strong>
+                    </div>
+                </div>
+
+                <div class="feature-image reveal-up keyword-wizard-media">
+                    <div class="slider-container keyword-wizard-slider">
+                        <div class="slider-wrapper shadow-lg">
+                            <img src="./33.jpg" class="slide-img active-slide" alt="키워드 마법사 팝업 화면 1" loading="lazy">
+                            <img src="./34.jpg" class="slide-img" alt="키워드 마법사 팝업 화면 2" loading="lazy">
+                            <img src="./35.jpg" class="slide-img" alt="키워드 마법사 팝업 화면 3" loading="lazy">
+                            <button class="slider-btn prev-btn" aria-label="이전 이미지">&#10094;</button>
+                            <button class="slider-btn next-btn" aria-label="다음 이미지">&#10095;</button>
+                        </div>
+
+                        <div class="slider-dots">
+                            <span class="dot active-dot" data-slide="0"></span>
+                            <span class="dot" data-slide="1"></span>
+                            <span class="dot" data-slide="2"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Feature 3: 버튼 기능 위주 설명 및 좌측 2-2 사진 배치 -->
         <section id="button-control" class="section feature alt-bg peek-next">
             <div class="container split-layout">
                 <div class="feature-text reveal-left"
                     style="display: flex; flex-direction: column; justify-content: flex-start; position: relative; z-index: 10;">
                     <div>
-                        <h2 class="section-title text-lg" style="margin-top: 0;">다양한 편의 기능을 품은<br>직관적인 버튼 컨트롤.</h2>
-                        <p class="section-desc text-lg">
-                            복잡한 메뉴를 뒤적일 필요가 없습니다. 화면에 배치된 직관적인 버튼들을 통해 키워드(상품명) 가공, 데이터 정리, 엑셀 내보내기 등 마크몬의 강력하고 다양한 편의
-                            기능들을
-                            즉시
-                            실행할 수 있습니다.
-                        </p>
+                        <h2 class="section-title text-lg" style="margin-top: 0;">원하는 기능을<br>버튼 한 번으로 바로 실행하세요.</h2>
+                    <p class="section-desc text-lg">
+                        복잡한 메뉴를 뒤적일 필요가 없습니다. 화면에 배치된 <strong>직관적인 버튼들</strong>을 통해 <strong>키워드(상품명) 가공</strong>, <strong>데이터 정리</strong>, <strong>엑셀 내보내기</strong> 등 마크몬의 강력하고 다양한 편의
+                        기능들을
+                        <strong>즉시</strong>
+                        실행할 수 있습니다.
+                    </p>
                     </div>
                     <!-- 왼쪽 텍스트 하단 보조 이미지 배치 -->
                     <div class="image-wrapper shadow-lg button-control-sub-image"
@@ -409,12 +652,92 @@
             </div>
         </section>
 
+        <!-- Feature New: 블랙리스트 & 화이트리스트 관리 (24.jpg) -->
+        <section id="blacklist-section" class="section feature peek-next reverse">
+            <div class="container split-layout">
+                <div class="feature-text reveal-right">
+                    <h2 class="section-title text-lg">직관적인<br>블랙리스트 & 화이트리스트.</h2>
+                    <p class="section-desc text-lg">
+                        이 기능은 단순히 보기 좋게 나누는 기능이 아닙니다. 사용자가 직접 골라낸 <strong>정말 위험한 단어</strong>는 블랙리스트로,
+                        그래도 <strong>비교적 안전하게 관리할 단어</strong>는 화이트리스트로 따로 저장해두는 기능입니다.<br>
+                        한번 정리해두면 다음 작업에서도 <strong>같은 기준으로 빠르게 걸러낼 수 있어</strong>, 매번 처음부터 다시 찾고 고민하는 번거로움을 크게 줄여줍니다.
+                    </p>
+                    <ul class="feature-list">
+                        <li><strong>블랙리스트:</strong> 직접 골라낸 위험 단어를 따로 모아 반복 노출을 빠르게 차단</li>
+                        <li><strong>화이트리스트:</strong> 비교적 안전하게 관리할 단어를 저장해 작업 기준을 일정하게 유지</li>
+                        <li><strong>반복 작업 단축:</strong> 다음 상품 작업에서도 같은 기준으로 더 빠르게 분류</li>
+                    </ul>
+                </div>
+                <!-- 왼쪽 사진 영역 -->
+                <div class="feature-image reveal-left">
+                    <div class="image-wrapper shadow-md list-image-container"
+                        style="transform: scale(1.1); transform-origin: center right; margin-top: 1.5rem; margin-bottom: 1.5rem; position: relative;">
+                        <img src="./24.jpg" alt="블랙리스트 화이트리스트 관리 화면" loading="lazy">
+
+                        <!-- 사진 우측 상단 오버레이 설명 박스 -->
+                        <div class="list-info-box bounce-subtle shadow-lg">
+                            <div class="info-item">
+                                <span class="dot-icon black"></span>
+                                <div class="info-text">
+                                    <strong>블랙리스트</strong>
+                                    <span>직접 골라낸 정말 위험한 단어</span>
+                                </div>
+                            </div>
+                            <div class="info-item mt-2">
+                                <span class="dot-icon white border-gray"></span>
+                                <div class="info-text">
+                                    <strong>화이트리스트</strong>
+                                    <span>그래도 안전하게 관리할 단어</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature New: 단건 직접 검색 & 리소스 최적화 (26.jpg) -->
+        <section id="detail-workspace" class="section feature peek-next">
+            <div class="container split-layout">
+                <div class="feature-text reveal-left">
+                    <div class="badge" style="background: #fff3e0; color: #e65100; margin-bottom: 1.5rem;">선결 조건: 시스템
+                        리소스 최적화</div>
+                    <h2 class="section-title text-lg">엑셀 업로드 없이도<br>즉시 상표 정보를 확인하세요.</h2>
+                    <p class="section-desc text-lg">
+                        <strong>번거롭게 파일을 업로드하지 않아도 됩니다.</strong> 검색이 필요한 상품명이나 키워드를 바로 입력해
+                        <strong>상표권 정보를 빠르게 확인</strong>할 수 있습니다.<br>
+                        하나씩 다시 찾는 과정이 부담스러울 때, 급하게 확인이 필요한 단어가 있을 때,
+                        <strong>가장 빠르게 확인 흐름</strong>을 이어갈 수 있는 기능입니다.<br>
+                        생각난 표현을 바로 넣어보고, <strong>필요한 정보만 빠르게 확인</strong>하면서 다음 작업으로 자연스럽게 넘어갈 수 있습니다.
+                    </p>
+                    <div
+                        style="background: var(--bg-alt); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #e65100; margin-top: 2rem;">
+                        <p style="font-size: 1rem; color: #444; word-break: keep-all; line-height: 1.6;">
+                            <strong>💡 필수 참고 사항:</strong><br>
+                            정확하고 빠른 상표권 매칭과 검색을 위해
+                            <span class="inline-glow">
+                                <img src="./27.jpg" alt="시스템 리소스 최적화 버튼" class="static-btn-img">
+                            </span>
+                            는 <strong>필수적인 선결 조건</strong>입니다. <br>
+                            <strong>원활한 검색을 위해 하단 버튼을 통한 최적화를 필수로 진행해 주세요.</strong>
+                        </p>
+                    </div>
+                </div>
+                <div class="feature-image reveal-right">
+                    <div class="image-wrapper shadow-lg"
+                        style="transform: scale(1.1); transform-origin: center left; margin-top: 1.5rem; margin-bottom: 1.5rem;">
+                        <img src="./26.jpg" alt="단건 직접 검색 인터페이스" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Feature Extra: 추가 기능 슬라이더 -->
         <section id="capturemon-showcase" class="section feature peek-next">
             <div class="container split-layout capturemon-layout">
                 <div class="feature-text reveal-up capturemon-copy">
                     <h2 class="section-title text-lg">마크몬에 내장되어 있는 강력한 이미지도구 캡쳐몬!</h2>
-                    <p class="section-desc text-lg capturemon-subcopy">상품 이미지 정리부터 편집, 저장까지 한 흐름으로 처리합니다.</p>
+                    <p class="section-desc text-lg capturemon-subcopy"><strong>상품 이미지 정리부터 편집, 저장</strong>까지 한 흐름으로 처리합니다.</p>
                     <ul class="feature-list capturemon-feature-list">
                         <li><strong>대상 추출:</strong> 필요한 이미지를 빠르게 선별</li>
                         <li><strong>이미지 자동추출:</strong> 상품별 이미지를 불러와 작업 시간을 단축</li>
@@ -459,128 +782,20 @@
             </div>
         </section>
 
-        <section id="keyword-wizard-showcase" class="section feature alt-bg peek-next">
-            <div class="container split-layout keyword-wizard-layout">
-                <div class="feature-text reveal-up keyword-wizard-copy">
-                    <h2 class="section-title text-lg">키워드 작업의 핵심,<br>올인원 가공도구 키워드 마법사</h2>
-                    <p class="section-desc text-lg keyword-wizard-subcopy">
-                        키워드 정리, 비교, 선별까지 한 번에 이어갈 수 있는 강력한 작업 도구입니다.
-                    </p>
-                    <ul class="feature-list keyword-wizard-feature-list">
-                        <li><strong>키워드 정리:</strong> 필요한 표현만 빠르게 선별</li>
-                        <li><strong>즉시 비교:</strong> 후보 키워드를 한눈에 비교</li>
-                        <li><strong>빠른 판단:</strong> 남길 표현과 제거할 표현을 바로 결정</li>
-                        <li><strong>강력한 작업성:</strong> 키워드 작업만으로도 높은 활용도를 제공</li>
-                    </ul>
-                    <div class="keyword-wizard-summary">
-                        키워드 마법사로,<br>
-                        <strong>정리부터 선별까지 한 번에 이어갈 수 있습니다.</strong>
-                    </div>
-                </div>
-
-                <div class="feature-image reveal-up keyword-wizard-media">
-                    <div class="slider-container keyword-wizard-slider">
-                        <div class="slider-wrapper shadow-lg">
-                            <img src="./33.jpg" class="slide-img active-slide" alt="키워드 마법사 팝업 화면 1" loading="lazy">
-                            <img src="./34.jpg" class="slide-img" alt="키워드 마법사 팝업 화면 2" loading="lazy">
-                            <img src="./35.jpg" class="slide-img" alt="키워드 마법사 팝업 화면 3" loading="lazy">
-                            <button class="slider-btn prev-btn" aria-label="이전 이미지">&#10094;</button>
-                            <button class="slider-btn next-btn" aria-label="다음 이미지">&#10095;</button>
-                        </div>
-
-                        <div class="slider-dots">
-                            <span class="dot active-dot" data-slide="0"></span>
-                            <span class="dot" data-slide="1"></span>
-                            <span class="dot" data-slide="2"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Feature New: 블랙리스트 & 화이트리스트 관리 (24.jpg) -->
-        <section id="blacklist-section" class="section feature peek-next reverse">
-            <div class="container split-layout">
-                <div class="feature-text reveal-right">
-                    <h2 class="section-title text-lg">직관적인<br>블랙리스트 & 화이트리스트.</h2>
-                    <p class="section-desc text-lg">
-                        수많은 상표 데이터 속에서 중요한 정보를 놓치지 마세요. 위험한 상표는 블랙리스트로, 안전하고 주시해야 할 상표는 화이트리스트로 지정하여 지식재산권 이슈를 사전에 방어할 수
-                        있습니다.
-                    </p>
-                    <ul class="feature-list">
-                        <li><strong>효과적인 이슈 방어:</strong> 리스크를 사전에 차단</li>
-                        <li><strong>체속적인 분류:</strong> 목적에 맞는 빠른 데이터 필터링</li>
-                        </li>
-                    </ul>
-                </div>
-                <!-- 왼쪽 사진 영역 -->
-                <div class="feature-image reveal-left">
-                    <div class="image-wrapper shadow-md list-image-container"
-                        style="transform: scale(1.1); transform-origin: center right; margin-top: 1.5rem; margin-bottom: 1.5rem; position: relative;">
-                        <img src="./24.jpg" alt="블랙리스트 화이트리스트 관리 화면" loading="lazy">
-
-                        <!-- 사진 우측 상단 오버레이 설명 박스 -->
-                        <div class="list-info-box bounce-subtle shadow-lg">
-                            <div class="info-item">
-                                <span class="dot-icon black"></span>
-                                <div class="info-text">
-                                    <strong>블랙리스트</strong>
-                                    <span>사용자가 생각하는 위험한 상표</span>
-                                </div>
-                            </div>
-                            <div class="info-item mt-2">
-                                <span class="dot-icon white border-gray"></span>
-                                <div class="info-text">
-                                    <strong>화이트리스트</strong>
-                                    <span>사용자가 생각하는 안전한 상표</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Feature New: 단건 직접 검색 & 리소스 최적화 (26.jpg) -->
-        <section id="detail-workspace" class="section feature peek-next">
-            <div class="container split-layout">
-                <div class="feature-text reveal-left">
-                    <div class="badge" style="background: #fff3e0; color: #e65100; margin-bottom: 1.5rem;">선결 조건: 시스템
-                        리소스 최적화</div>
-                    <h2 class="section-title text-lg">엑셀 업로드 없이도<br>즉시 상표 정보를 확인하세요.</h2>
-                    <p class="section-desc text-lg">
-                        번거로운 엑셀 파일 준비 없이도, 상표권 검색어를 직접 입력하여 즉시 데이터를 조회할 수 있습니다. 급하게 확인이 필요한 상표가 있을 때 가장 빠르고 직관적인 해결책이
-                        되어드립니다.
-                    </p>
-                    <div
-                        style="background: var(--bg-alt); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #e65100; margin-top: 2rem;">
-                        <p style="font-size: 1rem; color: #444; word-break: keep-all; line-height: 1.6;">
-                            <strong>💡 필수 참고 사항:</strong><br>
-                            정확하고 빠른 상표권 매칭과 검색을 위해
-                            <span class="inline-glow">
-                                <img src="./27.jpg" alt="시스템 리소스 최적화 버튼" class="static-btn-img">
-                            </span>
-                            는 필수적인 선결 조건입니다. <br>
-                            <strong>원활한 검색을 위해 하단 버튼을 통한 최적화를 필수로 진행해 주세요.</strong>
-                        </p>
-                    </div>
-                </div>
-                <div class="feature-image reveal-right">
-                    <div class="image-wrapper shadow-lg"
-                        style="transform: scale(1.1); transform-origin: center left; margin-top: 1.5rem; margin-bottom: 1.5rem;">
-                        <img src="./26.jpg" alt="단건 직접 검색 인터페이스" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="extra-features" class="section feature peek-next">
             <div class="container split-layout extra-features-layout">
                 <div class="feature-text reveal-left extra-features-copy">
                     <h2 class="section-title text-lg">그 외에도 편리한<br>다양한 기능들이 준비되어 있습니다.</h2>
                     <p class="section-desc text-lg">
-                        사용자의 업무 효율을 극대화하기 위한 여러 가지 추가 기능들을 만나보세요. 아래 화살표를 눌러 마크몬의 다양한 활용법을 확인하실 수 있습니다.
+                        사용자의 <strong>업무 효율을 극대화</strong>하기 위한 여러 가지 추가 기능들을 만나보세요. 아래 화살표를 눌러 마크몬의 <strong>다양한 활용법</strong>을 확인하실 수 있습니다.
                     </p>
+                    <ul class="feature-list extra-features-list">
+                        <li><strong>키워드 / 카테고리 추출:</strong> 키워드와 카테고리를 자동으로 빠르게 추출합니다.</li>
+                        <li><strong>상품명 추출기:</strong> 원본 상품명을 기준으로 상품명을 추출합니다.</li>
+                        <li><strong>키워드 연구소:</strong> 키워드들을 분석하여 작업 효율을 높여줍니다.</li>
+                        <li><strong>검색광고 키워드툴:</strong> 네이버 검색광고 키워드툴 기능을 이식했습니다.</li>
+                        <li><strong>설정 탭 기능:</strong> 마크몬의 심장부 입니다. 모든 기능을 이용하기 위해서 필수로 세팅이 필요합니다.</li>
+                    </ul>
                 </div>
 
                 <div class="slider-container reveal-right extra-features-slider">
@@ -622,7 +837,7 @@
                 <div class="feature-text reveal-right">
                     <h2 class="section-title text-lg">실제 작동 화면으로<br>마크몬을 확인해보세요.</h2>
                     <p class="section-desc text-lg" style="margin-bottom: 1rem;">
-                        핵심 기능 위주로 구성된 시연 영상을 통해 마크몬의 정확한 결과 도출과 실시간 분류 가공 과정을 미리 확인해 보세요. 영상에 담기지 않은 더 강력하고 다양한 편의 기능들은
+                        <strong>핵심 기능</strong> 위주로 구성된 시연 영상을 통해 마크몬의 정확한 결과 도출과 <strong>실시간 분류 가공 과정</strong>을 미리 확인해 보세요. 영상에 담기지 않은 더 강력하고 다양한 편의 기능들은
                         직접 설치하여 경험하실 수 있습니다.
                     </p>
                     <p style="font-size: 0.9rem; color: var(--text-muted);">(※ 검색해야 할 결과 데이터가 많을수록 속도에 다소 차이가 발생할 수
@@ -886,10 +1101,10 @@
                                 d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" />
                             <path fill="#FFFFFF" d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                         </svg>
-                        <span class="logo-mark" style="font-size: 1.4rem;">MARK</span><span class="logo-mon"
-                            style="font-size: 1.4rem;">MON</span>
+                        <span class="logo-mark" style="font-size: 1.48rem;">MARK</span><span class="logo-mon"
+                            style="font-size: 1.48rem;">MON</span>
                     </a>
-                    <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; word-break: keep-all;">
+                    <p style="font-size: 1.03rem; color: var(--text-muted); line-height: 1.66; word-break: keep-all;">
                         현업 셀러가 직접 만드는 가장 직관적인 상표권 보호 솔루션, 마크몬입니다. <br>
                         복잡한 법적 리스크를 사전에 예방하고 소중한 스토어를 지키세요.
                     </p>
@@ -897,25 +1112,25 @@
 
                 <!-- 사업자 정보 영역 (내용은 직접 채워넣으셔야 합니다) -->
                 <div id="business-info" hidden>
-                    <h4 style="font-size: 1rem; margin-bottom: 1.2rem; color: var(--text-dark);">Business Info</h4>
-                    <ul style="list-style: none; padding: 0; font-size: 0.85rem; color: #666; line-height: 1.8;">
-                        <li>상호: [마크몬] | 대표: [장상민]</li>
-                        <li>사업자등록번호: [443-22-02376]</li>
-                        <li>통신판매업신고: [제 2026-부천원미-0487 호]</li>
-                        <li>이메일: [markmon0135@gmail.com]</li>
-                        <li>주소: [부천시 원미구 중동로 301]</li>
+                    <h4 style="font-size: 1.08rem; margin-bottom: 1.2rem; color: var(--text-dark);">Business Info</h4>
+                    <ul style="list-style: none; padding: 0; font-size: 0.93rem; color: #666; line-height: 1.86;">
+                        <li>상호: 마크몬 | 대표: 장상민</li>
+                        <li>사업자등록번호: 443-22-02376</li>
+                        <li>통신판매업신고: 제 2026-부천원미-0487 호</li>
+                        <li>이메일: markmon0135@gmail.com</li>
+                        <li>주소: 부천시 원미구 중동로 301</li>
                     </ul>
                 </div>
 
                 <!-- 면책 조항 및 약관 영역 -->
                 <div id="legal-notice" hidden>
-                    <h4 style="font-size: 1rem; margin-bottom: 1.2rem; color: var(--text-dark);">Legal Notice</h4>
+                    <h4 style="font-size: 1.08rem; margin-bottom: 1.2rem; color: var(--text-dark);">Legal Notice</h4>
                     <p
-                        style="font-size: 0.85rem; color: #888; line-height: 1.6; word-break: keep-all; margin-bottom: 1rem;">
+                        style="font-size: 0.93rem; color: #888; line-height: 1.66; word-break: keep-all; margin-bottom: 1rem;">
                         <strong>Disclaimer:</strong> 본 서비스의 결과는 법률적 자문이 아니며 법적 효력이 없습니다. 상표 데이터 업데이트 시차로 실제 정보와 차이가 있을 수
                         있으므로, 최종 판단은 반드시 전문가와 상담하시기 바랍니다.
                     </p>
-                    <div style="display: flex; gap: 1rem; font-size: 0.85rem; font-weight: 700;">
+                    <div style="display: flex; gap: 1rem; font-size: 0.93rem; font-weight: 700;">
                         <a href="#terms" style="color: var(--text-dark); text-decoration: none;">이용약관</a>
                         <a href="#privacy" style="color: var(--text-dark); text-decoration: none;">개인정보처리방침</a>
                     </div>
@@ -924,8 +1139,8 @@
 
             <div class="footer-bottom-bar"
                 style="padding-top: 2rem; border-top: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                <p style="font-size: 0.85rem; color: #999;">&copy; 2026 MarkMon. All rights reserved.</p>
-                <p style="font-size: 0.85rem; color: #aaa;">Designed for maximum efficiency and exact database matching.
+                <p style="font-size: 0.93rem; color: #999;">&copy; 2026 MarkMon. All rights reserved.</p>
+                <p style="font-size: 0.93rem; color: #aaa;">Designed for maximum efficiency and exact database matching.
                 </p>
             </div>
         </div>

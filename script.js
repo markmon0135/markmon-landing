@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ensureHorizontalLayout(main, header, footer);
     initHorizontalPager();
     initFeatureSlider();
+    initWarningRiskCards();
     initFooterInfoPanels();
 });
 
@@ -26,23 +27,22 @@ function refreshIntroSection() {
 
     introContainer.innerHTML = `
         <div class="intro-content fade-in-up">
-            <div class="badge intro-badge">셀러가 가장 많이 다루는 영역, 키워드</div>
+            <div class="badge intro-badge">막막했던 상표 확인, 마크몬으로 더 쉽게</div>
             <h2 class="intro-title" style="word-break: keep-all;">
-                상표권 침해 예방,<br><span class="text-gradient">가장 중요한 '키워드'에서 시작됩니다.</span>
+                하나씩 찾던 상표 확인,<br><span class="text-gradient">마크몬에선 훨씬 쉽고 빠르게</span>
             </h2>
             <p class="intro-desc intro-copy">
-                소싱과 가공 단계에서 가장 많은 시간을 들이는 건 결국 키워드입니다.<br>
-                그만큼 상품의 방향도, 노출도, 매출도 키워드에서 갈립니다.
+                <strong>상품명과 키워드</strong>, 셀러가 실제로 가장 많이 다루는 항목들 안에서<br>
+                필요한 상표 확인을 <strong>더 빠르고 쉽게</strong> 이어갈 수 있습니다.
             </p>
             <p class="intro-desc intro-copy intro-copy--spaced">
-                그런데 정작 많은 셀러분들이 상표권이나 지재권 검토는 뒤로 미루거나 감으로 넘어갑니다.<br>
-                문제는 바로 그 익숙한 키워드 안에, 내가 놓친 지재권 침해 요소가 숨어 있을 수 있다는 점입니다.
+                더 이상 <strong>사이트를 오가며 하나씩 검색</strong>하고, 긴 결과 화면을 눈으로 다시 훑어볼 필요가 없습니다.
             </p>
             <p class="intro-desc intro-copy intro-copy--spaced intro-copy--compact">
-                마크몬은 셀러가 가장 자주 다루는 키워드 데이터 자체에 집중해
-                복잡한 법률 용어보다 더 빠르고 직관적으로 위험 요소를 확인할 수 있도록 도와드립니다.
+                <strong>찾는 데 시간을 쓰는 대신, 걸러내는 데 집중하세요.</strong><br>
+                막막했던 상표 확인을 <strong>더 직관적이고 편한 작업 흐름</strong>으로 바꿔줍니다.
             </p>
-            <p class="intro-highlight">지재권 이슈, 마크몬으로 해결하세요.</p>
+            <p class="intro-highlight">지재권 이슈, 마크몬으로 예방하세요.</p>
         </div>
         <div class="intro-visual reveal-up">
             <div class="image-wrapper shadow-lg intro-visual-card">
@@ -608,31 +608,103 @@ function initFooterInfoPanels() {
         buttons.forEach(button => button.classList.remove("is-active"));
     }
 
+    function openPanel(button) {
+        const targetId = button?.dataset.footerPanelTarget;
+        const source = targetId ? document.getElementById(targetId) : null;
+
+        if (!button || !source) {
+            return;
+        }
+
+        const content = source.cloneNode(true);
+        content.removeAttribute("id");
+        content.removeAttribute("hidden");
+        display.replaceChildren(content);
+
+        display.hidden = false;
+        activeTarget = targetId;
+
+        buttons.forEach(item => {
+            item.classList.toggle("is-active", item === button);
+        });
+    }
+
     buttons.forEach(button => {
         button.addEventListener("click", () => {
             const targetId = button.dataset.footerPanelTarget;
-            const source = targetId ? document.getElementById(targetId) : null;
-
-            if (!source) {
-                return;
-            }
 
             if (activeTarget === targetId) {
                 closePanel();
                 return;
             }
 
-            const content = source.cloneNode(true);
-            content.removeAttribute("id");
-            content.removeAttribute("hidden");
-            display.replaceChildren(content);
+            openPanel(button);
+        });
+    });
 
-            display.hidden = false;
-            activeTarget = targetId;
+    const defaultButton = buttons.find(button => button.dataset.footerPanelTarget === "terms") || buttons[0];
 
-            buttons.forEach(item => {
-                item.classList.toggle("is-active", item === button);
+    if (defaultButton) {
+        openPanel(defaultButton);
+    }
+}
+
+function initWarningRiskCards() {
+    const triggers = Array.from(document.querySelectorAll("[data-risk-toggle]"));
+    const previewImage = document.getElementById("warning-hook-main-image");
+    const previewFallback = document.getElementById("warning-hook-image-fallback");
+    const defaultImageSrc = previewImage?.dataset.defaultSrc || previewImage?.getAttribute("src") || "";
+
+    if (!triggers.length) {
+        return;
+    }
+
+    function showRiskImage(src) {
+        if (!previewImage || !src) {
+            return;
+        }
+
+        previewImage.style.display = "block";
+        previewImage.classList.toggle("is-default-risk-image", src === defaultImageSrc);
+
+        if (previewFallback) {
+            previewFallback.style.display = "none";
+        }
+
+        if (previewImage.getAttribute("src") !== src) {
+            previewImage.setAttribute("src", src);
+        }
+    }
+
+    triggers.forEach(trigger => {
+        trigger.addEventListener("click", () => {
+            const panelId = trigger.dataset.riskToggle;
+            const imageSrc = trigger.dataset.riskImage;
+            const panel = panelId ? document.getElementById(panelId) : null;
+            const isExpanded = trigger.getAttribute("aria-expanded") === "true";
+
+            triggers.forEach(otherTrigger => {
+                const otherPanelId = otherTrigger.dataset.riskToggle;
+                const otherPanel = otherPanelId ? document.getElementById(otherPanelId) : null;
+
+                otherTrigger.setAttribute("aria-expanded", "false");
+
+                if (otherPanel) {
+                    otherPanel.hidden = true;
+                }
             });
+
+            if (!panel) {
+                return;
+            }
+
+            if (!isExpanded) {
+                trigger.setAttribute("aria-expanded", "true");
+                panel.hidden = false;
+                showRiskImage(imageSrc);
+            } else if (defaultImageSrc) {
+                showRiskImage(defaultImageSrc);
+            }
         });
     });
 }

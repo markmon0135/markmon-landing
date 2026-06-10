@@ -70,6 +70,10 @@ body.mobile-landing .nav-links a {
 body.mobile-landing .nav-links .btn-primary-small {
     min-height: 42px;
     padding: 0.65rem 0.7rem;
+    color: #17212b !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(23, 33, 43, 0.08) !important;
+    box-shadow: 0 10px 22px rgba(18, 38, 54, 0.06) !important;
 }
 
 body.mobile-landing main {
@@ -361,6 +365,8 @@ body.mobile-landing #pricing .pricing-action-card {
 body.mobile-landing #download .page-frame--cta {
     padding: 18px 16px !important;
     overflow: visible !important;
+    background: #ffffff !important;
+    color: var(--text-dark) !important;
 }
 
 body.mobile-landing #download,
@@ -372,6 +378,7 @@ body.mobile-landing #download .page-frame--cta {
 
 body.mobile-landing #download .cta-title {
     color: var(--text-dark) !important;
+    text-shadow: none !important;
 }
 
 body.mobile-landing #download .cta-desc,
@@ -381,6 +388,32 @@ body.mobile-landing #download .version-info {
 
 body.mobile-landing #download .cta-desc strong {
     color: var(--primary-dark) !important;
+}
+
+body.mobile-landing #download .cta-title,
+body.mobile-landing #download .cta-desc,
+body.mobile-landing #download .cta-desc *,
+body.mobile-landing #download .mobile-disabled-download,
+body.mobile-landing #download .mobile-disabled-download *,
+body.mobile-landing #download .version-info {
+    color: inherit !important;
+}
+
+body.mobile-landing #download .cta-title {
+    color: var(--text-dark) !important;
+}
+
+body.mobile-landing #download .cta-desc,
+body.mobile-landing #download .version-info {
+    color: var(--text-muted) !important;
+}
+
+body.mobile-landing #download .mobile-disabled-download {
+    color: #405162 !important;
+}
+
+body.mobile-landing #download .mobile-disabled-download.btn-outline-white {
+    color: #546575 !important;
 }
 
 body.mobile-landing #download .download-corner-visual {

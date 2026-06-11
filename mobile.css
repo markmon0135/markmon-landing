@@ -516,13 +516,20 @@ body.mobile-landing #hero .hero-desc {
 }
 
 body.mobile-landing #features .section-desc,
+body.mobile-landing #features .feature-list,
 body.mobile-landing #direct-search .section-desc,
 body.mobile-landing #keyword-wizard-showcase .keyword-wizard-subcopy,
+body.mobile-landing #keyword-wizard-showcase .keyword-wizard-feature-list,
+body.mobile-landing #keyword-wizard-showcase .keyword-wizard-summary,
 body.mobile-landing #button-control .section-desc,
 body.mobile-landing #blacklist-section .section-desc,
+body.mobile-landing #blacklist-section .feature-list,
 body.mobile-landing #detail-workspace .section-desc,
+body.mobile-landing #detail-workspace .feature-text > div[style*="background: var(--bg-alt)"],
 body.mobile-landing #capturemon-showcase .capturemon-subcopy,
+body.mobile-landing #capturemon-showcase .capturemon-feature-list,
 body.mobile-landing #extra-features .section-desc,
+body.mobile-landing #extra-features .feature-list,
 body.mobile-landing #video-demo .feature-text p,
 body.mobile-landing #video-demo .feature-text > div {
     display: none !important;

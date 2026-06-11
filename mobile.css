@@ -534,3 +534,26 @@ body.mobile-landing #video-demo .feature-text p,
 body.mobile-landing #video-demo .feature-text > div {
     display: none !important;
 }
+
+body.mobile-landing #features .feature-text > p,
+body.mobile-landing #features .feature-text > ul,
+body.mobile-landing #direct-search .feature-text > p,
+body.mobile-landing #keyword-wizard-showcase .keyword-wizard-copy > p,
+body.mobile-landing #keyword-wizard-showcase .keyword-wizard-copy > ul,
+body.mobile-landing #keyword-wizard-showcase .keyword-wizard-copy > .keyword-wizard-summary,
+body.mobile-landing #button-control .feature-text > div > p,
+body.mobile-landing #blacklist-section .feature-text > p,
+body.mobile-landing #blacklist-section .feature-text > ul,
+body.mobile-landing #detail-workspace .feature-text > p,
+body.mobile-landing #capturemon-showcase .capturemon-copy > p,
+body.mobile-landing #capturemon-showcase .capturemon-copy > ul,
+body.mobile-landing #extra-features .extra-features-copy > p,
+body.mobile-landing #extra-features .extra-features-copy > ul,
+body.mobile-landing #video-demo .feature-text > p,
+body.mobile-landing #video-demo .feature-text > div {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}

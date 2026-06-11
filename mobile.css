@@ -491,14 +491,8 @@ body.mobile-landing .system-req-table td {
     white-space: nowrap;
 }
 
-body.mobile-landing .system-req-table th:nth-child(3),
-body.mobile-landing .system-req-table td:nth-child(3) {
+body.mobile-landing .system-req-wrapper {
     display: none !important;
-}
-
-body.mobile-landing .system-req-table {
-    min-width: 0 !important;
-    width: 100% !important;
 }
 
 body.mobile-landing .footer-quick-links {

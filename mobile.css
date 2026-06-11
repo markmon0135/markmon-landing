@@ -76,6 +76,22 @@ body.mobile-landing .nav-links .btn-primary-small {
     box-shadow: 0 10px 22px rgba(18, 38, 54, 0.06) !important;
 }
 
+body.mobile-landing .mobile-build-check {
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    z-index: 9999;
+    padding: 0.5rem 0.72rem;
+    border-radius: 999px;
+    background: rgba(17, 24, 39, 0.88);
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.22);
+    pointer-events: none;
+}
+
 body.mobile-landing main {
     width: 100%;
 }

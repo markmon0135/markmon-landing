@@ -508,3 +508,9 @@ body.mobile-landing .footer-bottom-bar {
     flex-direction: column;
     align-items: flex-start !important;
 }
+
+body.mobile-landing #prevention-first .prevention-desc,
+body.mobile-landing #intro .intro-desc,
+body.mobile-landing #hero .hero-desc {
+    display: none !important;
+}

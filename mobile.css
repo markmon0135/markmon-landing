@@ -514,3 +514,16 @@ body.mobile-landing #intro .intro-desc,
 body.mobile-landing #hero .hero-desc {
     display: none !important;
 }
+
+body.mobile-landing #features .section-desc,
+body.mobile-landing #direct-search .section-desc,
+body.mobile-landing #keyword-wizard-showcase .keyword-wizard-subcopy,
+body.mobile-landing #button-control .section-desc,
+body.mobile-landing #blacklist-section .section-desc,
+body.mobile-landing #detail-workspace .section-desc,
+body.mobile-landing #capturemon-showcase .capturemon-subcopy,
+body.mobile-landing #extra-features .section-desc,
+body.mobile-landing #video-demo .feature-text p,
+body.mobile-landing #video-demo .feature-text > div {
+    display: none !important;
+}

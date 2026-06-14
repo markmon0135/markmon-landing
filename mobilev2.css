@@ -1,0 +1,563 @@
+@charset "utf-8";
+
+html,
+body.mobile-landing {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+
+body.mobile-landing {
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: "Pretendard", "Segoe UI", sans-serif;
+    color: var(--text-dark);
+    background:
+        radial-gradient(circle at left top, rgba(19, 151, 216, 0.12), transparent 26%),
+        radial-gradient(circle at right bottom, rgba(255, 107, 0, 0.1), transparent 24%),
+        linear-gradient(180deg, #f8fbff 0%, #eef4f8 100%);
+}
+
+body.mobile-landing .horizontal-controls,
+body.mobile-landing .container.fade-in-up {
+    display: none !important;
+}
+
+body.mobile-landing .navbar {
+    position: sticky;
+    top: 0;
+    height: auto;
+    min-height: 72px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(16px);
+}
+
+body.mobile-landing .nav-container {
+    width: 100%;
+    padding: 14px 16px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+body.mobile-landing .logo {
+    font-size: 1.35rem;
+}
+
+body.mobile-landing .nav-links {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+body.mobile-landing .nav-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0.65rem 0.7rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid rgba(23, 33, 43, 0.08);
+    box-shadow: 0 10px 22px rgba(18, 38, 54, 0.06);
+    white-space: normal;
+    text-align: center;
+    font-size: 0.86rem;
+    line-height: 1.25;
+}
+
+body.mobile-landing .nav-links .btn-primary-small {
+    min-height: 42px;
+    padding: 0.65rem 0.7rem;
+    color: #17212b !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(23, 33, 43, 0.08) !important;
+    box-shadow: 0 10px 22px rgba(18, 38, 54, 0.06) !important;
+}
+
+body.mobile-landing main {
+    width: 100%;
+}
+
+body.mobile-landing main > section,
+body.mobile-landing .page-section {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    padding: 26px 12px 32px !important;
+    overflow: visible !important;
+}
+
+body.mobile-landing .page-section-scroll,
+body.mobile-landing .page-frame {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    overflow: visible;
+}
+
+body.mobile-landing .page-frame {
+    display: block;
+}
+
+body.mobile-landing .section {
+    min-height: auto;
+    padding: 0;
+}
+
+body.mobile-landing .container,
+body.mobile-landing .page-frame,
+body.mobile-landing .page-frame--cta,
+body.mobile-landing .footer-quick-panel,
+body.mobile-landing .footer-info-grid,
+body.mobile-landing .footer-bottom-bar {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto;
+}
+
+body.mobile-landing .hero-container,
+body.mobile-landing .split-layout,
+body.mobile-landing .intro-section .hero-container,
+body.mobile-landing #warning-hook .split-layout,
+body.mobile-landing #prevention-first .split-layout,
+body.mobile-landing #hero .hero-container,
+body.mobile-landing #features .split-layout,
+body.mobile-landing #features + section .split-layout,
+body.mobile-landing #detail-workspace + section .split-layout,
+body.mobile-landing #blacklist-section .split-layout,
+body.mobile-landing #keyword-wizard-showcase .keyword-wizard-layout,
+body.mobile-landing #capturemon-showcase .capturemon-layout,
+body.mobile-landing #extra-features .extra-features-layout,
+body.mobile-landing #video-demo .split-layout {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    align-items: start !important;
+}
+
+body.mobile-landing .feature-text,
+body.mobile-landing .feature-image,
+body.mobile-landing .hero-content,
+body.mobile-landing .hero-image,
+body.mobile-landing .intro-content,
+body.mobile-landing #pricing .pricing-copy,
+body.mobile-landing #capturemon-showcase .capturemon-copy,
+body.mobile-landing #extra-features .feature-text {
+    max-width: none !important;
+    width: 100% !important;
+    min-width: 0;
+    text-align: left !important;
+}
+
+body.mobile-landing .badge,
+body.mobile-landing .intro-badge,
+body.mobile-landing #prevention-first .prevention-badge,
+body.mobile-landing #hero .badge {
+    font-size: 0.92rem !important;
+    padding: 0.7rem 0.95rem !important;
+    line-height: 1.35 !important;
+    white-space: normal;
+}
+
+body.mobile-landing .section-title,
+body.mobile-landing .intro-title,
+body.mobile-landing .hero-title,
+body.mobile-landing .cta-title,
+body.mobile-landing #pricing .pricing-title,
+body.mobile-landing #capturemon-showcase .section-title,
+body.mobile-landing #extra-features .section-title,
+body.mobile-landing #prevention-first .prevention-title,
+body.mobile-landing #download .cta-title {
+    font-size: 1.9rem !important;
+    line-height: 1.22 !important;
+    margin-bottom: 0.9rem !important;
+}
+
+body.mobile-landing .section-desc,
+body.mobile-landing .intro-desc,
+body.mobile-landing .hero-desc,
+body.mobile-landing .cta-desc,
+body.mobile-landing .intro-copy,
+body.mobile-landing #prevention-first .prevention-desc,
+body.mobile-landing #features .section-desc,
+body.mobile-landing #features + section .section-desc,
+body.mobile-landing #extra-features .section-desc,
+body.mobile-landing #pricing .pricing-desc,
+body.mobile-landing #capturemon-showcase .capturemon-subcopy {
+    font-size: 0.98rem !important;
+    line-height: 1.66 !important;
+}
+
+body.mobile-landing .feature-list li,
+body.mobile-landing .extra-features-list li,
+body.mobile-landing #capturemon-showcase .capturemon-feature-list li,
+body.mobile-landing #keyword-wizard-showcase .keyword-wizard-feature-list li {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+}
+
+body.mobile-landing .image-wrapper,
+body.mobile-landing .slider-container,
+body.mobile-landing .slider-wrapper,
+body.mobile-landing .video-wrapper,
+body.mobile-landing .list-image-container,
+body.mobile-landing .capturemon-slider,
+body.mobile-landing .capturemon-video-action,
+body.mobile-landing .keyword-wizard-slider,
+body.mobile-landing .extra-features-slider {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    transform: none !important;
+}
+
+body.mobile-landing .hero-image,
+body.mobile-landing .feature-image {
+    display: flex;
+    justify-content: center !important;
+    overflow: visible !important;
+}
+
+body.mobile-landing .hero-image img,
+body.mobile-landing .feature-image img,
+body.mobile-landing .slide-img,
+body.mobile-landing .intro-logo {
+    width: 100%;
+    height: auto;
+    max-height: none !important;
+    object-fit: contain;
+}
+
+body.mobile-landing #warning-hook .section-title {
+    font-size: 2.2rem !important;
+    line-height: 1.18 !important;
+}
+
+body.mobile-landing #warning-hook .warning-hook-title-stack {
+    font-size: 1em !important;
+}
+
+body.mobile-landing #warning-hook .warning-hook-title-line--emphasis {
+    border-bottom-width: 5px !important;
+}
+
+body.mobile-landing #warning-hook .risk-card {
+    padding: 0.88rem !important;
+    gap: 0.85rem !important;
+    align-items: center !important;
+}
+
+body.mobile-landing #warning-hook .risk-icon-box {
+    width: 58px !important;
+    height: 58px !important;
+    min-width: 58px !important;
+    min-height: 58px !important;
+    padding: 0 !important;
+}
+
+body.mobile-landing #warning-hook .risk-content h3 {
+    font-size: 1.22rem !important;
+    line-height: 1.25 !important;
+}
+
+body.mobile-landing #warning-hook .risk-card-action-label {
+    min-height: 30px !important;
+    padding: 0.32rem 0.56rem !important;
+    font-size: 0.75rem !important;
+}
+
+body.mobile-landing #warning-hook .risk-card-panel-body {
+    font-size: 0.94rem !important;
+    line-height: 1.66 !important;
+}
+
+body.mobile-landing #warning-hook .feature-image .image-wrapper,
+body.mobile-landing #warning-hook #warning-hook-image-stage,
+body.mobile-landing #warning-hook #warning-hook-image-fallback,
+body.mobile-landing #prevention-first .prevention-visual-card,
+body.mobile-landing .intro-visual-card {
+    min-height: 300px !important;
+}
+
+body.mobile-landing #prevention-first .prevention-highlight,
+body.mobile-landing .intro-highlight,
+body.mobile-landing #keyword-wizard-showcase .keyword-wizard-summary {
+    font-size: 1.06rem !important;
+    line-height: 1.42 !important;
+    padding: 0.88rem 0.95rem !important;
+}
+
+body.mobile-landing #hero .hero-image .image-wrapper,
+body.mobile-landing #features .image-grid,
+body.mobile-landing #features + section .feature-image .image-wrapper,
+body.mobile-landing #detail-workspace + section .feature-image .image-wrapper,
+body.mobile-landing #button-control .button-control-main-image,
+body.mobile-landing #button-control .button-control-sub-image,
+body.mobile-landing #detail-workspace + section .feature-text > .image-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+}
+
+body.mobile-landing #features .crossfade-img {
+    position: relative !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    margin-top: 12px !important;
+}
+
+body.mobile-landing #blacklist-section .list-image-container,
+body.mobile-landing #blacklist-section .feature-image .image-wrapper {
+    transform: none !important;
+}
+
+body.mobile-landing #blacklist-section .list-info-box {
+    position: static !important;
+    width: 100% !important;
+    margin-top: 12px !important;
+}
+
+body.mobile-landing #keyword-wizard-showcase .slider-wrapper,
+body.mobile-landing #extra-features .slider-wrapper,
+body.mobile-landing #capturemon-showcase .slider-wrapper,
+body.mobile-landing #video-demo .video-wrapper {
+    aspect-ratio: 16 / 10 !important;
+    min-height: 0 !important;
+    max-height: none !important;
+}
+
+body.mobile-landing .slider-btn {
+    width: 38px;
+    height: 38px;
+}
+
+body.mobile-landing #capturemon-showcase .capturemon-video-btn,
+body.mobile-landing #pricing .pricing-action-btn,
+body.mobile-landing #download .btn-large,
+body.mobile-landing .btn-primary,
+body.mobile-landing .btn-secondary {
+    width: 100% !important;
+    min-height: 56px !important;
+    padding: 0.9rem 1rem !important;
+    font-size: 0.98rem !important;
+}
+
+body.mobile-landing #pricing .pricing-layout {
+    gap: 18px !important;
+}
+
+body.mobile-landing #pricing .pricing-actions-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+}
+
+body.mobile-landing #pricing .pricing-action-card {
+    min-height: 0 !important;
+    padding: 1.3rem 1rem !important;
+    border-radius: 20px !important;
+}
+
+body.mobile-landing #download .page-frame--cta {
+    padding: 18px 16px !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    color: var(--text-dark) !important;
+}
+
+body.mobile-landing #download,
+body.mobile-landing #download .cta,
+body.mobile-landing #download .cta-container,
+body.mobile-landing #download .page-frame--cta {
+    color: var(--text-dark) !important;
+}
+
+body.mobile-landing #download .cta-title {
+    color: #17212b !important;
+    text-shadow: none !important;
+}
+
+body.mobile-landing #download .cta-desc,
+body.mobile-landing #download .version-info {
+    color: #5f6f7d !important;
+}
+
+body.mobile-landing #download .cta-desc strong {
+    color: #e25700 !important;
+}
+
+body.mobile-landing #download .cta-title {
+    color: #17212b !important;
+}
+
+body.mobile-landing #download .cta-desc,
+body.mobile-landing #download .version-info {
+    color: #5f6f7d !important;
+}
+
+body.mobile-landing #download .mobile-disabled-download {
+    color: #405162 !important;
+}
+
+body.mobile-landing #download .mobile-disabled-download.btn-outline-white {
+    color: #546575 !important;
+    background: #f8fbff !important;
+    border-color: rgba(23, 33, 43, 0.08) !important;
+    box-shadow: 0 12px 24px rgba(18, 38, 54, 0.08) !important;
+}
+
+body.mobile-landing #download .cta-title,
+body.mobile-landing #download .cta-title *,
+body.mobile-landing #download .cta-desc,
+body.mobile-landing #download .cta-desc *,
+body.mobile-landing #download .mobile-download-blocked,
+body.mobile-landing #download .mobile-download-blocked *,
+body.mobile-landing #download .mobile-disabled-download,
+body.mobile-landing #download .mobile-disabled-download *,
+body.mobile-landing #download .version-info {
+    -webkit-text-fill-color: currentColor !important;
+}
+
+body.mobile-landing #download .mobile-download-blocked .btn-large {
+    color: #405162 !important;
+}
+
+body.mobile-landing #download .mobile-download-blocked .btn-outline-white {
+    color: #546575 !important;
+}
+
+body.mobile-landing #download .mobile-download-blocked .btn-outline-white,
+body.mobile-landing #download .mobile-download-blocked .btn-outline-white * {
+    color: #546575 !important;
+}
+
+body.mobile-landing #download .mobile-download-blocked .btn-large,
+body.mobile-landing #download .mobile-download-blocked .btn-large * {
+    color: #405162 !important;
+}
+
+body.mobile-landing #download .download-corner-visual {
+    position: static !important;
+    width: min(52vw, 220px) !important;
+    margin: 0 auto 14px !important;
+}
+
+body.mobile-landing #download .cta-button-container,
+body.mobile-landing #download .cta-container {
+    overflow: visible !important;
+}
+
+body.mobile-landing #download .mobile-download-blocked {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+body.mobile-landing #download .mobile-disabled-download {
+    cursor: default;
+    pointer-events: none;
+    background: linear-gradient(135deg, #dbe4ec 0%, #c9d5e0 100%) !important;
+    color: #405162 !important;
+    box-shadow: 0 12px 24px rgba(18, 38, 54, 0.1) !important;
+    border: 1px solid rgba(23, 33, 43, 0.08) !important;
+}
+
+body.mobile-landing #download .mobile-disabled-download.btn-outline-white {
+    background: #f8fbff !important;
+    color: #546575 !important;
+}
+
+body.mobile-landing .system-req-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+}
+
+body.mobile-landing .system-req-table {
+    width: max-content;
+    min-width: 600px;
+}
+
+body.mobile-landing .system-req-table th,
+body.mobile-landing .system-req-table td {
+    font-size: 0.86rem !important;
+    white-space: nowrap;
+}
+
+body.mobile-landing .system-req-wrapper {
+    display: none !important;
+}
+
+body.mobile-landing .footer-quick-links {
+    justify-content: flex-start !important;
+}
+
+body.mobile-landing .footer-quick-link {
+    font-size: 0.84rem !important;
+}
+
+body.mobile-landing .footer-panel-display .footer-policy-item,
+body.mobile-landing .footer-panel-display > div {
+    padding: 0.9rem !important;
+}
+
+body.mobile-landing .footer-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start !important;
+}
+
+body.mobile-landing #prevention-first .prevention-desc,
+body.mobile-landing #intro .intro-desc,
+body.mobile-landing #hero .hero-desc {
+    display: none !important;
+}
+
+body.mobile-landing #features .section-desc,
+body.mobile-landing #features .feature-list,
+body.mobile-landing #direct-search .section-desc,
+body.mobile-landing #keyword-wizard-showcase .keyword-wizard-subcopy,
+body.mobile-landing #keyword-wizard-showcase .keyword-wizard-feature-list,
+body.mobile-landing #keyword-wizard-showcase .keyword-wizard-summary,
+body.mobile-landing #button-control .section-desc,
+body.mobile-landing #blacklist-section .section-desc,
+body.mobile-landing #blacklist-section .feature-list,
+body.mobile-landing #detail-workspace .section-desc,
+body.mobile-landing #detail-workspace .feature-text > div[style*="background: var(--bg-alt)"],
+body.mobile-landing #capturemon-showcase .capturemon-subcopy,
+body.mobile-landing #capturemon-showcase .capturemon-feature-list,
+body.mobile-landing #extra-features .section-desc,
+body.mobile-landing #extra-features .feature-list,
+body.mobile-landing #video-demo .feature-text p,
+body.mobile-landing #video-demo .feature-text > div {
+    display: none !important;
+}
+
+body.mobile-landing #features .feature-text > p,
+body.mobile-landing #features .feature-text > ul,
+body.mobile-landing #direct-search .feature-text > p,
+body.mobile-landing #keyword-wizard-showcase .keyword-wizard-copy > p,
+body.mobile-landing #keyword-wizard-showcase .keyword-wizard-copy > ul,
+body.mobile-landing #keyword-wizard-showcase .keyword-wizard-copy > .keyword-wizard-summary,
+body.mobile-landing #button-control .feature-text > div > p,
+body.mobile-landing #blacklist-section .feature-text > p,
+body.mobile-landing #blacklist-section .feature-text > ul,
+body.mobile-landing #detail-workspace .feature-text > p,
+body.mobile-landing #capturemon-showcase .capturemon-copy > p,
+body.mobile-landing #capturemon-showcase .capturemon-copy > ul,
+body.mobile-landing #extra-features .extra-features-copy > p,
+body.mobile-landing #extra-features .extra-features-copy > ul,
+body.mobile-landing #video-demo .feature-text > p,
+body.mobile-landing #video-demo .feature-text > div {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}

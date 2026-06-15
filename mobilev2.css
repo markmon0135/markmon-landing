@@ -282,6 +282,7 @@ body.mobile-landing .intro-visual-card {
 }
 
 body.mobile-landing #prevention-first .prevention-highlight,
+body.mobile-landing #direct-search .prevention-highlight,
 body.mobile-landing .intro-highlight,
 body.mobile-landing #keyword-wizard-showcase .keyword-wizard-summary {
     font-size: 1.06rem !important;

@@ -59,17 +59,6 @@ function refreshIntroSection() {
             <h2 class="intro-title" style="word-break: keep-all;">
                 하나씩 찾던 상표 확인,<br><span class="text-gradient">마크몬에선 훨씬 쉽고 빠르게</span>
             </h2>
-            <p class="intro-desc intro-copy">
-                <strong>상품명과 키워드</strong>, 셀러가 실제로 가장 많이 다루는 항목들 안에서<br>
-                필요한 상표 확인을 <strong>더 빠르고 쉽게</strong> 이어갈 수 있습니다.
-            </p>
-            <p class="intro-desc intro-copy intro-copy--spaced">
-                더 이상 <strong>사이트를 오가며 하나씩 검색</strong>하고, 긴 결과 화면을 눈으로 다시 훑어볼 필요가 없습니다.
-            </p>
-            <p class="intro-desc intro-copy intro-copy--spaced intro-copy--compact">
-                <strong>찾는 데 시간을 쓰는 대신, 걸러내는 데 집중하세요.</strong><br>
-                막막했던 상표 확인을 <strong>더 직관적이고 편한 작업 흐름</strong>으로 바꿔줍니다.
-            </p>
             <p class="intro-highlight">지재권 이슈, 마크몬으로 예방하세요.</p>
         </div>
         <div class="intro-visual reveal-up">

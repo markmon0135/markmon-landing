@@ -3,16 +3,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const isDesktopLanding = !isMobileLanding;
     const mobileBreakpoint = 860;
     const currentPath = window.location.pathname || "";
-    const mobilePath = currentPath.replace(/[^/]*$/, "mobilev2.html");
-    const desktopPath = currentPath.replace(/[^/]*$/, "indexv2.html");
+    const mobilePath = currentPath.replace(/[^/]*$/, "mobile.html");
+    const desktopPath = currentPath.replace(/[^/]*$/, "index.html");
 
-    if (isDesktopLanding && window.innerWidth <= mobileBreakpoint && !/mobilev2\.html$/i.test(currentPath)) {
+    if (isDesktopLanding && window.innerWidth <= mobileBreakpoint && !/mobile\.html$/i.test(currentPath)) {
         const target = `${mobilePath}${window.location.search}${window.location.hash}`;
         window.location.replace(target);
         return;
     }
 
-    if (isMobileLanding && window.innerWidth > mobileBreakpoint && !/indexv2\.html$/i.test(currentPath)) {
+    if (isMobileLanding && window.innerWidth > mobileBreakpoint && !/index\.html$/i.test(currentPath)) {
         const target = `${desktopPath}${window.location.search}${window.location.hash}`;
         window.location.replace(target);
         return;

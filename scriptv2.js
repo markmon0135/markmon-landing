@@ -55,7 +55,6 @@ function refreshIntroSection() {
 
     introContainer.innerHTML = `
         <div class="intro-content fade-in-up">
-            <div class="badge intro-badge">막막했던 상표 확인, 마크몬으로 더 쉽게</div>
             <h2 class="intro-title" style="word-break: keep-all;">
                 하나씩 찾던 상표 확인,<br><span class="text-gradient">마크몬에선 훨씬 쉽고 빠르게</span>
             </h2>

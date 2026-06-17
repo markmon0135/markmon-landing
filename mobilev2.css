@@ -153,8 +153,6 @@ body.mobile-landing #extra-features .feature-text {
 }
 
 body.mobile-landing .badge,
-body.mobile-landing .intro-badge,
-body.mobile-landing #prevention-first .prevention-badge,
 body.mobile-landing #hero .badge {
     font-size: 0.92rem !important;
     padding: 0.74rem 0.96rem !important;

@@ -487,17 +487,6 @@ button {
     margin-inline: auto;
 }
 
-.intro-badge {
-    background:
-        linear-gradient(180deg, rgba(255, 251, 247, 0.98), rgba(255, 245, 238, 0.96)) padding-box,
-        linear-gradient(135deg, rgba(255, 195, 125, 0.7), rgba(255, 255, 255, 0.96), rgba(255, 157, 84, 0.42)) border-box;
-    color: #b95710;
-    margin-bottom: 1.5rem;
-    padding: 0.98rem 1.4rem;
-    font-size: 1.08rem;
-    font-weight: 900;
-}
-
 .intro-copy {
     max-width: 760px;
     font-size: clamp(1.14rem, 1.18vw, 1.24rem);
@@ -564,17 +553,6 @@ button {
 
 #prevention-first .feature-text {
     max-width: 590px;
-}
-
-#prevention-first .prevention-badge {
-    background:
-        linear-gradient(180deg, rgba(255, 252, 248, 0.98), rgba(255, 244, 236, 0.96)) padding-box,
-        linear-gradient(135deg, rgba(255, 182, 120, 0.68), rgba(255, 255, 255, 0.96), rgba(255, 145, 72, 0.42)) border-box;
-    color: #bf5a0b;
-    margin-bottom: 1.35rem;
-    padding: 0.98rem 1.38rem;
-    font-size: 1.08rem;
-    font-weight: 900;
 }
 
 #prevention-first .prevention-title {
@@ -2622,8 +2600,6 @@ button {
     }
 
     .badge,
-    .intro-badge,
-    #prevention-first .prevention-badge,
     #hero .badge {
         font-size: 0.92rem !important;
         padding: 0.72rem 1rem !important;

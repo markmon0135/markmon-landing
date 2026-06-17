@@ -61,16 +61,15 @@
                 }
 
                 .risk-card {
-                    background: #fff;
-                    border: 1px solid #edf2f7;
-                    border-left: 4px solid #C62828;
+                    background: linear-gradient(135deg, #fffdfd 0%, #fff6f6 100%);
+                    border: 1px solid rgba(198, 40, 40, 0.2);
                     /* 전문적인 딥 레드 */
                     padding: 2rem 1.9rem;
                     border-radius: 16px;
                     display: flex;
                     align-items: center;
                     gap: 1.45rem;
-                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+                    box-shadow: 0 6px 14px rgba(17, 26, 34, 0.05);
                     transition: transform 0.3s ease, box-shadow 0.3s ease;
                     width: 100%;
                     text-align: left;
@@ -80,7 +79,7 @@
 
                 .risk-card:hover {
                     transform: translateX(5px);
-                    box-shadow: 0 12px 24px rgba(17, 26, 34, 0.08);
+                    box-shadow: 0 14px 28px rgba(17, 26, 34, 0.09);
                 }
 
                 .risk-card:hover .risk-card-action-label {
@@ -149,11 +148,11 @@
                     align-items: center;
                     justify-content: center;
                     min-height: 34px;
-                    padding: 0.4rem 0.78rem;
-                    border-radius: 999px;
-                    border: 1px solid #e2e8f0;
-                    background: #f8fafc;
-                    color: #475569;
+                    padding: 0.46rem 0.82rem;
+                    border-radius: 14px;
+                    border: 1px solid rgba(104, 128, 149, 0.15);
+                    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(245, 248, 251, 0.96));
+                    color: #415364;
                     font-size: 0.88rem;
                     font-weight: 800;
                     line-height: 1;
@@ -165,9 +164,9 @@
                 }
 
                 .risk-card[aria-expanded="true"] .risk-card-action-label {
-                    background: rgba(255, 107, 0, 0.12);
-                    border-color: rgba(255, 122, 24, 0.24);
-                    color: #c2410c;
+                    background: linear-gradient(180deg, rgba(255, 251, 247, 0.98), rgba(255, 243, 234, 0.96));
+                    border-color: rgba(255, 176, 118, 0.24);
+                    color: #bf5a0b;
                     animation: none;
                 }
 
@@ -438,7 +437,7 @@
             style="padding-bottom: 5rem; background-color: var(--bg-alt);">
             <div class="container hero-container">
                 <div class="hero-content fade-in-up">
-                    <div class="badge" style="background: #e1f5fe; color: #0288d1;">AI 제한 없음 · 대량 엑셀 업로드 최적화</div>
+                    <div class="badge badge--hero">AI 제한 없음 · 대량 엑셀 업로드 최적화</div>
                     <h1 class="hero-title" style="word-break: keep-all;"><span class="hero-title-first-line">단건 검색은 그만</span><br><span class="text-gradient">한
                             번에 최대 3,000행까지 대량 확인.</span></h1>
                 </div>
@@ -842,7 +841,7 @@
 
                 <!-- 사업자 정보 영역 (내용은 직접 채워넣으셔야 합니다) -->
                 <div id="business-info" hidden>
-                    <h4 style="font-size: 1.08rem; margin-bottom: 1.2rem; color: var(--text-dark);">Business Info</h4>
+                    <h3 style="font-size: 1.08rem; margin-bottom: 1.2rem; color: var(--text-dark);">Business Info</h3>
                     <ul style="list-style: none; padding: 0; font-size: 0.93rem; color: #666; line-height: 1.86;">
                         <li>상호: 마크몬 | 대표: 장상민</li>
                         <li>사업자등록번호: 443-22-02376</li>

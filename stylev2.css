@@ -639,6 +639,7 @@ button {
     width: min(100%, 320px);
 }
 
+
 #features .split-layout {
     grid-template-columns: minmax(320px, 0.58fr) minmax(0, 1.42fr);
     gap: 8px;
@@ -743,6 +744,7 @@ button {
 #detail-workspace + section .feature-text > .image-wrapper img {
     max-height: min(82vh, 1040px);
 }
+
 
 #extra-features .container {
     width: min(100%, 1420px) !important;
@@ -989,6 +991,7 @@ button {
     line-height: 1.66;
     word-break: keep-all;
 }
+
 
 #button-control .section-desc {
     font-size: clamp(1.14rem, 1.18vw, 1.24rem) !important;
@@ -2070,6 +2073,7 @@ button {
     transform: none !important;
 }
 
+
 @media (max-width: 1280px) {
     .nav-container {
         padding: 0 18px;
@@ -2399,6 +2403,7 @@ button {
         width: 100% !important;
         margin-top: 12px !important;
     }
+
 
     #keyword-wizard-showcase .keyword-wizard-summary,
     #extra-features .feature-text,

@@ -353,6 +353,16 @@ body.mobile-landing #pricing .pricing-layout {
     gap: 18px !important;
 }
 
+body.mobile-landing #pricing .pricing-free-note {
+    font-size: 0.82rem !important;
+    line-height: 1.5 !important;
+}
+
+body.mobile-landing #pricing .pricing-free-banner strong {
+    font-size: 1.3rem !important;
+    padding: 0.28rem 0.72rem !important;
+}
+
 body.mobile-landing #pricing .pricing-actions-grid {
     grid-template-columns: 1fr !important;
     gap: 14px !important;

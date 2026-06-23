@@ -1877,9 +1877,18 @@ button {
 }
 
 #pricing .pricing-free-banner strong {
-    font-size: clamp(1.28rem, 1.95vw, 1.58rem);
+    display: inline-block;
+    padding: 0.32rem 0.9rem;
+    border-radius: 999px;
+    font-size: clamp(1.5rem, 2.4vw, 1.95rem);
+    font-weight: 900;
     line-height: 1.24;
-    color: #c24f00;
+    letter-spacing: -0.03em;
+    color: #a84400;
+    background: linear-gradient(180deg, #fff7dd 0%, #ffe6bf 100%);
+    box-shadow: 0 10px 24px rgba(255, 153, 51, 0.22);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
+    animation: pricingBannerPop 2.2s ease-in-out infinite;
 }
 
 #pricing .pricing-free-banner span {
@@ -1887,6 +1896,27 @@ button {
     color: #7a5a45;
     line-height: 1.56;
     word-break: keep-all;
+}
+
+#pricing .pricing-free-note {
+    display: block;
+    margin-top: 0.18rem;
+    font-size: 0.9rem;
+    color: #8a6a53;
+    line-height: 1.55;
+    word-break: keep-all;
+}
+
+@keyframes pricingBannerPop {
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 10px 24px rgba(255, 153, 51, 0.22);
+    }
+    50% {
+        transform: translateY(-2px) scale(1.03);
+        box-shadow: 0 14px 30px rgba(255, 153, 51, 0.3);
+    }
 }
 
 #pricing .pricing-actions-grid {

@@ -130,6 +130,20 @@ button {
     gap: 16px;
 }
 
+.nav-zoom-note {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.42rem 0.78rem;
+    border-radius: 999px;
+    background: rgba(255, 245, 235, 0.96);
+    border: 1px solid rgba(255, 173, 109, 0.3);
+    color: #b45309;
+    font-size: 0.8rem;
+    font-weight: 800;
+    white-space: nowrap;
+    box-shadow: 0 8px 18px rgba(180, 83, 9, 0.08);
+}
+
 .nav-links a {
     font-size: 0.96rem;
     font-weight: 700;
@@ -2330,6 +2344,11 @@ button {
 
     .nav-links {
         gap: 10px;
+    }
+
+    .nav-zoom-note {
+        font-size: 0.74rem;
+        padding: 0.38rem 0.62rem;
     }
 
     #keyword-wizard-showcase .keyword-wizard-layout {

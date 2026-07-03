@@ -51,6 +51,16 @@ body.mobile-landing .nav-links {
     gap: 8px;
 }
 
+body.mobile-landing .nav-zoom-note {
+    grid-column: 1 / -1;
+    justify-content: center;
+    padding: 0.68rem 0.8rem;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1.3;
+    white-space: normal;
+}
+
 body.mobile-landing .nav-links a {
     display: inline-flex;
     align-items: center;

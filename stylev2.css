@@ -1142,6 +1142,27 @@ button {
     overflow: visible;
 }
 
+#video-demo .video-demo-extra-action {
+    margin-top: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.65rem;
+}
+
+#video-demo .video-demo-extra-btn {
+    min-width: 280px;
+}
+
+#video-demo .video-demo-extra-note {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: #66707c;
+    word-break: keep-all;
+}
+
 #video-demo .video-wrapper {
     width: min(150%, 1320px);
     margin-right: -140px;

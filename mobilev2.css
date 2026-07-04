@@ -575,6 +575,19 @@ body.mobile-landing #video-demo .feature-text > div {
     display: none !important;
 }
 
+body.mobile-landing #video-demo .video-demo-extra-action {
+    display: flex !important;
+    height: auto !important;
+    margin-top: 1.5rem !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.5rem !important;
+}
+
+body.mobile-landing #video-demo .video-demo-extra-btn {
+    width: 100% !important;
+}
+
 body.mobile-landing #features .feature-text > p,
 body.mobile-landing #features .feature-text > ul,
 body.mobile-landing #direct-search .feature-text > p,
@@ -596,4 +609,25 @@ body.mobile-landing #video-demo .feature-text > div {
     margin: 0 !important;
     padding: 0 !important;
     overflow: hidden !important;
+}
+
+body.mobile-landing #video-demo .video-demo-extra-action {
+    display: flex !important;
+    height: auto !important;
+    margin-top: 1.5rem !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.5rem !important;
+    padding: 0 !important;
+    overflow: visible !important;
+}
+
+body.mobile-landing #video-demo .video-demo-extra-note {
+    display: block !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    font-size: 0.8rem !important;
+    line-height: 1.45 !important;
 }

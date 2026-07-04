@@ -632,6 +632,10 @@
             <div class="container split-layout">
                 <div class="feature-text reveal-right">
                     <h2 class="section-title text-lg">실제 작동 화면으로<br>마크몬을 확인해보세요.</h2>
+                    <div class="video-demo-extra-action">
+                        <button type="button" class="btn-primary video-demo-extra-btn" data-open-video="markmon-raw-video-modal">배속 없는 원본 영상 보기</button>
+                        <p class="video-demo-extra-note">너무 빨라서 못보신 분들은 배속 없는 원본 영상을 봐주세요!</p>
+                    </div>
                 </div>
                 <div class="feature-image reveal-left" style="flex: 1.8;">
                     <div class="video-wrapper shadow-lg">
@@ -869,6 +873,18 @@
             <div class="video-modal-frame shadow-lg">
                 <video controls preload="metadata">
                     <source src="./캡쳐몬 샘플v2.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <div id="markmon-raw-video-modal" class="video-modal" aria-hidden="true">
+        <div class="video-modal-backdrop" data-close-video="markmon-raw-video-modal"></div>
+        <div class="video-modal-dialog" role="dialog" aria-modal="true" aria-label="마크몬 홍보영상 원본">
+            <button type="button" class="video-modal-close" data-close-video="markmon-raw-video-modal" aria-label="영상 닫기">&times;</button>
+            <div class="video-modal-frame shadow-lg">
+                <video controls preload="metadata">
+                    <source src="./마크몬 홍보영상v3 배속없음.mp4" type="video/mp4">
                 </video>
             </div>
         </div>

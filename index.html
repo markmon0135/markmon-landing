@@ -1,899 +1,301 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
-    <meta name="naver-site-verification" content="84f0ed7744ad44eb34b93de26ec7ac73fd48b3c4" />
+    <meta name="naver-site-verification" content="84f0ed7744ad44eb34b93de26ec7ac73fd48b3c4">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>마크몬(MarkMon) - 키워드부터 상표권 위험까지 한 번에 점검</title>
-    <meta name="description"
-        content="지식재산처 공식 DB 기반 상표권 침해 자동 감지 및 키워드 분석 솔루션 마크몬입니다. 셀러의 안전을 위한 가장 정확한 상표 검색 도구를 경험하세요.">
+    <title>마크몬(MarkMon) — 셀러를 위한 상표권·키워드 워크스페이스</title>
+    <meta name="description" content="공식 DB 기반 상표 확인부터 키워드 가공과 이미지 작업까지. 현업 셀러가 만든 올인원 워크스페이스 마크몬입니다.">
     <meta name="keywords" content="상표권, 상표검색, 지식재산권, 마크몬, MarkMon, 키워드분석, 셀러도구, 상표침해예방">
+    <meta name="theme-color" content="#ff6b35">
     <link rel="canonical" href="https://www.markmon.co.kr/">
-
-    <!-- Open Graph (SNS 공유 시 노출되는 정보) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="마크몬(MarkMon) - 지재권 이슈 예방 솔루션">
-    <meta property="og:description" content="100% 공식 데이터 기반, 신속한 반응 속도의 지재권 이슈 예방 솔루션">
+    <meta property="og:title" content="마크몬(MarkMon) — 셀러의 빠르고 안전한 작업 습관">
+    <meta property="og:description" content="공식 DB 기반 상표 확인, 대량 키워드 가공, 캡쳐몬을 한곳에서 만나보세요.">
     <meta property="og:image" content="https://markmon.co.kr/markmonlogo33v2.jpg">
     <meta property="og:url" content="https://www.markmon.co.kr/">
-
-    <!-- 최신 모던 폰트 적용 (Pretendard) -->
-    <link rel="stylesheet" href="stylev2.css?v=5">
-    <link rel="stylesheet" as="style" crossorigin
-        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="stylev2.css?v=23">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
     <link rel="icon" type="image/png" href="markmonlogov2.png">
 </head>
+<body>
+    <a class="skip-link" href="#home">본문 바로가기</a>
 
-<body class="horizontal-mode">
-    <!-- 네비게이션 헤더 -->
-    <header class="navbar glass">
-        <div class="nav-container">
-            <a href="https://www.youtube.com/@markmon0135" target="_blank" class="logo" title="마크몬 유튜브 채널">
-                <svg viewBox="0 0 24 24" width="28" height="28" style="margin-right: 6px;">
-                    <path fill="#FF0000"
-                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" />
-                    <path fill="#FFFFFF" d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                </svg>
-                <span class="logo-mark">MARK</span><span class="logo-mon">MON</span>
+    <header class="site-header" id="site-header">
+        <div class="header-inner">
+            <a class="brand" href="#cover" aria-label="마크몬 첫 화면으로 이동">
+                <span class="brand-logo" aria-hidden="true"></span>
+                <span class="brand-word"><b>MARK</b><strong>MON</strong></span>
             </a>
-            <nav class="nav-links">
-                <span class="nav-zoom-note">* 브라우저 배율 100% 권장</span>
-                <a href="#warning-hook">처음으로</a>
-                <a href="#hero">핵심 기능</a>
-                <a href="#download" class="btn-primary-small">무료 다운로드</a>
+            <a class="mobile-header-home" href="#cover"><span aria-hidden="true">↑</span> 처음으로</a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+                <span class="sr-only">메뉴 열기</span><span></span><span></span>
+            </button>
+            <nav class="primary-nav" id="primary-nav" aria-label="주요 메뉴">
+                <a href="#risk">Why MarkMon</a>
+                <a href="#solution">Solution</a>
+                <a href="#features">Features</a>
+                <a href="#capture">CaptureMon</a>
             </nav>
+            <div class="header-actions">
+                <a class="header-home" href="#cover"><span aria-hidden="true">↑</span> 처음으로</a>
+                <a class="header-download" href="#download">
+                    <span>무료 다운로드</span>
+                    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4"/></svg>
+                </a>
+            </div>
         </div>
     </header>
 
-    <main>
-        <!-- Warning Section (최상단 경각심 부여 기능) -->
-        <section id="warning-hook" class="section warning-section"
-            style="padding-top: calc(var(--nav-height) + 8vh); padding-bottom: 4rem; background-color: #fff;">
-            <style>
-                #warning-hook {
-                    background-color: #fcfdfe !important;
-                    /* 미세한 그레이시 블루 배경 */
-                }
+    <aside class="page-progress is-light" aria-label="페이지 섹션 이동">
+        <a href="#cover" class="is-active" aria-label="브랜드 인트로"><span>Intro</span></a>
+        <a href="#home" aria-label="제품 소개"><span>Product</span></a>
+        <a href="#risk" aria-label="문제"><span>Risk</span></a>
+        <a href="#solution" aria-label="솔루션"><span>Solution</span></a>
+        <a href="#features" aria-label="기능"><span>Features</span></a>
+        <a href="#capture" aria-label="캡쳐몬"><span>CaptureMon</span></a>
+        <a href="#download" aria-label="다운로드"><span>Download</span></a>
+    </aside>
 
-                .risk-card-group {
-                    margin-bottom: 1.2rem;
-                }
+    <main class="site-scroll" id="site-scroll">
+        <section class="panel cover-panel" id="cover" data-section="Intro">
+            <div class="panel-inner cover-grid">
+                <div class="cover-copy">
+                    <p class="eyebrow cover-eyebrow"><span></span> SELLER'S ALL-IN-ONE WORKSPACE</p>
+                    <h1 class="cover-sequence" aria-label="확인하고, 다듬고, 완성하다."><span>확인하고,</span><span>다듬고,</span><span class="cover-sequence-final"><em>완성하다.</em></span></h1>
+                </div>
+            </div>
+            <a class="scroll-hint cover-scroll-hint" href="#home"><span>DISCOVER MARKMON</span><i></i></a>
+        </section>
 
-                .risk-card {
-                    background: linear-gradient(135deg, #fffdfd 0%, #fff6f6 100%);
-                    border: 1px solid rgba(198, 40, 40, 0.2);
-                    /* 전문적인 딥 레드 */
-                    padding: 2rem 1.9rem;
-                    border-radius: 16px;
-                    display: flex;
-                    align-items: center;
-                    gap: 1.45rem;
-                    box-shadow: 0 6px 14px rgba(17, 26, 34, 0.05);
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
-                    width: 100%;
-                    text-align: left;
-                    cursor: pointer;
-                    position: relative;
-                }
-
-                .risk-card:hover {
-                    transform: translateX(5px);
-                    box-shadow: 0 14px 28px rgba(17, 26, 34, 0.09);
-                }
-
-                .risk-card:hover .risk-card-action-label {
-                    background: #fff7ed;
-                    border-color: #fed7aa;
-                    color: #c2410c;
-                }
-
-                .risk-card:focus-visible {
-                    outline: 2px solid rgba(198, 40, 40, 0.28);
-                    outline-offset: 2px;
-                }
-
-                .risk-icon-box {
-                    background: rgba(198, 40, 40, 0.08);
-                    /* 딥 레드 블렌딩 */
-                    padding: 1.15rem;
-                    border-radius: 14px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    min-width: 74px;
-                    min-height: 74px;
-                }
-
-                .risk-content h3 {
-                    font-size: 1.45rem;
-                    font-weight: 800;
-                    color: #C62828;
-                    margin: 0;
-                }
-
-                .risk-content p {
-                    font-size: 0.95rem;
-                    color: #555;
-                    line-height: 1.55;
-                    margin: 0;
-                }
-
-                .risk-highlight {
-                    font-weight: 800;
-                    color: #C62828;
-                }
-
-                .risk-highlight--accent {
-                    font-weight: 800;
-                    color: #ff6b00;
-                }
-
-                .risk-card-chevron {
-                    color: #c62828;
-                    transition: transform 0.24s ease;
-                    flex: 0 0 auto;
-                }
-
-                .risk-card-action {
-                    margin-left: auto;
-                    display: flex;
-                    align-items: center;
-                    gap: 0.5rem;
-                    flex: 0 0 auto;
-                }
-
-                .risk-card-action-label {
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: center;
-                    min-height: 34px;
-                    padding: 0.46rem 0.82rem;
-                    border-radius: 14px;
-                    border: 1px solid rgba(104, 128, 149, 0.15);
-                    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(245, 248, 251, 0.96));
-                    color: #415364;
-                    font-size: 0.88rem;
-                    font-weight: 800;
-                    line-height: 1;
-                    animation: riskActionPulse 2.8s ease-in-out infinite;
-                }
-
-                .risk-card[aria-expanded="true"] .risk-card-chevron {
-                    transform: rotate(180deg);
-                }
-
-                .risk-card[aria-expanded="true"] .risk-card-action-label {
-                    background: linear-gradient(180deg, rgba(255, 251, 247, 0.98), rgba(255, 243, 234, 0.96));
-                    border-color: rgba(255, 176, 118, 0.24);
-                    color: #bf5a0b;
-                    animation: none;
-                }
-
-                .risk-card-panel {
-                    margin-top: 0.45rem;
-                    padding: 1rem 1.1rem;
-                    border-radius: 12px;
-                    border: 1px dashed rgba(198, 40, 40, 0.18);
-                    background: rgba(255, 255, 255, 0.86);
-                }
-
-                .risk-card-panel[hidden] {
-                    display: none !important;
-                }
-
-                .risk-card-panel-body {
-                    min-height: 56px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color: #94a3b8;
-                    font-size: 0.9rem;
-                    font-weight: 700;
-                    letter-spacing: -0.02em;
-                }
-
-                @keyframes riskActionPulse {
-                    0%,
-                    100% {
-                        transform: translateY(0);
-                        box-shadow: 0 0 0 0 rgba(255, 122, 24, 0.0);
-                    }
-                    50% {
-                        transform: translateY(-1px);
-                        box-shadow: 0 6px 16px rgba(255, 122, 24, 0.16);
-                    }
-                }
-
-                /* 기존 애니메이션들... */
-                .inline-glow {
-                    display: inline-block;
-                    position: relative;
-                    vertical-align: middle;
-                    line-height: 0;
-                    margin: 0 5px;
-                }
-
-                .inline-glow::before {
-                    content: '';
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    width: 105%;
-                    height: 105%;
-                    transform: translate(-50%, -50%);
-                    border-radius: 10px;
-                    background: rgba(255, 167, 38, 0.25);
-                    filter: blur(8px);
-                    z-index: 1;
-                    pointer-events: none;
-                }
-
-                .static-btn-img {
-                    position: relative;
-                    z-index: 2;
-                    height: 3.2rem;
-                    border-radius: 6px;
-                    border: 1.5px solid #ffccbc;
-                    background: #fff;
-                    box-shadow: 0 0 10px rgba(255, 138, 101, 0.2);
-                }
-            </style>
-            <div class="container split-layout">
-                <div class="feature-text reveal-up" style="flex: 1.2;">
-                    <h2 class="section-title text-lg"
-                        style="display:flex; align-items:center; gap: 1rem; line-height: 1.35; margin-bottom: 1.5rem; word-break: keep-all; font-weight: 800; letter-spacing: -0.03em;">
-                        <span class="warning-hook-title-stack">
-                            <span class="warning-hook-title-line warning-hook-title-line--emphasis">지재권, 상표권</span>
-                            <span class="warning-hook-title-line warning-hook-title-line--main">터진 뒤엔 늦습니다</span>
-                        </span>
-                    </h2>
-
-                    <div class="risk-cards-wrapper">
-                        <!-- 카드 1 -->
-                        <div class="risk-card-group">
-                            <button type="button" class="risk-card" data-risk-toggle="risk-panel-cost" data-risk-image="./cost-bombv2.png" aria-expanded="false" aria-controls="risk-panel-cost" style="border-left-color: #111827;">
-                                <div class="risk-icon-box" style="background: rgba(15, 23, 42, 0.08);">
-                                    <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#111827"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <line x1="12" y1="1" x2="12" y2="23"></line>
-                                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                                    </svg>
-                                </div>
-                                <div class="risk-content">
-                                    <h3 style="color: #111827;">합의금 폭탄</h3>
-                                </div>
-                                <span class="risk-card-action" aria-hidden="true">
-                                    <span class="risk-card-action-label">눌러서 보기</span>
-                                    <span class="risk-card-chevron" style="color: #111827;">
-                                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="6 9 12 15 18 9"></polyline>
-                                        </svg>
-                                    </span>
+        <section class="panel hero-panel" id="home" data-section="Product">
+            <div class="ambient ambient-one" aria-hidden="true"></div>
+            <div class="ambient ambient-two" aria-hidden="true"></div>
+            <div class="panel-inner hero-grid">
+                <div class="hero-copy reveal">
+                    <p class="eyebrow"><span></span> SELLER'S TRADEMARK WORKSPACE</p>
+                    <h1>셀러의 반복 업무를<br><em>더 빠르고 안전하게.</em></h1>
+                    <p class="hero-lead">하나씩 찾던 상표 확인부터 키워드 가공과 이미지 작업까지.<br>셀러의 반복 업무를 마크몬 한 화면에서 끝내세요.</p>
+                    <div class="hero-actions">
+                        <a class="button button-primary desktop-download-link" href="#download">
+                            Windows 무료 다운로드
+                            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4"/></svg>
+                        </a>
+                        <button class="button button-primary mobile-download-button" type="button" disabled>PC에서 다운로드 받으세요</button>
+                        <button class="button button-ghost" type="button" data-open-video="markmon-video-modal">
+                            <span class="play-icon" aria-hidden="true">▶</span> 1분 미리보기
+                        </button>
+                    </div>
+                    <div class="hero-facts" aria-label="마크몬 주요 특징">
+                        <div><strong>3,000</strong><span>행 대량 분석</span></div>
+                        <div><strong>Official DB</strong><span>공식 데이터 기반</span></div>
+                        <div><strong>Local</strong><span>안전한 설치형</span></div>
+                    </div>
+                </div>
+                <div class="hero-visual reveal reveal-delay">
+                    <div class="product-orbit" aria-hidden="true"></div>
+                    <div class="product-slider" id="hero-product-slider" aria-label="마크몬 작업 화면 갤러리">
+                        <div class="product-stack">
+                            <button class="product-window is-front" type="button" data-product-slide="0" aria-label="다음 화면 보기: 키워드 검사 전 화면" aria-pressed="true">
+                                <span class="window-bar">
+                                    <span class="window-dots"><i></i><i></i><i></i></span>
+                                    <span>MARKMON WORKSPACE · 01</span>
+                                    <span class="window-status"><i></i> LIVE</span>
                                 </span>
+                                <img src="./n1.jpg" alt="마크몬 키워드 검사 전 화면">
                             </button>
-                            <div id="risk-panel-cost" class="risk-card-panel" hidden>
-                                <div class="risk-card-panel-body" style="display:block; min-height:auto; text-align:left; color:#475569; font-size:1.08rem; font-weight:600; line-height:1.7;">
-                                    상표권 침해는 경고장으로 끝나지 않을 수 있습니다. 실제 분쟁은 <span class="risk-highlight">합의·조정과 손해배상</span>으로 이어질 수 있고, 고의 침해는 손해액의 <span class="risk-highlight">최대 3배</span>, 법정손해배상도 <span class="risk-highlight">최대 1억원(고의는 최대 3억원)</span>까지 청구될 수 있습니다. 일부는 상표를 선점한 뒤 <span class="risk-highlight--accent">합의금이나 사용료</span>를 요구하는 방식으로 압박하는 경우도 있어, 초기에 걸러내지 못하면 <span class="risk-highlight">비용 부담</span>이 더 커질 수 있습니다.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 카드 2 -->
-                        <div class="risk-card-group">
-                            <button type="button" class="risk-card" data-risk-toggle="risk-panel-stop" data-risk-image="./store-suspensionv2.png" aria-expanded="false" aria-controls="risk-panel-stop">
-                                <div class="risk-icon-box">
-                                    <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#C62828"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path
-                                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
-                                        </path>
-                                        <line x1="12" y1="9" x2="12" y2="13"></line>
-                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                                    </svg>
-                                </div>
-                                <div class="risk-content">
-                                    <h3>스토어 정지</h3>
-                                </div>
-                                <span class="risk-card-action" aria-hidden="true">
-                                    <span class="risk-card-action-label">눌러서 보기</span>
-                                    <span class="risk-card-chevron">
-                                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="6 9 12 15 18 9"></polyline>
-                                        </svg>
-                                    </span>
+                            <button class="product-window is-back" type="button" data-product-slide="1" aria-label="키워드 검사 결과 화면을 앞으로 가져오기" aria-pressed="false">
+                                <span class="window-bar">
+                                    <span class="window-dots"><i></i><i></i><i></i></span>
+                                    <span>MARKMON WORKSPACE · 02</span>
+                                    <span class="window-status"><i></i> LIVE</span>
                                 </span>
+                                <img src="./n2.jpg" alt="마크몬 키워드 검사 결과 화면">
                             </button>
-                            <div id="risk-panel-stop" class="risk-card-panel" hidden>
-                                <div class="risk-card-panel-body" style="display:block; min-height:auto; text-align:left; color:#475569; font-size:1.08rem; font-weight:600; line-height:1.7;">
-                                    상표권 분쟁은 <span class="risk-highlight">판매중지 요청이나 삭제 조치</span>로 바로 이어질 수 있습니다. 경고장 접수 후 <span class="risk-highlight">플랫폼 신고, 상품 비노출, 판매 제한</span>이 겹치면 스토어 운영이 한순간에 흔들릴 수 있고, 거래처나 외부 채널까지 문제가 번지면 <span class="risk-highlight--accent">매출 공백</span>이 더 길어질 수 있습니다.
-                                </div>
-                            </div>
                         </div>
-
-                        <!-- 카드 3 -->
-                        <div class="risk-card-group">
-                            <button type="button" class="risk-card" data-risk-toggle="risk-panel-time" data-risk-image="./time-wastev2.png" aria-expanded="false" aria-controls="risk-panel-time" style="border-left-color: var(--primary);">
-                                <div class="risk-icon-box" style="background: rgba(255, 107, 0, 0.08);">
-                                    <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="var(--primary)"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <circle cx="12" cy="12" r="9"></circle>
-                                        <polyline points="12 7 12 12 15.5 14.5"></polyline>
-                                    </svg>
-                                </div>
-                                <div class="risk-content">
-                                    <h3 style="color: var(--primary);">시간 낭비</h3>
-                                </div>
-                                <span class="risk-card-action" aria-hidden="true">
-                                    <span class="risk-card-action-label">눌러서 보기</span>
-                                    <span class="risk-card-chevron" style="color: var(--primary);">
-                                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="6 9 12 15 18 9"></polyline>
-                                        </svg>
-                                    </span>
-                                </span>
-                            </button>
-                            <div id="risk-panel-time" class="risk-card-panel" hidden>
-                                <div class="risk-card-panel-body" style="display:block; min-height:auto; text-align:left; color:#475569; font-size:1.08rem; font-weight:600; line-height:1.7;">
-                                    경고장을 받은 뒤에는 끝이 아니라 <span class="risk-highlight">대응이 시작됩니다</span>. <span class="risk-highlight--accent">합의 요구</span>에 답해야 하고, <span class="risk-highlight">판매 이력·거래 자료·소명 자료</span>를 다시 정리해야 하며, 고의 침해 주장으로 형사 고소까지 이어지면 <span class="risk-highlight">경찰·검찰 조사 출석</span>에 시간을 써야 할 수 있습니다. 한번 얽히면 <span class="risk-highlight--accent">판매보다 대응에 더 많은 시간</span>을 빼앗길 수 있습니다.
-                                </div>
-                            </div>
+                        <div class="product-slider-controls">
+                            <button type="button" data-product-prev aria-label="이전 작업 화면">←</button>
+                            <span aria-live="polite"><b id="product-current">01</b> / 02</span>
+                            <button type="button" data-product-next aria-label="다음 작업 화면">→</button>
                         </div>
                     </div>
-                    </div>
-
-                <!-- 우측 이미지 영역 -->
-                <div class="feature-image reveal-up" style="flex: 1; transition-delay: 0.2s;">
-                    <div class="image-wrapper shadow-lg"
-                        style="position: relative; border-radius: 20px; overflow: hidden; border: 1px solid #edf2f7; background: #fff; padding: 1rem;">
-                        <div id="warning-hook-image-stage"
-                            style="aspect-ratio: 49 / 40; display: grid; place-items: center; background: #f8fafc; border-radius: 12px; overflow: hidden;">
-                            <!-- 세련된 이메일 알림 목업 -->
-                            <div id="warning-hook-image-fallback"
-                                style="width: 100%; height: 100%; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; overflow: hidden;">
-                                <div
-                                    style="padding: 0.8rem 1.2rem; background: #fff; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between;">
-                                    <div style="display: flex; gap: 6px;">
-                                        <span
-                                            style="width: 10px; height: 10px; background: #ff5f57; border-radius: 50%;"></span>
-                                        <span
-                                            style="width: 10px; height: 10px; background: #febc2e; border-radius: 50%;"></span>
-                                        <span
-                                            style="width: 10px; height: 10px; background: #28c840; border-radius: 50%;"></span>
-                                    </div>
-                                    <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">System
-                                        Notification</span>
-                                </div>
-                                <div style="padding: 2.5rem 1.5rem; text-align: center;">
-                                    <div
-                                        style="width: 60px; height: 60px; background: rgba(198, 40, 40, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
-                                        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#C62828"
-                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path
-                                                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                            </path>
-                                            <polyline points="22,6 12,13 2,6"></polyline>
-                                        </svg>
-                                    </div>
-                                    <h4 style="font-size: 1.2rem; color: #1e293b; margin-bottom: 0.8rem; font-weight: 800;">
-                                        [긴급] 상표권 침해 법적 통지</h4>
-                                    <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 2rem; line-height: 1.6;">
-                                        마켓에 등록하신 상품 번호 [0135]가 <br>
-                                        제3자의 지식재산권을 침해한 것으로 확인되어...
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- 실제 이미지가 로드되면 위의 목업을 숨기고 이미지를 보여줌 -->
-                            <img id="warning-hook-main-image" class="is-default-risk-image" src="./email_finalv2.png" alt="상표권 침해 경고 메일" data-default-src="./email_finalv2.png"
-                                style="display: none; width: 100%; height: 100%; border-radius: 12px; object-fit: contain; object-position: center top;"
-                                onload="this.style.display='block'; this.previousElementSibling.style.display='none';">
-                        </div>
-                    </div>
+                    <div class="float-badge float-badge-top"><b>3,000 ROWS</b><span>한 번에 빠르게</span></div>
+                    <div class="float-badge float-badge-bottom"><i></i><b>검사 완료</b><span>결과를 한눈에</span></div>
                 </div>
             </div>
-
+            <a class="scroll-hint" href="#risk"><span>SCROLL TO EXPLORE</span><i></i></a>
         </section>
 
-        <!-- Intro Section (보강됨: 키워드 집중 및 실시간 가공) -->
-        <section id="prevention-first" class="section feature alt-bg"
-            style="padding: 5.6vh 0 5vh; background: linear-gradient(180deg, #f9fbff 0%, #eef4fa 100%);">
-            <div class="container split-layout">
-                <div class="feature-text reveal-left">
-                    <h2 class="section-title prevention-title" style="word-break: keep-all;">
-                        <span class="text-gradient">예방이 제일 쉬운 방법입니다.</span><br>상표권, 검색해보셨나요?
-                    </h2>
-                    <p class="prevention-highlight">찾기 어렵고, 확인은 더 어렵습니다</p>
-                </div>
-
-                <div class="feature-image reveal-right">
-                    <div class="image-wrapper shadow-lg prevention-visual-card">
-                        <img src="./48v2.png" alt="상표 검색 확인 안내 이미지" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="intro" class="section intro-section"
-            style="padding-top: 4rem; min-height: auto; background: #fff;">
-            <div class="container hero-container">
-                <div class="intro-content fade-in-up">
-                    <h2 class="intro-title" style="word-break: keep-all;">
-                        하나씩 찾던 상표 확인,<br><span class="text-gradient">마크몬에선 훨씬 쉽고 빠르게</span>
-                    </h2>
-                    <p class="intro-highlight">지재권 이슈, 마크몬으로 예방하세요.</p>
-                </div>
-                <div class="intro-visual reveal-up">
-                    <div class="image-wrapper shadow-lg intro-visual-card">
-                        <img src="./markmonlogo33v2.jpg" alt="MarkMon Logo" class="intro-logo">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Hero Section (보강됨: 대량 검사 및 무제한 강조) -->
-        <section id="hero" class="section hero peek-next"
-            style="padding-bottom: 5rem; background-color: var(--bg-alt);">
-            <div class="container hero-container">
-                <div class="hero-content fade-in-up">
-                    <div class="badge badge--hero">AI 제한 없음 · 대량 엑셀 업로드 최적화</div>
-                    <h1 class="hero-title" style="word-break: keep-all;"><span class="hero-title-first-line">단건 검색은 그만</span><br><span class="text-gradient">한
-                            번에 최대 3,000행까지 대량 확인.</span></h1>
-                </div>
-                <!-- 22번 사진 메인 강조 -->
-                <div class="hero-image slide-up-delayed" style="margin-top: 0;">
-                    <div class="image-wrapper shadow-lg" style="transform: scale(1.1); transform-origin: top center;">
-                        <img src="./47v2.jpg" alt="마크몬 메인 검색 인터페이스" loading="lazy">
-                        <div class="floating-card bounce-subtle">
-                            <span class="icon">🚀</span>
-                            <span>3,000행 쾌속 분석</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Feature 1: 정확성 & 직관적 UI (2-1 & 2-2 병합 레이아웃) -->
-        <section id="features" class="section feature alt-bg peek-next">
-            <div class="container split-layout">
-                <div class="feature-text reveal-left">
-                    <h2 class="section-title">불필요한 기능은 과감히 버리고,<br>한 화면에 모든 것을 담았습니다.</h2>
-                    <ul class="feature-list">
-                        <li><strong>100% DB 매칭:</strong> 허위 결과 노출 확률 0%</li>
-                        <li><strong>직관적인 한눈 뷰:</strong> 여러 번 클릭하며 페이지를 오갈 필요 없이 즉시 확인</li>
-                        <li><strong>쾌적한 반응성:</strong> 즉각적인 데이터 결과</li>
-                        <li><strong>지정상품정보 검색:</strong> 지정상품정보 내에서 개별 검색 기능 제공</li>
-                    </ul>
-                </div>
-                <!-- 1번 섹션: 17번(메인)과 19번(서브) 병합 -->
-                <div class="feature-image reveal-right" style="flex: 1.8;">
-                    <div class="image-grid"
-                        style="transform: scale(1.2) translateX(12%); transform-origin: center right; margin-top: 1rem; margin-bottom: 1rem;">
-                        <div class="image-wrapper shadow-lg main-img-layer">
-                            <img src="./49.jpg" alt="권리 정보 분석 메인 뷰" loading="lazy">
-                        </div>
-                        <div class="image-wrapper shadow-lg crossfade-img crossfade-animation">
-                            <img src="./50.jpg" alt="권리 정보 보조 뷰" loading="lazy">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Feature 2: 18번 사진 (상세페이지 가공 폰트 확대) -->
-        <section id="direct-search" class="section feature peek-next reverse">
-            <div class="container split-layout">
-                <div class="feature-text reveal-right">
-                    <h2 class="section-title text-lg">보고, 지우고, 고치고<br>바로 가공하세요.</h2>
-                    <p class="prevention-highlight">듀얼모니터 강력추천!</p>
-                </div>
-                <div class="feature-image reveal-left">
-                    <div class="image-wrapper shadow-md"
-                        style="transform: scale(1.2); transform-origin: center right; margin-top: 1.5rem; margin-bottom: 1.5rem;">
-                        <img src="./38v2.jpg" alt="상세페이지 가공 및 컨트롤 화면" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="keyword-wizard-showcase" class="section feature alt-bg peek-next">
-            <div class="container split-layout keyword-wizard-layout">
-                <div class="feature-text reveal-up keyword-wizard-copy">
-                    <h2 class="section-title text-lg">키워드 작업의 핵심,<br>올인원 가공도구 키워드 마법사</h2>
-                    <ul class="feature-list keyword-wizard-feature-list">
-                        <li><strong>키워드 정리:</strong> 필요한 표현만 빠르게 선별</li>
-                        <li><strong>즉시 비교:</strong> 후보 키워드를 한눈에 비교</li>
-                        <li><strong>빠른 판단:</strong> 남길 표현과 제거할 표현을 바로 결정</li>
-                        <li><strong>강력한 작업성:</strong> 키워드 작업만으로도 높은 활용도를 제공</li>
-                    </ul>
-                    <div class="keyword-wizard-summary">
-                        키워드 마법사로,<br>
-                        <strong>정리부터 선별까지 한 번에 이어갈 수 있습니다.</strong>
-                    </div>
-                </div>
-
-                <div class="feature-image reveal-up keyword-wizard-media">
-                    <div class="slider-container keyword-wizard-slider">
-                        <div class="slider-wrapper shadow-lg">
-                            <img src="./33v2.jpg" class="slide-img active-slide" alt="키워드 마법사 팝업 화면 1" loading="lazy">
-                            <img src="./34v2.jpg" class="slide-img" alt="키워드 마법사 팝업 화면 2" loading="lazy">
-                            <img src="./35v2.jpg" class="slide-img" alt="키워드 마법사 팝업 화면 3" loading="lazy">
-                            <button class="slider-btn prev-btn" aria-label="이전 이미지">&#10094;</button>
-                            <button class="slider-btn next-btn" aria-label="다음 이미지">&#10095;</button>
-                        </div>
-
-                        <div class="slider-dots">
-                            <span class="dot active-dot" data-slide="0"></span>
-                            <span class="dot" data-slide="1"></span>
-                            <span class="dot" data-slide="2"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-<section id="extra-features" class="section feature peek-next">
-            <div class="container split-layout extra-features-layout">
-                <div class="feature-text reveal-left extra-features-copy">
-                    <h2 class="section-title text-lg">그 외에도 편리한<br>다양한 기능들이 준비되어 있습니다.</h2>
-                    <ul class="feature-list extra-features-list">
-                        <li><strong>키워드 / 카테고리 추출:</strong> 키워드와 카테고리를 자동으로 빠르게 추출합니다.</li>
-                        <li><strong>상품명 추출기:</strong> 원본 상품명을 기준으로 상품명을 추출합니다.</li>
-                        <li><strong>키워드 연구소:</strong> 키워드들을 분석하여 작업 효율을 높여줍니다.</li>
-                        <li><strong>검색광고 키워드툴:</strong> 네이버 검색광고 키워드툴 기능을 이식했습니다.</li>
-                        <li><strong>설정 탭 기능:</strong> 마크몬의 심장부 입니다. 모든 기능을 이용하기 위해서 필수로 세팅이 필요합니다.</li>
-                    </ul>
-                </div>
-
-                <div class="slider-container reveal-right extra-features-slider">
-                    <div class="slider-wrapper shadow-lg"
-                        style="border-radius: 12px; overflow: hidden; position: relative; background: #fff;">
-                        <!-- 슬라이드 이미지들 -->
-                        <img src="./51.jpg" class="slide-img active-slide" alt="추가 기능 1" loading="lazy">
-                        <img src="./40v2.jpg" class="slide-img" alt="추가 기능 2" loading="lazy">
-                        <img src="./41v2.jpg" class="slide-img" alt="추가 기능 3" loading="lazy">
-                        <img src="./42v2.jpg" class="slide-img" alt="추가 기능 4" loading="lazy">
-                        <img src="./43v2.jpg" class="slide-img" alt="추가 기능 5" loading="lazy">
-                        <img src="./44v2.jpg" class="slide-img" alt="추가 기능 6" loading="lazy">
-                        <img src="./45v2.jpg" class="slide-img" alt="추가 기능 7" loading="lazy">
-                        <img src="./46v2.jpg" class="slide-img" alt="추가 기능 8" loading="lazy">
-
-                        <!-- 좌우 컨트롤 버튼 -->
-                        <button class="slider-btn prev-btn" aria-label="이전 이미지">&#10094;</button>
-                        <button class="slider-btn next-btn" aria-label="다음 이미지">&#10095;</button>
-                    </div>
-
-                    <!-- 인디케이터 (점) -->
-                        <div class="slider-dots">
-                            <span class="dot active-dot" data-slide="0"></span>
-                            <span class="dot" data-slide="1"></span>
-                            <span class="dot" data-slide="2"></span>
-                            <span class="dot" data-slide="3"></span>
-                            <span class="dot" data-slide="4"></span>
-                            <span class="dot" data-slide="5"></span>
-                            <span class="dot" data-slide="6"></span>
-                            <span class="dot" data-slide="7"></span>
-                        </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Feature 4: 영상 -->
-        <section id="video-demo" class="section feature peek-next reverse" style="padding-bottom: 4rem;">
-            <div class="container split-layout">
-                <div class="feature-text reveal-right">
-                    <h2 class="section-title text-lg">실제 작동 화면으로<br>마크몬을 확인해보세요.</h2>
-                    <div class="video-demo-extra-action">
-                        <button type="button" class="btn-primary video-demo-extra-btn" data-open-video="markmon-raw-video-modal">배속 없는 원본 영상 보기</button>
-                        <p class="video-demo-extra-note">너무 빨라서 못보신 분들은 배속 없는 원본 영상을 봐주세요!</p>
-                    </div>
-                </div>
-                <div class="feature-image reveal-left" style="flex: 1.8;">
-                    <div class="video-wrapper shadow-lg">
-                        <video width="100%" height="100%" controls
-                            style="position: absolute; top: 0; left: 0; border-radius: 12px;">
-                            <source src="./마크몬 홍보영상v3.mp4" type="video/mp4">
-                            브라우저가 동영상을 지원하지 않습니다. 최신 브라우저로 업데이트 해주세요.
-                        </video>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pricing/Trial Section (7일 무료 및 제작자 스토리) -->
-                <!-- Feature Extra: 추가 기능 슬라이더 -->
-        <section id="capturemon-showcase" class="section feature peek-next">
-            <div class="container split-layout capturemon-layout">
-                <div class="feature-text reveal-up capturemon-copy">
-                    <h2 class="section-title text-lg">마크몬에 내장되어 있는 강력한 이미지도구 캡쳐몬!</h2>
-                    <ul class="feature-list capturemon-feature-list">
-                        <li><strong>대상 추출:</strong> 필요한 이미지를 빠르게 선별</li>
-                        <li><strong>이미지 자동추출:</strong> 상품별 이미지를 불러와 작업 시간을 단축</li>
-                        <li><strong>즉시 편집:</strong> 자르기와 영역 지정으로 원하는 부분만 정리</li>
-                        <li><strong>후처리 일괄화:</strong> 배경 제거, 지우기, 모자이크까지 한곳에서</li>
-                        <li><strong>파일 정리:</strong> 상품번호, 상품코드, 상품명 기준으로 저장 관리</li>
-                    </ul>
-
-                    <div class="capturemon-video-action">
-                        <button type="button" class="btn-primary capturemon-video-btn" data-open-video="capturemon-video-modal">
-                            <svg viewBox="0 0 24 24" width="20" height="20" fill="#fff" aria-hidden="true">
-                                <path
-                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" />
-                                <path fill="#FFFFFF" d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                            </svg>
-                            <span>캡쳐몬 시연 영상 보기</span>
+        <section class="panel risk-panel" id="risk" data-section="Risk">
+            <div class="panel-inner risk-grid">
+                <div class="risk-copy reveal">
+                    <p class="section-index">01 <span></span> WHY MARKMON</p>
+                    <h2>터진 뒤엔<br><em>이미 늦습니다.</em></h2>
+                    <p class="section-lead">경고 메일 한 통이 판매 중지와 긴 대응으로 이어지기 전에,<br>상품을 올리는 순간부터 확인하는 습관이 필요합니다.</p>
+                    <div class="risk-tabs" role="tablist" aria-label="상표권 위험 사례">
+                        <button class="risk-tab is-active" type="button" role="tab" aria-selected="true" data-risk-src="./cost-bombv2.png" data-risk-alt="합의금 부담을 표현한 이미지">
+                            <span>01</span><b>예상치 못한 합의금</b><i>↗</i>
+                        </button>
+                        <button class="risk-tab" type="button" role="tab" aria-selected="false" data-risk-src="./store-suspensionv2.png" data-risk-alt="스토어 판매 중지를 표현한 이미지">
+                            <span>02</span><b>갑작스러운 판매 중지</b><i>↗</i>
+                        </button>
+                        <button class="risk-tab" type="button" role="tab" aria-selected="false" data-risk-src="./time-wastev2.png" data-risk-alt="대응 시간 낭비를 표현한 이미지">
+                            <span>03</span><b>끝없이 드는 대응 시간</b><i>↗</i>
                         </button>
                     </div>
                 </div>
+                <div class="risk-visual reveal reveal-delay">
+                    <div class="risk-frame">
+                        <div class="risk-frame-label"><span>RISK PREVIEW</span><b>BEFORE IT HAPPENS</b></div>
+                        <img id="risk-preview" src="./cost-bombv2.png" alt="합의금 부담을 표현한 이미지">
+                    </div>
+                    <p class="risk-note">지재권(상표권) 이슈는 <strong>예방이 답입니다.</strong></p>
+                </div>
+            </div>
+        </section>
 
-                <div class="feature-image reveal-up capturemon-media">
-                    <div class="slider-container capturemon-slider">
-                        <div class="slider-wrapper shadow-lg">
-                            <img src="./28v2.jpg" class="slide-img active-slide" alt="캡쳐몬 기능 화면 1" loading="lazy">
-                            <img src="./29v2.jpg" class="slide-img" alt="캡쳐몬 기능 화면 2" loading="lazy">
-                            <img src="./30v2.jpg" class="slide-img" alt="캡쳐몬 기능 화면 3" loading="lazy">
-                            <img src="./31v2.jpg" class="slide-img" alt="캡쳐몬 기능 화면 4" loading="lazy">
-                            <img src="./32v2.jpg" class="slide-img" alt="캡쳐몬 기능 화면 5" loading="lazy">
-                            <button class="slider-btn prev-btn" aria-label="이전 이미지">&#10094;</button>
-                            <button class="slider-btn next-btn" aria-label="다음 이미지">&#10095;</button>
+        <section class="panel solution-panel" id="solution" data-section="Solution">
+            <div class="solution-glow" aria-hidden="true"></div>
+            <div class="panel-inner solution-inner">
+                <div class="solution-head reveal">
+                    <p class="section-index section-index-light">02 <span></span> THE SOLUTION</p>
+                    <h2>상표권 위험을 미리 확인하고,<br><em>판매 준비는 더 탄탄하게.</em></h2>
+                    <p>공식 DB의 권리 정보를 보기 쉬운 결과로 정리해<br>셀러가 더 빠르고 정확하게 판단할 수 있도록 돕습니다.</p>
+                </div>
+                <div class="solution-stage reveal reveal-delay">
+                    <div class="solution-screen screen-back"><img src="./50.jpg" alt="마크몬 부분일치 상표 검색 결과"></div>
+                    <div class="solution-screen screen-front"><img src="./49.jpg" alt="마크몬 완전일치 상표 상세 결과"></div>
+                    <div class="solution-metric metric-one"><span>01</span><b>공식 DB 기반</b><small>신뢰할 수 있는 원천 데이터</small></div>
+                    <div class="solution-metric metric-two"><span>02</span><b>한눈에 비교</b><small>완전일치와 부분일치를 명확하게</small></div>
+                    <div class="solution-metric metric-three"><span>03</span><b>즉시 판단</b><small>지정상품정보까지 한 화면에</small></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel features-panel" id="features" data-section="Features">
+            <div class="panel-inner features-inner">
+                <div class="features-heading reveal">
+                    <p class="section-index">03 <span></span> ONE WORKFLOW</p>
+                    <h2>검색에서 가공까지,<br><em>흐름이 끊기지 않게.</em></h2>
+                </div>
+                <div class="feature-explorer reveal reveal-delay">
+                    <div class="feature-menu" role="tablist" aria-label="마크몬 핵심 기능">
+                        <button type="button" class="feature-tab is-active" role="tab" aria-selected="true" data-feature="bulk"><span>01</span><b>대량 상품 검사</b></button>
+                        <button type="button" class="feature-tab" role="tab" aria-selected="false" data-feature="edit"><span>02</span><b>즉시 키워드 가공</b></button>
+                        <button type="button" class="feature-tab" role="tab" aria-selected="false" data-feature="wizard"><span>03</span><b>키워드 마법사</b></button>
+                        <button type="button" class="feature-tab" role="tab" aria-selected="false" data-feature="background"><span>04</span><b>배경지우개</b></button>
+                    </div>
+                    <div class="feature-viewer">
+                        <div class="feature-media">
+                            <div class="media-toolbar"><span id="feature-kicker">BULK CHECK</span><i></i></div>
+                            <img id="feature-image" src="./47v2.jpg" alt="3,000행을 한 번에 분석하는 대량 상품 검사 화면">
                         </div>
-
-                        <div class="slider-dots">
-                            <span class="dot active-dot" data-slide="0"></span>
-                            <span class="dot" data-slide="1"></span>
-                            <span class="dot" data-slide="2"></span>
-                            <span class="dot" data-slide="3"></span>
-                            <span class="dot" data-slide="4"></span>
+                        <div class="feature-detail" aria-live="polite">
+                            <p id="feature-number">FEATURE 01</p>
+                            <h3 id="feature-title">3,000행을 한 번에</h3>
+                            <p id="feature-copy">엑셀을 불러오면 상품명과 키워드를 대량으로 확인하고, 결과를 즉시 가공할 수 있습니다.</p>
+                            <div class="feature-chips" id="feature-chips"><span>대량 엑셀</span><span>빠른 검사</span><span>결과 저장</span></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="pricing" class="section pricing-section alt-bg" style="padding: 10vh 0; text-align: center;">
-            <div class="container reveal-up pricing-layout">
-                <div class="pricing-copy">
-                    <h2 class="section-title pricing-title">
-                        "셀러의 마음은 셀러가 가장 잘 압니다." <br>
-                        <span style="color: var(--primary-dark);">제작자가 매일 직접 사용하는 프로그램</span>
-                    </h2>
-                    <p class="section-desc pricing-desc">
-                        마크몬은 단순한 판매용 소프트웨어가 아닙니다. 현업 셀러인 제작자가 본인의 스토어를 안전하게 지키기 위해 직접 개발하고,<br>
-                        지금 이 순간에도 매일 사용하며 다듬고 있습니다.
-                        <br><br>
-                        여러분의 소중한 의견을 바탕으로 <strong>새로운 기능들이 끊임없이 업데이트</strong>될 예정입니다.
-                    </p>
+        <section class="panel capture-panel" id="capture" data-section="CaptureMon">
+            <div class="capture-pattern" aria-hidden="true"></div>
+            <div class="panel-inner capture-grid">
+                <div class="capture-copy reveal">
+                    <p class="section-index section-index-light">04 <span></span> BUILT-IN TOOL</p>
+                    <p class="capture-logo">CAPTURE<span>MON</span></p>
+                    <h2>이미지 작업도<br><em>한곳에서 끝.</em></h2>
+                    <p>상품 이미지를 불러오고, 필요한 영역만 고른 뒤<br>배경 제거·지우기·모자이크까지 바로 처리하세요.</p>
+                    <ul class="capture-list">
+                        <li><span>01</span>상품 이미지 자동 추출</li>
+                        <li><span>02</span>자르기와 영역 지정</li>
+                        <li><span>03</span>배경 제거·지우기·모자이크</li>
+                    </ul>
+                    <button class="button button-light" type="button" data-open-video="capturemon-video-modal"><span class="play-icon" aria-hidden="true">▶</span> 캡쳐몬 시연 보기</button>
                 </div>
-
-                <div class="pricing-free-banner">
-                    <strong>지금 바로 무료로 사용하세요!</strong>
-                    <small class="pricing-free-note">9월까지 무료로 이용가능, 추후 상황에 따라 무료로 유지 또는 유료로 전환 될 수 있습니다.</small>
-                </div>
-
-                <div class="pricing-actions-grid">
-                    <div class="pricing-action-card pricing-action-card--youtube">
-                        <div class="pricing-action-head">
-                            <span class="pricing-badge">Guide</span>
-                            <h3>공식 유튜브 가이드</h3>
+                <div class="capture-showcase reveal reveal-delay">
+                    <div class="capture-card capture-card-back"><img src="./30v2.jpg" alt="캡쳐몬 이미지 편집 도구"></div>
+                    <div class="capture-card capture-card-main">
+                        <img id="capture-image" src="./28v2.jpg" alt="캡쳐몬 메인 화면">
+                        <div class="capture-controls">
+                            <div class="capture-control-copy">
+                                <span class="capture-control-label"><i aria-hidden="true"></i>이미지를 넘겨보세요</span>
+                                <span class="capture-control-count"><b id="capture-current">01</b><em>/ 05</em></span>
+                            </div>
+                            <div class="capture-nav"><button type="button" id="capture-prev" aria-label="이전 캡쳐몬 이미지"><span aria-hidden="true">←</span></button><button type="button" id="capture-next" aria-label="다음 캡쳐몬 이미지"><span aria-hidden="true">→</span></button></div>
                         </div>
-                        <p>핵심 기능 설명과 실제 사용 흐름을 영상으로 바로 확인해보세요.</p>
-                        <a href="https://www.youtube.com/@markmon0135" target="_blank" class="pricing-action-btn pricing-action-btn--youtube">
-                            <svg viewBox="0 0 24 24" width="20" height="20" fill="#fff" aria-hidden="true">
-                                <path
-                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" />
-                                <path fill="#FFFFFF" d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                            </svg>
-                            <span>공식 유튜브 바로가기</span>
-                        </a>
                     </div>
-
-                    <div class="pricing-action-card pricing-action-card--store">
-                        <div class="pricing-action-head">
-                            <span class="pricing-badge">Store</span>
-                            <h3>스마트스토어 결제 안내</h3>
-                        </div>
-                        <p>이용권 구매가 시작되면 스마트스토어에서 안전하고 간편하게 진행할 수 있도록 연결됩니다.</p>
-                        <a href="#" class="pricing-action-btn pricing-action-btn--store">
-                            <span>스마트스토어 연결 예정</span>
-                        </a>
-                    </div>
+                    <div class="capture-sticker"><b>5 TOOLS</b><span>ONE FLOW</span></div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section id="download" class="section cta">
-            <div class="container cta-container reveal-up">
-                <div class="download-corner-visual" aria-hidden="true">
-                    <img src="./markmonwhl - 복사본v2.png" alt="" loading="lazy">
-                </div>
-                <h2 class="cta-title">지금 바로 가장 정확한<br>상표 검색을 경험해보세요.</h2>
-                <p class="cta-desc">클라우드에 의존하지 않는 안전한 설치형 프로그램으로, 데이터 유출 걱정 없는 마크몬을 경험해 보세요.</p>
-                <div class="cta-button-container">
-                    <div class="cta-buttons-layout">
-                        <a href="https://github.com/markmon0135/MarkMon-Installer-/releases/download/v1.0.54/MARKMON.INSTALLER.v1.0.54.exe"
-                            class="btn-large pulse-animation">Windows 용 무료 다운로드</a>
-                        <a href="https://github.com/markmon0135/template/releases/download/markmontemplate-20260718/markmontemplate-20260718.zip"
-                            class="btn-large btn-outline-white">마크몬 양식 다운로드</a>
+        <section class="panel download-panel" id="download" data-section="Download">
+            <div class="download-shape shape-left" aria-hidden="true"></div>
+            <div class="download-shape shape-right" aria-hidden="true"></div>
+            <div class="panel-inner download-inner">
+                <div class="download-copy reveal">
+                    <p class="section-index">05 <span></span> START TODAY</p>
+                    <h2>상표 확인과 키워드 가공부터<br><em>이미지 작업까지 한 번에.</em></h2>
+                    <p><span class="desktop-download-copy">설치부터 첫 검사까지 어렵지 않습니다.<br>Windows용 마크몬을 지금 무료로 시작해보세요.</span><span class="mobile-download-copy">모바일에서는 설치 파일과 양식을 사용할 수 없습니다.<br><strong>PC에서 다운로드 받아주세요.</strong></span></p>
+                    <div class="download-actions desktop-download-actions">
+                        <a class="button button-primary button-large" href="https://github.com/markmon0135/MarkMon-Installer-/releases/download/v1.0.54/MARKMON.INSTALLER.v1.0.54.exe">Windows용 무료 다운로드<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4"/></svg></a>
+                        <a class="button button-outline button-large" href="https://github.com/markmon0135/template/releases/download/markmontemplate-20260718/markmontemplate-20260718.zip">마크몬 양식 다운로드</a>
                     </div>
-                    <span class="version-info">Release v1.0.54 | 2026년 8월 23일</span>
+                    <div class="download-actions mobile-download-actions" aria-label="모바일 다운로드 안내">
+                        <button class="button button-primary button-large" type="button" disabled>PC에서 다운로드 받으세요</button>
+                        <button class="button button-outline button-large" type="button" disabled>설치 파일과 양식은 PC에서 받아주세요</button>
+                    </div>
+                    <p class="release-info desktop-release-info"><span></span> Release v1.0.54 · Windows 10/11 64-bit</p>
+                    <p class="release-info mobile-release-info"><span></span> 모바일에서는 다운로드할 수 없습니다</p>
                 </div>
-
-                <!-- 시스템 최소/권장 사양 테이블 -->
-                <div class="system-req-wrapper">
-                    <table class="system-req-table">
-                        <thead>
-                            <tr>
-                                <th>구분</th>
-                                <th>최소 사양</th>
-                                <th class="recommended">권장 사양 (★)</th>
-                                <th>비고</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>운영체제</td>
-                                <td>Windows 10 (64-bit)</td>
-                                <td><strong>Windows 11 (64-bit)</strong></td>
-                                <td class="table-note">최신 업데이트 권장</td>
-                            </tr>
-                            <tr>
-                                <td>CPU</td>
-                                <td>Intel Core i3 / Ryzen 3</td>
-                                <td><strong>Intel Core i5 / Ryzen 5 이상</strong></td>
-                                <td class="table-note">멀티스레드 성능 중요</td>
-                            </tr>
-                            <tr>
-                                <td>RAM (메모리)</td>
-                                <td>8 GB</td>
-                                <td><strong>16 GB 이상</strong></td>
-                                <td class="table-note">대용량 원본 로딩 시 필수</td>
-                            </tr>
-                            <tr>
-                                <td>저장공간</td>
-                                <td>1 GB 여유</td>
-                                <td><strong>SSD 장착 권장</strong></td>
-                                <td class="table-note">I/O 속도 영향</td>
-                            </tr>
-                            <tr>
-                                <td>해상도</td>
-                                <td>1280 x 720 (HD)</td>
-                                <td><strong>1920 x 1080 (FHD)</strong></td>
-                                <td class="table-note">넓은 작업 화면 권장</td>
-                            </tr>
-                            <tr>
-                                <td>인터넷</td>
-                                <td>100 Mbps</td>
-                                <td><strong>500 Mbps 이상 (Gigabit)</strong></td>
-                                <td class="table-note">서버 통신 및 다운로드</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="download-card reveal reveal-delay">
+                    <div class="free-label">FREE NOW</div>
+                    <p>현재 이용 요금</p>
+                    <strong>₩ 0</strong>
+                    <ul><li>대량 상품명·키워드 검사</li><li>공식 DB 기반 상표 확인</li><li>키워드 가공 도구 전체</li><li>캡쳐몬 이미지 도구</li></ul>
+                    <a href="https://www.youtube.com/@markmon0135" target="_blank" rel="noopener">사용 가이드 보기 <span>↗</span></a>
                 </div>
             </div>
+            <footer class="site-footer">
+                <div class="footer-inner">
+                    <div class="footer-brand"><span class="brand-word"><b>MARK</b><strong>MON</strong></span><p>현업 셀러가 직접 만드는 상표권·키워드 워크스페이스</p></div>
+                    <div class="footer-links">
+                        <button type="button" data-policy="terms-dialog">이용약관</button>
+                        <button type="button" data-policy="privacy-dialog">개인정보처리방침</button>
+                        <button type="button" data-policy="business-dialog">사업자정보</button>
+                        <a href="https://open.kakao.com/o/sX8ez9bi" target="_blank" rel="noopener noreferrer">고객문의</a>
+                    </div>
+                    <p class="copyright">© 2026 MarkMon. All rights reserved.</p>
+                </div>
+            </footer>
         </section>
     </main>
 
-    <footer style="background-color: #f8f9fa; border-top: 1px solid var(--border-color); padding: 4rem 0 2rem;">
-        <div class="container">
-            <div class="footer-quick-panel footer-quick-panel--entities">
-                <div class="footer-quick-links footer-toggle-links">
-                    <button type="button" class="footer-quick-link footer-toggle-btn" data-footer-panel-target="terms">이용약관</button>
-                    <button type="button" class="footer-quick-link footer-toggle-btn" data-footer-panel-target="privacy">개인정보처리방침</button>
-                    <button type="button" class="footer-quick-link footer-toggle-btn" data-footer-panel-target="business-info">사업자정보</button>
-                    <button type="button" class="footer-quick-link footer-toggle-btn" data-footer-panel-target="refund-policy">환불 / 이용권 안내</button>
-                    <button type="button" class="footer-quick-link footer-toggle-btn" data-footer-panel-target="customer-support">고객문의</button>
-                </div>
-                <p class="footer-legal-note">
-                    &#48376; &#49436;&#48708;&#49828;&#51032; &#44160;&#49353; &#44208;&#44284; &#48143; &#51648;&#51116;&#44428; &#44288;&#47144; &#51221;&#48372;&#45716; &#52280;&#44256;&#50857;&#51060;&#47728;, &#52572;&#51333; &#48277;&#51201; &#54032;&#45800; &#51204; &#44428;&#47532;&#51088; &#54869;&#51064; &#48143; &#51204;&#47928;&#44032; &#44160;&#53664;&#47484; &#44428;&#51109;&#54633;&#45768;&#45796;.
-                </p>
-                <div class="footer-panel-display" id="footer-panel-display" hidden></div>
-                <div class="footer-policy-mini footer-source-library" hidden aria-hidden="true">
-                    <div class="footer-policy-item" id="terms">
-                        <strong>이용약관</strong>
-                        <div class="footer-policy-content">
-                            <p><strong>제1조 목적</strong> 본 약관은 마크몬이 제공하는 상표·지재권 점검 보조 서비스의 이용 조건, 권리, 의무 및 책임사항을 정함을 목적으로 합니다.</p>
-                            <p><strong>제2조 서비스의 성격</strong> 본 서비스는 상표 및 지재권 관련 위험 요소를 사전에 검토할 수 있도록 돕는 참고용 도구이며, 법률 자문 또는 법적 판단을 대체하지 않습니다.</p>
-                            <p><strong>제3조 회원의 의무</strong> 이용자는 정확한 회원 정보를 입력해야 하며, 계정 정보의 관리 책임은 이용자 본인에게 있습니다. 타인의 권리를 침해하거나 관계 법령에 위반되는 방식으로 서비스를 이용해서는 안 됩니다.</p>
-                            <p><strong>제4조 서비스 제공 및 변경</strong> 서비스의 기능, 구성, 운영 정책은 서비스 안정성 및 품질 향상을 위해 변경될 수 있으며, 중요한 변경이 있는 경우 사전에 공지합니다.</p>
-                            <p><strong>제5조 이용 제한</strong> 마크몬은 비정상적 자동화 요청, 권리 침해 목적 사용, 시스템 운영을 방해하는 행위, 허위 정보 등록 등 약관 위반 행위가 확인될 경우 서비스 이용을 제한할 수 있습니다.</p>
-                            <p><strong>제6조 책임의 한계</strong> 서비스 결과는 참고자료로 제공되며, 이를 바탕으로 한 상품 등록, 판매, 광고, 법적 대응 등 최종 의사결정과 그 책임은 이용자에게 있습니다.</p>
-                            <p><strong>제7조 유료 서비스 및 환불</strong> 유료 이용권이 도입되는 경우 판매 조건, 이용 기간, 환불 기준 및 결제 방식은 별도 고지되는 정책에 따릅니다.</p>
-                            <p><strong>제8조 문의</strong> 서비스 이용 중 문의가 필요한 경우 고지된 고객 문의 채널을 통해 접수할 수 있습니다.</p>
-                        </div>
-                    </div>
-                    <div class="footer-policy-item" id="privacy">
-                        <strong>개인정보처리방침</strong>
-                        <div class="footer-policy-content">
-                            <p><strong>1. 수집하는 개인정보 항목</strong> 마크몬은 회원가입, 로그인, 고객 문의 대응 및 서비스 운영을 위해 이메일 주소, 비밀번호, 문의 내용, 접속 기록 등 최소한의 정보를 수집할 수 있습니다.</p>
-                            <p><strong>2. 개인정보의 이용 목적</strong> 수집된 개인정보는 회원 식별, 서비스 제공, 문의 응대, 공지 전달, 서비스 안정성 확보 및 운영 개선 목적으로 이용됩니다.</p>
-                            <p><strong>3. 보유 및 이용 기간</strong> 개인정보는 수집 및 이용 목적이 달성될 때까지 보관하며, 회원 탈퇴 또는 보유 목적 종료 시 지체 없이 파기합니다. 다만 관계 법령에 따라 보존이 필요한 경우 해당 기간 동안 별도 보관합니다.</p>
-                            <p><strong>4. 제3자 제공</strong> 마크몬은 이용자의 개인정보를 원칙적으로 외부에 제공하지 않으며, 법령에 근거가 있거나 이용자의 동의가 있는 경우에 한하여 예외적으로 제공합니다.</p>
-                            <p><strong>5. 처리 위탁</strong> 서비스 운영상 필요한 경우 개인정보 처리 업무의 일부를 외부에 위탁할 수 있으며, 이 경우 위탁 대상 및 업무 내용은 사전 고지하고 관련 법령에 따른 보호 조치를 적용합니다.</p>
-                            <p><strong>6. 이용자의 권리</strong> 이용자는 언제든지 본인의 개인정보에 대해 열람, 정정, 삭제, 처리정지 등을 요청할 수 있으며, 고객 문의 채널을 통해 관련 요청을 접수할 수 있습니다.</p>
-                            <p><strong>7. 파기 절차 및 방법</strong> 보유 기간이 종료되거나 처리 목적이 달성된 개인정보는 복구 또는 재생이 불가능한 방식으로 지체 없이 파기합니다.</p>
-                            <p><strong>8. 안전성 확보 조치</strong> 마크몬은 접근 권한 관리, 계정 정보 보호, 접속 기록 관리 등 합리적인 기술적·관리적 보호 조치를 통해 개인정보를 안전하게 관리합니다.</p>
-                        </div>
-                    </div>
-                    <div class="footer-policy-item" id="refund-policy">
-                        <strong>&#54872;&#48520; / &#51060;&#50857;&#44428; &#50504;&#45236;</strong>
-                        <span>&#52628;&#54980; &#49828;&#47560;&#53944;&#49828;&#53664;&#50640; &#51060;&#50857;&#44428; &#54032;&#47588; &#49884;&#51089; &#49884; &#54872;&#48520; &#48143; &#44396;&#47588; &#51221;&#52293;&#51012; &#48324;&#46020; &#50504;&#45236;&#54633;&#45768;&#45796;.</span>
-                    </div>
-                    <div class="footer-policy-item" id="customer-support">
-                        <strong>고객문의</strong>
-                        <span>문의 메일: markmon0135@gmail.com</span>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-info-grid"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem; text-align: left;">
-                <!-- 브랜드 영역 -->
-                <div style="flex: 1.5;">
-                    <a href="https://www.youtube.com/@markmon0135" target="_blank" class="footer-logo"
-                        style="margin-bottom: 1.5rem; display: inline-flex; align-items: center;">
-                        <svg viewBox="0 0 24 24" width="28" height="28" style="margin-right: 8px;">
-                            <path fill="#FF0000"
-                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" />
-                            <path fill="#FFFFFF" d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                        </svg>
-                        <span class="logo-mark" style="font-size: 1.48rem;">MARK</span><span class="logo-mon"
-                            style="font-size: 1.48rem;">MON</span>
-                    </a>
-                    <p style="font-size: 1.03rem; color: var(--text-muted); line-height: 1.66; word-break: keep-all;">
-                        현업 셀러가 직접 만드는 가장 직관적인 상표권 보호 솔루션, 마크몬입니다. <br>
-                        복잡한 법적 리스크를 사전에 예방하고 소중한 스토어를 지키세요.
-                    </p>
-                </div>
-
-                <!-- 사업자 정보 영역 (내용은 직접 채워넣으셔야 합니다) -->
-                <div id="business-info" hidden>
-                    <h3 style="font-size: 1.08rem; margin-bottom: 1.2rem; color: var(--text-dark);">Business Info</h3>
-                    <ul style="list-style: none; padding: 0; font-size: 0.93rem; color: #666; line-height: 1.86;">
-                        <li>상호: 마크몬 | 대표: 장상민</li>
-                        <li>사업자등록번호: 443-22-02376</li>
-                        <li>통신판매업신고: 제 2026-부천원미-0487 호</li>
-                        <li>이메일: markmon0135@gmail.com</li>
-                        <li>주소: 부천시 원미구 중동로 301</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="footer-bottom-bar"
-                style="padding-top: 2rem; border-top: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                <p style="font-size: 0.93rem; color: #999;">&copy; 2026 MarkMon. All rights reserved.</p>
-                <p style="font-size: 0.93rem; color: #aaa;">Designed for maximum efficiency and exact database matching.
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- 스크립트 연동 -->
-    <div id="capturemon-video-modal" class="video-modal" aria-hidden="true">
-        <div class="video-modal-backdrop" data-close-video="capturemon-video-modal"></div>
-        <div class="video-modal-dialog" role="dialog" aria-modal="true" aria-label="캡쳐몬 시연 영상">
-            <button type="button" class="video-modal-close" data-close-video="capturemon-video-modal" aria-label="영상 닫기">&times;</button>
-            <div class="video-modal-frame shadow-lg">
-                <video controls preload="metadata">
-                    <source src="./캡쳐몬 샘플v2.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
+    <div class="video-modal" id="markmon-video-modal" aria-hidden="true">
+        <button class="modal-backdrop" type="button" data-close-video aria-label="영상 닫기"></button>
+        <div class="video-dialog" role="dialog" aria-modal="true" aria-label="마크몬 소개 영상"><button class="modal-close" type="button" data-close-video aria-label="영상 닫기">×</button><video controls preload="metadata"><source src="./마크몬 홍보영상v3.mp4" type="video/mp4"></video></div>
+    </div>
+    <div class="video-modal" id="capturemon-video-modal" aria-hidden="true">
+        <button class="modal-backdrop" type="button" data-close-video aria-label="영상 닫기"></button>
+        <div class="video-dialog" role="dialog" aria-modal="true" aria-label="캡쳐몬 시연 영상"><button class="modal-close" type="button" data-close-video aria-label="영상 닫기">×</button><video controls preload="metadata"><source src="./캡쳐몬 샘플v2.mp4" type="video/mp4"></video></div>
     </div>
 
-    <div id="markmon-raw-video-modal" class="video-modal" aria-hidden="true">
-        <div class="video-modal-backdrop" data-close-video="markmon-raw-video-modal"></div>
-        <div class="video-modal-dialog" role="dialog" aria-modal="true" aria-label="마크몬 홍보영상 원본">
-            <button type="button" class="video-modal-close" data-close-video="markmon-raw-video-modal" aria-label="영상 닫기">&times;</button>
-            <div class="video-modal-frame shadow-lg">
-                <video controls preload="metadata">
-                    <source src="./마크몬 홍보영상v3 배속없음.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-    </div>
-
-    <script src="scriptv2.js?v=4"></script>
+    <dialog class="policy-dialog" id="terms-dialog">
+        <button class="dialog-close" type="button" data-close-dialog aria-label="닫기">×</button><p class="dialog-label">MARKMON POLICY</p><h2>이용약관</h2>
+        <div class="dialog-body"><p><strong>제1조 목적</strong> 본 약관은 마크몬이 제공하는 상표·지재권 점검 보조 서비스의 이용 조건, 권리, 의무 및 책임사항을 정함을 목적으로 합니다.</p><p><strong>제2조 서비스의 성격</strong> 본 서비스는 상표 및 지재권 관련 위험 요소를 사전에 검토할 수 있도록 돕는 참고용 도구이며, 법률 자문 또는 법적 판단을 대체하지 않습니다.</p><p><strong>제3조 이용자의 의무</strong> 이용자는 관계 법령과 타인의 권리를 준수해야 하며, 계정 및 입력 데이터의 관리 책임은 이용자에게 있습니다.</p><p><strong>제4조 서비스 제공 및 변경</strong> 서비스의 기능과 운영 정책은 안정성 및 품질 향상을 위해 변경될 수 있습니다.</p><p><strong>제5조 책임의 한계</strong> 서비스 결과는 참고자료이며, 상품 등록·판매·광고·법적 대응 등 최종 의사결정과 책임은 이용자에게 있습니다.</p></div>
+    </dialog>
+    <dialog class="policy-dialog" id="privacy-dialog">
+        <button class="dialog-close" type="button" data-close-dialog aria-label="닫기">×</button><p class="dialog-label">MARKMON POLICY</p><h2>개인정보처리방침</h2>
+        <div class="dialog-body"><p><strong>1. 수집 항목</strong> 회원가입, 로그인, 문의 대응 및 서비스 운영을 위해 이메일 주소, 비밀번호, 문의 내용, 접속 기록 등 최소한의 정보를 수집할 수 있습니다.</p><p><strong>2. 이용 목적</strong> 수집 정보는 회원 식별, 서비스 제공, 문의 응대, 공지 전달, 안정성 확보 및 운영 개선 목적으로 이용됩니다.</p><p><strong>3. 보유 기간</strong> 수집 목적 달성 시 지체 없이 파기하며, 관계 법령상 보존이 필요한 경우 해당 기간 동안 별도 보관합니다.</p><p><strong>4. 제3자 제공</strong> 이용자의 개인정보는 원칙적으로 외부에 제공하지 않으며, 법령상 근거나 이용자 동의가 있을 때만 예외로 합니다.</p><p><strong>5. 이용자의 권리</strong> 이용자는 개인정보 열람, 정정, 삭제 및 처리정지를 고객 문의 채널을 통해 요청할 수 있습니다.</p></div>
+    </dialog>
+    <dialog class="policy-dialog" id="business-dialog">
+        <button class="dialog-close" type="button" data-close-dialog aria-label="닫기">×</button><p class="dialog-label">BUSINESS INFORMATION</p><h2>사업자정보</h2>
+        <div class="dialog-body business-list"><p><span>상호 / 대표</span><strong>마크몬 / 장상민</strong></p><p><span>사업자등록번호</span><strong>443-22-02376</strong></p><p><span>통신판매업신고</span><strong>제 2026-부천원미-0487 호</strong></p><p><span>이메일</span><strong>markmon0135@gmail.com</strong></p><p><span>주소</span><strong>부천시 원미구 중동로 301</strong></p></div>
+    </dialog>
+    <script src="scriptv2.js?v=11"></script>
 </body>
-
 </html>

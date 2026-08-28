@@ -144,6 +144,38 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    /* Solution screen stack */
+    const solutionStage = document.querySelector(".solution-stage");
+    const solutionScreens = Array.from(document.querySelectorAll("[data-solution-screen]"));
+    let solutionIndex = solutionScreens.findIndex(screen => screen.classList.contains("screen-front"));
+    if (solutionIndex < 0) solutionIndex = 0;
+
+    function selectSolutionScreen(nextIndex) {
+        if (!solutionScreens.length) return;
+        solutionIndex = (nextIndex + solutionScreens.length) % solutionScreens.length;
+        solutionScreens.forEach((screen, index) => {
+            const active = index === solutionIndex;
+            screen.classList.toggle("screen-front", active);
+            screen.classList.toggle("screen-back", !active);
+            screen.setAttribute("aria-pressed", String(active));
+            screen.setAttribute("aria-label", active
+                ? "다음 솔루션 화면 보기"
+                : `${screen.querySelector("img")?.alt || "솔루션 화면"}를 앞으로 가져오기`);
+        });
+    }
+
+    solutionScreens.forEach((screen, index) => {
+        screen.addEventListener("click", () => {
+            selectSolutionScreen(index === solutionIndex ? solutionIndex + 1 : index);
+        });
+    });
+    solutionStage?.addEventListener("keydown", event => {
+        if (!["ArrowLeft", "ArrowRight"].includes(event.key)) return;
+        event.preventDefault();
+        selectSolutionScreen(solutionIndex + (event.key === "ArrowRight" ? 1 : -1));
+        solutionScreens[solutionIndex]?.focus();
+    });
+
     /* Feature explorer */
     const features = {
         bulk: {
@@ -230,31 +262,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* CaptureMon gallery */
-    const captureSlides = [
-        ["./28v2.jpg", "캡쳐몬 메인 화면"],
-        ["./29v2.jpg", "캡쳐몬 이미지 추출 화면"],
-        ["./30v2.jpg", "캡쳐몬 이미지 편집 화면"],
-        ["./31v2.jpg", "캡쳐몬 배경 처리 화면"],
-        ["./32v2.jpg", "캡쳐몬 결과 저장 화면"]
-    ];
-    const captureImage = document.getElementById("capture-image");
+    const captureGallery = document.getElementById("capture-gallery");
+    const captureSlides = Array.from(document.querySelectorAll("[data-capture-slide]"));
     const captureCurrent = document.getElementById("capture-current");
     let captureIndex = 0;
 
-    function moveCapture(direction) {
-        if (!captureImage || !captureCurrent) return;
-        captureIndex = (captureIndex + direction + captureSlides.length) % captureSlides.length;
-        captureImage.classList.add("is-changing");
-        window.setTimeout(() => {
-            captureImage.src = captureSlides[captureIndex][0];
-            captureImage.alt = captureSlides[captureIndex][1];
-            captureCurrent.textContent = String(captureIndex + 1).padStart(2, "0");
-            captureImage.classList.remove("is-changing");
-        }, 170);
+    function selectCapture(nextIndex) {
+        if (!captureSlides.length) return;
+        captureIndex = (nextIndex + captureSlides.length) % captureSlides.length;
+        captureSlides.forEach((slide, index) => {
+            const depth = (index - captureIndex + captureSlides.length) % captureSlides.length;
+            const active = depth === 0;
+            slide.classList.remove("is-front", "is-behind-1", "is-behind-2", "is-behind-3", "is-behind-4");
+            slide.classList.add(active ? "is-front" : `is-behind-${depth}`);
+            slide.setAttribute("aria-pressed", String(active));
+            slide.setAttribute("aria-label", active
+                ? "다음 캡쳐몬 작업 화면 보기"
+                : `${slide.querySelector("img")?.alt || "캡쳐몬 작업 화면"}을 앞으로 가져오기`);
+        });
+        if (captureCurrent) captureCurrent.textContent = String(captureIndex + 1).padStart(2, "0");
     }
 
-    document.getElementById("capture-prev")?.addEventListener("click", () => moveCapture(-1));
-    document.getElementById("capture-next")?.addEventListener("click", () => moveCapture(1));
+    captureSlides.forEach((slide, index) => {
+        slide.addEventListener("click", () => {
+            selectCapture(index === captureIndex ? captureIndex + 1 : index);
+        });
+    });
+    document.getElementById("capture-prev")?.addEventListener("click", () => selectCapture(captureIndex - 1));
+    document.getElementById("capture-next")?.addEventListener("click", () => selectCapture(captureIndex + 1));
+    captureGallery?.addEventListener("keydown", event => {
+        if (!["ArrowLeft", "ArrowRight"].includes(event.key)) return;
+        event.preventDefault();
+        selectCapture(captureIndex + (event.key === "ArrowRight" ? 1 : -1));
+        captureSlides[captureIndex]?.focus();
+    });
+    selectCapture(0);
 
     /* Video modals */
     let lastFocusedElement = null;

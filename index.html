@@ -14,7 +14,7 @@
     <meta property="og:description" content="공식 DB 기반 상표 확인, 대량 키워드 가공, 캡쳐몬을 한곳에서 만나보세요.">
     <meta property="og:image" content="https://markmon.co.kr/markmonlogo33v2.jpg">
     <meta property="og:url" content="https://www.markmon.co.kr/">
-    <link rel="stylesheet" href="stylev2.css?v=25">
+    <link rel="stylesheet" href="stylev2.css?v=36">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
     <link rel="icon" type="image/png" href="markmonlogov2.png">
 </head>
@@ -163,8 +163,8 @@
                     <p>공식 DB의 권리 정보를 보기 쉬운 결과로 정리해<br>셀러가 더 빠르고 정확하게 판단할 수 있도록 돕습니다.</p>
                 </div>
                 <div class="solution-stage reveal reveal-delay">
-                    <div class="solution-screen screen-back"><img src="./50.jpg" alt="마크몬 부분일치 상표 검색 결과"></div>
-                    <div class="solution-screen screen-front"><img src="./49.jpg" alt="마크몬 완전일치 상표 상세 결과"></div>
+                    <button class="solution-screen screen-back" type="button" data-solution-screen="0" aria-pressed="false" aria-label="마크몬 부분일치 상표 검색 결과를 앞으로 가져오기"><img src="./50.jpg" alt="마크몬 부분일치 상표 검색 결과"></button>
+                    <button class="solution-screen screen-front" type="button" data-solution-screen="1" aria-pressed="true" aria-label="다음 솔루션 화면 보기"><img src="./49.jpg" alt="마크몬 완전일치 상표 상세 결과"></button>
                     <div class="solution-metric metric-one"><span>01</span><b>공식 DB 기반</b><small>신뢰할 수 있는 원천 데이터</small></div>
                     <div class="solution-metric metric-two"><span>02</span><b>한눈에 비교</b><small>완전일치와 부분일치를 명확하게</small></div>
                     <div class="solution-metric metric-three"><span>03</span><b>즉시 판단</b><small>지정상품정보까지 한 화면에</small></div>
@@ -217,16 +217,29 @@
                     <button class="button button-light" type="button" data-open-video="capturemon-video-modal"><span class="play-icon" aria-hidden="true">▶</span> 캡쳐몬 시연 보기</button>
                 </div>
                 <div class="capture-showcase reveal reveal-delay">
-                    <div class="capture-card capture-card-back"><img src="./30v2.jpg" alt="캡쳐몬 이미지 편집 도구"></div>
-                    <div class="capture-card capture-card-main">
-                        <img id="capture-image" src="./28v2.jpg" alt="캡쳐몬 메인 화면">
-                        <div class="capture-controls">
-                            <div class="capture-control-copy">
-                                <span class="capture-control-label"><i aria-hidden="true"></i>이미지를 넘겨보세요</span>
-                                <span class="capture-control-count"><b id="capture-current">01</b><em>/ 05</em></span>
-                            </div>
-                            <div class="capture-nav"><button type="button" id="capture-prev" aria-label="이전 캡쳐몬 이미지"><span aria-hidden="true">←</span></button><button type="button" id="capture-next" aria-label="다음 캡쳐몬 이미지"><span aria-hidden="true">→</span></button></div>
+                    <div class="capture-stack" id="capture-gallery" aria-label="캡쳐몬 작업 화면 갤러리">
+                        <button class="capture-card is-front" type="button" data-capture-slide="0" aria-pressed="true" aria-label="다음 캡쳐몬 작업 화면 보기">
+                            <img src="./28v2.jpg" alt="캡쳐몬 메인 화면">
+                        </button>
+                        <button class="capture-card is-behind-1" type="button" data-capture-slide="1" aria-pressed="false" aria-label="캡쳐몬 이미지 추출 화면을 앞으로 가져오기">
+                            <img src="./29v2.jpg" alt="캡쳐몬 이미지 추출 화면">
+                        </button>
+                        <button class="capture-card is-behind-2" type="button" data-capture-slide="2" aria-pressed="false" aria-label="캡쳐몬 이미지 편집 화면을 앞으로 가져오기">
+                            <img src="./30v2.jpg" alt="캡쳐몬 이미지 편집 화면">
+                        </button>
+                        <button class="capture-card is-behind-3" type="button" data-capture-slide="3" aria-pressed="false" aria-label="캡쳐몬 배경 처리 화면을 앞으로 가져오기">
+                            <img src="./31v2.jpg" alt="캡쳐몬 배경 처리 화면">
+                        </button>
+                        <button class="capture-card is-behind-4" type="button" data-capture-slide="4" aria-pressed="false" aria-label="캡쳐몬 결과 저장 화면을 앞으로 가져오기">
+                            <img src="./32v2.jpg" alt="캡쳐몬 결과 저장 화면">
+                        </button>
+                    </div>
+                    <div class="capture-controls">
+                        <div class="capture-control-copy">
+                            <span class="capture-control-label"><i aria-hidden="true"></i>앞 이미지를 클릭해 넘겨보세요</span>
+                            <span class="capture-control-count" aria-live="polite"><b id="capture-current">01</b><em>/ 05</em></span>
                         </div>
+                        <div class="capture-nav"><button type="button" id="capture-prev" aria-label="이전 캡쳐몬 이미지"><span aria-hidden="true">←</span></button><button type="button" id="capture-next" aria-label="다음 캡쳐몬 이미지"><span aria-hidden="true">→</span></button></div>
                     </div>
                     <div class="capture-sticker"><b>5 TOOLS</b><span>ONE FLOW</span></div>
                 </div>
@@ -242,14 +255,14 @@
                     <h2>상표 확인과 키워드 가공부터<br><em>이미지 작업까지 한 번에.</em></h2>
                     <p><span class="desktop-download-copy">설치부터 첫 검사까지 어렵지 않습니다.<br>Windows용 마크몬을 지금 무료로 시작해보세요.</span><span class="mobile-download-copy">모바일에서는 설치 파일과 양식을 사용할 수 없습니다.<br><strong>PC에서 다운로드 받아주세요.</strong></span></p>
                     <div class="download-actions desktop-download-actions">
-                        <a class="button button-primary button-large" href="https://github.com/markmon0135/MarkMon-Installer-/releases/download/v1.0.55/MARKMON.INSTALLER.v1.0.55.exe">Windows용 무료 다운로드<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4"/></svg></a>
+                        <a class="button button-primary button-large" href="https://github.com/markmon0135/MarkMon-Installer-/releases/download/v1.0.56/MARKMON.INSTALLER.v1.0.56.exe">Windows용 무료 다운로드<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4"/></svg></a>
                         <a class="button button-outline button-large" href="https://github.com/markmon0135/template/releases/download/markmontemplate-20260718/markmontemplate-20260718.zip">마크몬 양식 다운로드</a>
                     </div>
                     <div class="download-actions mobile-download-actions" aria-label="모바일 다운로드 안내">
                         <button class="button button-primary button-large" type="button" disabled>PC에서 다운로드 받으세요</button>
                         <button class="button button-outline button-large" type="button" disabled>설치 파일과 양식은 PC에서 받아주세요</button>
                     </div>
-                    <p class="release-info desktop-release-info"><span></span> Release v1.0.55 · Windows 10/11 64-bit</p>
+                    <p class="release-info desktop-release-info"><span></span> Release v1.0.56 · Windows 10/11 64-bit</p>
                     <p class="release-info mobile-release-info"><span></span> 모바일에서는 다운로드할 수 없습니다</p>
                 </div>
                 <div class="download-card reveal reveal-delay">
@@ -296,6 +309,6 @@
         <button class="dialog-close" type="button" data-close-dialog aria-label="닫기">×</button><p class="dialog-label">BUSINESS INFORMATION</p><h2>사업자정보</h2>
         <div class="dialog-body business-list"><p><span>상호 / 대표</span><strong>마크몬 / 장상민</strong></p><p><span>사업자등록번호</span><strong>443-22-02376</strong></p><p><span>통신판매업신고</span><strong>제 2026-부천원미-0487 호</strong></p><p><span>이메일</span><strong>markmon0135@gmail.com</strong></p><p><span>주소</span><strong>부천시 원미구 중동로 301</strong></p></div>
     </dialog>
-    <script src="scriptv2.js?v=11"></script>
+    <script src="scriptv2.js?v=13"></script>
 </body>
 </html>

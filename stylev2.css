@@ -674,10 +674,6 @@ h1 em, h2 em { color: var(--brand-red); }
 .capture-controls button { width: 43px; height: 43px; padding: 0; display: grid; place-items: center; border: 1px solid #dadde5; border-radius: 50%; color: #323641; background: #fff; font-size: 1.06rem; cursor: pointer; box-shadow: 0 7px 18px rgba(18,20,30,.08); transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease; }
 .capture-controls button:hover { color: #fff; border-color: var(--brand-blue); background: var(--brand-blue); transform: translateY(-2px); }
 .capture-controls button:focus-visible { outline: 3px solid rgba(142,207,235,.62); outline-offset: 2px; }
-.capture-sticker { position: absolute; z-index: 8; right: -16px; bottom: 34px; width: 112px; aspect-ratio: 1; display: grid; place-content: center; gap: 2px; border-radius: 50%; color: var(--ink); background: #9edaf0; text-align: center; transform: rotate(9deg); box-shadow: 0 15px 30px rgba(16, 8, 58, .28); }
-.capture-sticker b { font-size: .85rem; }
-.capture-sticker span { font-size: .56rem; font-weight: 850; letter-spacing: .12em; }
-
 /* Download and footer */
 .download-panel { display: flex; flex-direction: column; min-height: 100svh; background: #fff; }
 .download-panel .panel-inner { flex: 1; display: grid; grid-template-columns: 1fr minmax(330px, .48fr); align-items: center; gap: clamp(50px, 8vw, 125px); padding-bottom: 150px; }
@@ -911,7 +907,6 @@ h1 em, h2 em { color: var(--brand-red); }
     .capture-control-count b { font-size: 1rem; }
     .capture-nav { gap: 6px; }
     .capture-controls button { width: 40px; height: 40px; }
-    .capture-sticker { right: -4px; width: 88px; }
     .download-actions { flex-direction: column; }
     .download-card { padding: 30px 24px 24px; }
     .download-card > strong { font-size: 4rem; }

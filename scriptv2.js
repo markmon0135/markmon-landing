@@ -6,6 +6,36 @@ document.addEventListener("DOMContentLoaded", () => {
     const primaryLinks = Array.from(document.querySelectorAll('.primary-nav a[href^="#"]'));
     const menuToggle = document.querySelector(".menu-toggle");
     const primaryNav = document.getElementById("primary-nav");
+    const modalHistoryKey = "__markmonModal";
+    const historyManagedDialogIds = ["tool-dialog", "faq-dialog"];
+    let closingDialogFromHistory = false;
+
+    function pushDialogHistory(dialog) {
+        if (!dialog?.id || history.state?.[modalHistoryKey] === dialog.id) return;
+        const currentState = history.state && typeof history.state === "object" ? history.state : {};
+        try {
+            history.pushState({ ...currentState, [modalHistoryKey]: dialog.id }, "", window.location.href);
+        } catch (_) {
+            /* The dialog still works if a browser blocks History API on a local file. */
+        }
+    }
+
+    function removeDialogHistory(dialog) {
+        if (!dialog?.id || closingDialogFromHistory) return;
+        if (history.state?.[modalHistoryKey] === dialog.id) history.back();
+    }
+
+    window.addEventListener("popstate", () => {
+        const historyDialogId = history.state?.[modalHistoryKey];
+        const openDialog = historyManagedDialogIds
+            .map(id => document.getElementById(id))
+            .find(dialog => dialog?.open);
+        if (!openDialog || historyDialogId === openDialog.id) return;
+
+        closingDialogFromHistory = true;
+        openDialog.close();
+        closingDialogFromHistory = false;
+    });
 
     function closeMobileMenu() {
         if (!menuToggle || !primaryNav) return;
@@ -292,6 +322,7 @@ document.addEventListener("DOMContentLoaded", () => {
             lastToolTrigger = card;
             selectTool(card.dataset.openTool);
             toolDialog.showModal();
+            pushDialogHistory(toolDialog);
             document.body.classList.add("modal-open");
             window.setTimeout(() => toolDialog.querySelector(".tool-dialog-close")?.focus(), 0);
         });
@@ -311,6 +342,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     toolDialog?.addEventListener("close", () => {
+        removeDialogHistory(toolDialog);
         document.body.classList.remove("modal-open");
         lastToolTrigger?.focus?.();
     });
@@ -535,11 +567,13 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!dialog) return;
             lastFocusedElement = button;
             dialog.showModal();
+            pushDialogHistory(dialog);
             document.body.classList.add("modal-open");
             window.setTimeout(() => faqSearch?.focus(), 0);
         });
     });
     faqDialog?.addEventListener("close", () => {
+        removeDialogHistory(faqDialog);
         document.body.classList.remove("modal-open");
         lastFocusedElement?.focus?.();
     });

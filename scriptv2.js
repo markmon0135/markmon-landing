@@ -157,20 +157,43 @@ document.addEventListener("DOMContentLoaded", () => {
     /* Risk preview */
     const riskPreview = document.getElementById("risk-preview");
     const riskTabs = Array.from(document.querySelectorAll(".risk-tab"));
+    const riskImageCache = new Map();
+    let riskSelectionRequest = 0;
 
-    function selectRisk(tab) {
+    riskTabs.forEach(tab => {
+        const source = tab.dataset.riskSrc;
+        if (!source || riskImageCache.has(source)) return;
+
+        const image = new Image();
+        image.decoding = "async";
+        const loaded = new Promise(resolve => {
+            image.addEventListener("load", resolve, { once: true });
+            image.addEventListener("error", resolve, { once: true });
+        });
+        image.src = source;
+
+        const ready = typeof image.decode === "function"
+            ? image.decode().catch(() => loaded)
+            : loaded;
+        riskImageCache.set(source, { image, ready });
+    });
+
+    async function selectRisk(tab) {
         if (!riskPreview || !tab || tab.classList.contains("is-active")) return;
         riskTabs.forEach(item => {
             const active = item === tab;
             item.classList.toggle("is-active", active);
             item.setAttribute("aria-selected", String(active));
         });
-        riskPreview.classList.add("is-changing");
-        window.setTimeout(() => {
-            riskPreview.src = tab.dataset.riskSrc;
-            riskPreview.alt = tab.dataset.riskAlt || "상표권 위험 사례 이미지";
-            riskPreview.classList.remove("is-changing");
-        }, 170);
+
+        const source = tab.dataset.riskSrc;
+        const request = ++riskSelectionRequest;
+        const cachedImage = riskImageCache.get(source);
+        if (cachedImage) await cachedImage.ready;
+        if (request !== riskSelectionRequest) return;
+
+        riskPreview.src = cachedImage?.image.src || source;
+        riskPreview.alt = tab.dataset.riskAlt || "상표권 위험 사례 이미지";
     }
 
     riskTabs.forEach((tab, index) => {

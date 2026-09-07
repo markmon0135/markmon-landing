@@ -564,8 +564,7 @@ h1 em, h2 em { color: var(--brand-red); }
 .risk-frame { padding: 14px; border-radius: 28px; background: #fff; border: 1px solid rgba(17, 19, 25, .1); box-shadow: 0 30px 80px rgba(82, 31, 39, .13); }
 .risk-frame-label { height: 44px; padding: 0 8px; display: flex; align-items: center; justify-content: space-between; color: #9698a0; font-size: .61rem; font-weight: 850; letter-spacing: .12em; }
 .risk-frame-label b { color: var(--brand-red-dark); }
-.risk-frame img { width: 100%; height: clamp(350px, 56vh, 570px); object-fit: cover; border-radius: 17px; background: #f7f7f8; transition: opacity .18s ease, transform .35s var(--ease); }
-.risk-frame img.is-changing { opacity: 0; transform: scale(.985); }
+.risk-frame img { width: 100%; height: clamp(350px, 56vh, 570px); object-fit: cover; border-radius: 17px; background: #f7f7f8; }
 .risk-note { position: absolute; right: -16px; bottom: -25px; margin: 0; padding: 14px 18px; border-radius: 13px; background: var(--ink); color: #fff; box-shadow: 0 16px 36px rgba(17, 19, 25, .22); font-size: .78rem; }
 .risk-note strong { color: #ff9da4; }
 

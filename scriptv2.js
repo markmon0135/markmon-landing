@@ -287,6 +287,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         mainImage.src = selectedImage.currentSrc || selectedImage.src;
         mainImage.alt = selectedImage.alt;
+        mainImage.classList.toggle("is-contain", selectedThumbnail.dataset.galleryFit === "contain");
         thumbnails.forEach((thumbnail, thumbnailIndex) => {
             const active = thumbnailIndex === index;
             thumbnail.classList.toggle("is-active", active);
@@ -461,6 +462,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 ["처리된 이미지를 다시 수정할 수 있나요?", "네. 처리가 끝난 이미지 중 필요한 이미지를 선택해 개별 편집할 수 있으며, 수정 내용은 결과 파일에 반영됩니다."],
                 ["작업을 중간에 멈추면 저장된 결과도 사라지나요?", "아닙니다. 현재 처리 중인 이미지를 마친 뒤 작업이 중지되며 이미 저장된 결과는 유지됩니다."]
             ]
+        },
+        {
+            id: "rotation",
+            label: "썸네일 랜덤 회전",
+            items: [
+                ["썸네일 랜덤 회전은 어떤 기능인가요?", "여러 썸네일을 한꺼번에 회전해 별도의 결과 폴더에 저장하는 기능입니다. 이미지마다 다른 각도를 적용하거나 모든 이미지에 같은 각도를 적용할 수 있습니다."],
+                ["폴더에 있는 썸네일을 한꺼번에 불러올 수 있나요?", "네. 선택한 폴더의 JPG, JPEG, PNG, WEBP와 BMP 이미지를 불러올 수 있습니다. 하위 폴더에 있는 이미지는 포함되지 않습니다."],
+                ["마크몬 엑셀에 있는 이미지도 처리할 수 있나요?", "네. 이미지1·이미지2·이미지3 중 처리할 이미지 주소 열을 선택할 수 있습니다. 저장 파일명은 제품번호, 상품코드 또는 상품명 중에서 정할 수 있습니다."],
+                ["랜덤 각도와 고정 각도는 어떻게 다른가요?", "랜덤 각도는 정한 범위 안에서 이미지마다 다른 각도와 방향을 적용합니다. 고정 각도는 선택한 각도와 방향을 모든 이미지에 똑같이 적용합니다."],
+                ["회전 각도는 어느 범위까지 정할 수 있나요?", "1도부터 15도까지 선택할 수 있습니다. 랜덤 각도에서는 최소값과 최대값을 정하고, 고정 각도에서는 적용할 각도 하나를 선택합니다."],
+                ["좌우 반전도 함께 적용할 수 있나요?", "네. 랜덤 각도에서는 이미지마다 50% 확률로 좌우 반전이 적용되고, 고정 각도에서는 모든 이미지에 같은 방식으로 적용됩니다."],
+                ["회전하면서 생긴 빈 공간도 채울 수 있나요?", "네. AI 여백 채우기를 켜면 회전하면서 생긴 빈 공간을 주변 배경과 비슷하게 채웁니다. 처리 시간이 더 걸릴 수 있고, 이미지 가장자리에 글자나 복잡한 무늬가 있으면 결과가 자연스럽지 않을 수 있습니다."],
+                ["회전한 이미지는 어떤 형식과 크기로 저장되나요?", "결과는 JPG로 저장됩니다. 원본 비율을 유지하면서 긴 변이 1000px을 넘지 않도록 크기가 조정됩니다."],
+                ["원본 이미지는 그대로 유지되나요?", "네. 원본 파일은 수정하지 않고 회전 결과만 별도의 폴더에 저장합니다. 원본 폴더와 결과 폴더는 같은 위치로 지정할 수 없습니다."],
+                ["같은 이름의 결과 파일이 이미 있으면 어떻게 되나요?", "덮어쓰기 방지를 켜면 기존 파일은 그대로 두고 새 파일명 뒤에 번호를 붙여 저장합니다. 이 기능을 끄면 결과 폴더에 있는 같은 이름의 파일이 새 결과로 바뀝니다."],
+                ["작업 진행 상황과 적용된 각도를 확인할 수 있나요?", "네. 처리 개수와 진행률, 성공·실패 여부, 각 이미지에 실제로 적용된 각도를 확인할 수 있습니다. 작업이 끝난 이미지는 원본과 결과를 비교해 볼 수 있습니다."],
+                ["작업을 멈추거나 초기화하면 저장한 결과도 사라지나요?", "아닙니다. 작업을 멈추면 현재 이미지를 마친 뒤 다음 이미지부터 중지되며, 이미 저장된 결과는 유지됩니다. 초기화해도 저장된 원본과 결과 파일은 삭제되지 않습니다."]
+            ]
         }
     ];
     let faqNumber = 0;
@@ -471,6 +490,9 @@ document.addEventListener("DOMContentLoaded", () => {
         question,
         answer
     })));
+    document.querySelectorAll("[data-faq-total]").forEach(element => {
+        element.textContent = allFaqItems.length;
+    });
     const faqDialog = document.getElementById("faq-dialog");
     const faqCategories = document.querySelector("[data-faq-categories]");
     const faqResults = document.querySelector("[data-faq-results]");
